@@ -1,0 +1,152 @@
+@use "../../utils/css" as utils;
+
+.main {
+    @include utils.container(100%, calc(100% - 100px));
+    padding: 10px;
+
+    &__container {
+        @include utils.container(100%, 100%);
+    }
+
+    &__home,
+    &__not-found {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        text-align: center;
+
+        h1 {
+            font-size: 1.75rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
+
+    &__generator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .generator-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+            max-height: 100%;
+            height: 100%;
+            padding: 5px;
+            border: 2px solid whitesmoke;
+
+            .accept-button {
+                font-size: 1.3rem;
+                padding: 5px;
+                width: 100px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                margin: 5px;
+            }
+
+            .select-players-wrapper {
+                border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                height: 100%;
+                max-height: 100%;
+                overflow: hidden;
+
+                h2 {
+                    color: whitesmoke;
+                }
+
+                input {
+                    font-size: 1.3rem;
+                }
+
+                .players {
+                    font-size: 1.3rem;
+                    color: whitesmoke;
+                    text-align: center;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+
+                    .player {
+                        border: 1px solid blue;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        button {
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+
+            .select-options-wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .select {
+                    font-size: 1.3rem;
+                    color: whitesmoke;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 2px solid whitesmoke;
+                    width: 400px;
+                    border-radius: 10px;
+
+                    select {
+                        font-size: 1rem;
+                        background-color: #2a2f3b;
+                        background: #636363;
+                        color: whitesmoke;
+                        // border: 2px #2a2f3b solid;
+                        border-radius: 10px;
+                        padding: 5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .icon-style1 {
+        font-size: 1.5rem;
+        color: rgb(65, 65, 65);
+    }
+
+    .popup {
+        max-width: 530px;
+        width: 90%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: rgba(240, 248, 255, 0.719);
+        position: fixed;
+        padding: 10px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        font-size: 1.3rem;
+
+        button {
+            cursor: pointer;
+            border-radius: 15px;
+            background-color: rgba(240, 248, 255, 0.719);
+            padding: 5px;
+            border: 2px solid black;
+        }
+    }
+}
