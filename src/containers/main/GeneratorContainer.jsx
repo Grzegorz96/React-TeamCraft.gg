@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import GeneratorComponent from "../../components/main/GeneratorComponent";
+import GeneratorComponent from "../../components/main/generator-components/GeneratorComponent";
 import { generatorInitialState } from "../../reducers/generator-reducer/initialState";
 import { generatorReducer } from "../../reducers/generator-reducer/reducer";
 import { generatorActions } from "../../reducers/generator-reducer/actionTypes";
@@ -19,19 +19,52 @@ export default function GeneratorContainer() {
     };
 
     const handleToggleButton = () => {
-        if (generatorState.isAccepted) {
+        if (generatorState.teamOptionsIsAccepted) {
             dispatch({
                 type: generatorActions.setReset,
             });
         } else {
-            dispatch({ type: generatorActions.setIsAccepted });
+            dispatch({ type: generatorActions.setTeamOptionsIsAccepted });
         }
     };
 
-    const handleSetPlayerName = (e) => {
+    const setPlayerName = (e) => {
         dispatch({
             type: generatorActions.setNameOfPlayer,
             payload: e.target.value,
+        });
+        if (generatorState.popup) closePopup();
+    };
+
+    const editPlayerInList = () => {
+        if (generatorState.nameOfPlayer) {
+            if (
+                !generatorState.actualListOfPlayers.includes(
+                    generatorState.nameOfPlayer
+                )
+            ) {
+                dispatch({
+                    type: generatorActions.editPlayerInList,
+                });
+            } else {
+                dispatch({
+                    type: generatorActions.setPopup,
+                    payload: "Player already on the list, cannot be changed.",
+                });
+            }
+        } else {
+            dispatch({
+                type: generatorActions.setPopup,
+                payload: "Cannot change name to empty.",
+            });
+        }
+    };
+
+    const removePlayerFromList = (player) => {
+        if (generatorState.nameOfEditingPlayer === player) undoEditPlayerName();
+        dispatch({
+            type: generatorActions.removePlayerFromList,
+            payload: player,
         });
     };
 
@@ -49,7 +82,6 @@ export default function GeneratorContainer() {
                 ) {
                     dispatch({
                         type: generatorActions.addPlayerToList,
-                        payload: generatorState.nameOfPlayer,
                     });
                 } else {
                     dispatch({
@@ -79,14 +111,48 @@ export default function GeneratorContainer() {
         });
     };
 
+    const editPlayerName = (player) => {
+        dispatch({
+            type: generatorActions.setNameOfEditingPlayer,
+            payload: player,
+        });
+        dispatch({
+            type: generatorActions.setNameOfPlayer,
+            payload: player,
+        });
+    };
+
+    const undoEditPlayerName = () => {
+        dispatch({
+            type: generatorActions.setNameOfEditingPlayer,
+            payload: "",
+        });
+        dispatch({
+            type: generatorActions.setNameOfPlayer,
+            payload: "",
+        });
+    };
+
+    const clearPlayersList = () => {
+        dispatch({
+            type: generatorActions.clearPlayersList,
+        });
+        if (generatorState.popup) closePopup();
+    };
+
     return (
         <GeneratorComponent
             generatorState={generatorState}
             handleSelectChange={handleSelectChange}
             handleToggleButton={handleToggleButton}
-            handleSetPlayerName={handleSetPlayerName}
+            setPlayerName={setPlayerName}
             addPlayerToList={addPlayerToList}
             closePopup={closePopup}
+            editPlayerName={editPlayerName}
+            undoEditPlayerName={undoEditPlayerName}
+            editPlayerInList={editPlayerInList}
+            removePlayerFromList={removePlayerFromList}
+            clearPlayersList={clearPlayersList}
         />
     );
 }

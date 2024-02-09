@@ -30,97 +30,127 @@
         flex-direction: column;
         align-items: center;
 
-        .generator-wrapper {
+        .buttons-wrapper {
+            display: flex;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 130px;
+            font-size: 1.3rem;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .set-players-wrapper {
+            padding: 5px;
+            position: relative;
+            border: 1px solid red;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            max-width: 500px;
-            width: 100%;
-            max-height: 100%;
+            gap: 5px;
             height: 100%;
-            padding: 5px;
-            border: 2px solid whitesmoke;
+            max-height: 100%;
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
 
-            .accept-button {
-                font-size: 1.3rem;
-                padding: 5px;
-                width: 100px;
-                border-radius: 5px;
-                border: none;
-                cursor: pointer;
-                margin: 5px;
+            h2 {
+                color: whitesmoke;
+                text-align: center;
             }
 
-            .select-players-wrapper {
-                border: 1px solid red;
+            .input-button {
+                display: flex;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    font-size: 1.3rem;
+                    border: none;
+                    background-color: whitesmoke;
+                }
+
+                button {
+                    border: none;
+                    font-size: 1.5rem;
+                    padding: 5px;
+                    background-color: whitesmoke;
+                }
+            }
+
+            .players {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-                height: 100%;
-                max-height: 100%;
-                overflow: hidden;
+                font-size: 1.3rem;
+                color: whitesmoke;
+                text-align: center;
+                overflow-x: hidden;
+                overflow-y: auto;
 
-                h2 {
-                    color: whitesmoke;
-                }
+                .player {
+                    padding: 5px;
+                    border-radius: 20px;
+                    border: 2px solid whitesmoke;
+                    background-color: rgba(73, 73, 73, 0.616);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
 
-                input {
-                    font-size: 1.3rem;
-                }
-
-                .players {
-                    font-size: 1.3rem;
-                    color: whitesmoke;
-                    text-align: center;
-                    overflow-x: hidden;
-                    overflow-y: auto;
-
-                    .player {
-                        border: 1px solid blue;
+                    div {
                         display: flex;
-                        justify-content: space-between;
-                        align-items: center;
+                        gap: 5px;
 
-                        button {
-                            padding: 5px;
+                        .player__button {
+                            width: 50px;
+                            border-radius: 50%;
+                            background-color: rgb(199, 199, 199, 0.616);
+                            padding: 10px;
+                            border: 2px solid whitesmoke;
                         }
                     }
                 }
             }
+        }
 
-            .select-options-wrapper {
+        .select-options-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .select {
+                font-size: 1.3rem;
+                color: whitesmoke;
                 display: flex;
-                flex-direction: column;
-                gap: 10px;
+                justify-content: space-between;
+                align-items: center;
+                border: 2px solid whitesmoke;
+                width: 400px;
+                border-radius: 10px;
 
-                .select {
-                    font-size: 1.3rem;
+                select {
+                    font-size: 1rem;
+                    background-color: #2a2f3b;
+                    background: #636363;
                     color: whitesmoke;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border: 2px solid whitesmoke;
-                    width: 400px;
+                    // border: 2px #2a2f3b solid;
                     border-radius: 10px;
-
-                    select {
-                        font-size: 1rem;
-                        background-color: #2a2f3b;
-                        background: #636363;
-                        color: whitesmoke;
-                        // border: 2px #2a2f3b solid;
-                        border-radius: 10px;
-                        padding: 5px;
-                        cursor: pointer;
-                    }
+                    padding: 5px;
+                    cursor: pointer;
                 }
             }
         }
     }
 
     .icon-style1 {
-        font-size: 1.5rem;
-        color: rgb(65, 65, 65);
+        font-size: 1.7rem;
+        color: rgb(73, 73, 73);
     }
 
     .popup {
