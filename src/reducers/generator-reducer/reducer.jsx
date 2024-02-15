@@ -6,8 +6,8 @@ export const generatorReducer = (state, action) => {
             return { ...state, numberOfTeams: action.payload };
         case "SET_NUMBER_OF_TEAM_PLAYERS":
             return { ...state, numberOfTeamPlayers: action.payload };
-        case "SET_TEAM_OPTIONS_IS_ACCEPTED":
-            return { ...state, teamOptionsIsAccepted: true };
+        case "SET_IS_TEAM_OPTIONS_ACCEPTED":
+            return { ...state, isTeamOptionsAccepted: true };
         case "SET_NAME_OF_PLAYER":
             return { ...state, nameOfPlayer: action.payload };
         case "ADD_PLAYER_TO_LIST":
@@ -65,6 +65,11 @@ export const generatorReducer = (state, action) => {
             return {
                 ...state,
                 nameOfEditingPlayer: action.payload,
+            };
+        case "SET_GENERATED_TEAMS":
+            return {
+                ...state,
+                generatedTeams: action.payload,
             };
 
         default:

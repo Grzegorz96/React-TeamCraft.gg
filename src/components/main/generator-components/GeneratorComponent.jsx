@@ -1,38 +1,50 @@
 import React from "react";
 import SetPlayersComponent from "./SetPlayersComponent";
 import SelectOptionsComponent from "./SelectOptionsComponent";
+import GeneratedTeamsComponent from "./GeneratedTeamsComponent";
 
 export default function GeneratorComponent({
     generatorState,
     handleSelectChange,
-    handleToggleButton,
+    handleAcceptAndBackButton,
     setPlayerName,
     addPlayerToList,
     closePopup,
-    editPlayerName,
-    undoEditPlayerName,
     editPlayerInList,
     removePlayerFromList,
     clearPlayersList,
+    toggleEditPlayerName,
+    generate,
+    setListOfGeneratedTeams,
+    acceptGeneratedTeams,
 }) {
     return (
         <div className="main__container main__generator">
-            {generatorState.teamOptionsIsAccepted ? (
-                <SetPlayersComponent
-                    setPlayerName={setPlayerName}
-                    addPlayerToList={addPlayerToList}
-                    closePopup={closePopup}
-                    handleToggleButton={handleToggleButton}
-                    generatorState={generatorState}
-                    editPlayerName={editPlayerName}
-                    undoEditPlayerName={undoEditPlayerName}
-                    editPlayerInList={editPlayerInList}
-                    removePlayerFromList={removePlayerFromList}
-                    clearPlayersList={clearPlayersList}
-                />
+            {generatorState.isTeamOptionsAccepted ? (
+                generatorState.generatedTeams.length ? (
+                    <GeneratedTeamsComponent
+                        setListOfGeneratedTeams={setListOfGeneratedTeams}
+                        generatorState={generatorState}
+                        generate={generate}
+                        acceptGeneratedTeams={acceptGeneratedTeams}
+                    />
+                ) : (
+                    <SetPlayersComponent
+                        setPlayerName={setPlayerName}
+                        addPlayerToList={addPlayerToList}
+                        closePopup={closePopup}
+                        handleAcceptAndBackButton={handleAcceptAndBackButton}
+                        generatorState={generatorState}
+                        editPlayerInList={editPlayerInList}
+                        removePlayerFromList={removePlayerFromList}
+                        clearPlayersList={clearPlayersList}
+                        toggleEditPlayerName={toggleEditPlayerName}
+                        generate={generate}
+                    />
+                )
             ) : (
                 <SelectOptionsComponent
-                    handleToggleButton={handleToggleButton}
+                    handleAcceptAndBackButton={handleAcceptAndBackButton}
                     handleSelectChange={handleSelectChange}
                 />
             )}

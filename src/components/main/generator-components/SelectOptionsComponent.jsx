@@ -5,11 +5,11 @@ import { faC, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function SelectOptionsComponent({
     handleSelectChange,
-    handleToggleButton,
+    handleAcceptAndBackButton,
 }) {
     return (
         <>
-            <button className="button" onClick={handleToggleButton}>
+            <button className="button" onClick={handleAcceptAndBackButton}>
                 <FontAwesomeIcon icon={faCheck} />
                 Accept
             </button>

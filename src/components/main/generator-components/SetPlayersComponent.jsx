@@ -6,32 +6,33 @@ import {
     faX,
     faRotateLeft,
     faUsersSlash,
-    faMarker,
-    faRightToBracket,
+    faDice,
+    faPlus,
+    faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function SetPlayersComponent({
     setPlayerName,
     addPlayerToList,
     closePopup,
-    handleToggleButton,
+    handleAcceptAndBackButton,
     generatorState,
-    editPlayerName,
-    undoEditPlayerName,
     editPlayerInList,
     removePlayerFromList,
     clearPlayersList,
+    toggleEditPlayerName,
+    generate,
 }) {
     return (
         <>
             <div className="buttons-wrapper">
-                <button className="button" onClick={handleToggleButton}>
+                <button className="button" onClick={handleAcceptAndBackButton}>
                     <FontAwesomeIcon icon={faRotateLeft} />
                     Back
                 </button>
                 <button
                     className="button"
-                    onClick={handleToggleButton}
+                    onClick={generate}
                     disabled={
                         generatorState.numberOfTeams *
                             generatorState.numberOfTeamPlayers -
@@ -39,7 +40,7 @@ export default function SetPlayersComponent({
                         0
                     }
                 >
-                    <FontAwesomeIcon icon={faMarker} /> Generate
+                    <FontAwesomeIcon icon={faDice} /> Generate
                 </button>
                 <button
                     className="button"
@@ -72,8 +73,20 @@ export default function SetPlayersComponent({
                             }
                         }}
                     />
-                    <button>
-                        <FontAwesomeIcon icon={faRightToBracket} />
+                    <button
+                        onClick={
+                            generatorState.nameOfEditingPlayer
+                                ? editPlayerInList
+                                : addPlayerToList
+                        }
+                    >
+                        <FontAwesomeIcon
+                            icon={
+                                generatorState.nameOfEditingPlayer
+                                    ? faCheck
+                                    : faPlus
+                            }
+                        />
                     </button>
                 </div>
                 {generatorState.popup && (
@@ -91,33 +104,29 @@ export default function SetPlayersComponent({
                     <div className="players">
                         {generatorState.actualListOfPlayers.map((player) => (
                             <div className="player" key={player}>
-                                {player}
-                                <div>
-                                    {generatorState.nameOfEditingPlayer ===
-                                    player ? (
-                                        <button
-                                            className="player__button"
-                                            onClick={undoEditPlayerName}
-                                        >
-                                            <FontAwesomeIcon
-                                                className="icon-style1"
-                                                icon={faRotateLeft}
-                                            />
-                                        </button>
-                                    ) : (
-                                        <button
-                                            className="player__button"
-                                            onClick={() =>
-                                                editPlayerName(player)
+                                <div className="player__text">{player}</div>
+                                <div className="player__buttons">
+                                    <button
+                                        className="player__button"
+                                        onClick={() =>
+                                            toggleEditPlayerName(
+                                                generatorState.nameOfEditingPlayer ===
+                                                    player
+                                                    ? undefined
+                                                    : player
+                                            )
+                                        }
+                                    >
+                                        <FontAwesomeIcon
+                                            className="icon-style1"
+                                            icon={
+                                                generatorState.nameOfEditingPlayer ===
+                                                player
+                                                    ? faRotateLeft
+                                                    : faPenToSquare
                                             }
-                                        >
-                                            <FontAwesomeIcon
-                                                className="icon-style1"
-                                                icon={faPenToSquare}
-                                            />
-                                        </button>
-                                    )}
-
+                                        />
+                                    </button>
                                     <button
                                         className="player__button"
                                         onClick={() =>

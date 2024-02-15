@@ -25,6 +25,54 @@
         }
     }
 
+    &__my-teams {
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        color: whitesmoke;
+
+        .event-wrapper {
+            background-color: rgba(73, 73, 73, 0.616);
+            background-color: #6363637a;
+            border: 2px solid whitesmoke;
+            padding: 10px;
+            border-radius: 10px;
+
+            h3 {
+                font-size: 1.4rem;
+                text-align: center;
+                padding-bottom: 5px;
+            }
+            .teams-wrapper {
+                display: flex;
+                gap: 10px;
+
+                .team-wrapper {
+                    padding: 5px;
+                    border: 2px solid rgba(245, 245, 245, 0.418);
+                    width: 150px;
+                    border-radius: 10px;
+
+                    h4 {
+                        padding: 5px;
+                    }
+
+                    .player {
+                        padding: 5px;
+                        border-top: 2px solid whitesmoke;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+
     &__generator {
         display: flex;
         flex-direction: column;
@@ -33,12 +81,13 @@
         .buttons-wrapper {
             display: flex;
         }
+
         .button {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 5px;
-            width: 130px;
+            width: 150px;
             font-size: 1.3rem;
             padding: 5px;
             border-radius: 5px;
@@ -103,7 +152,13 @@
                     justify-content: space-between;
                     align-items: center;
 
-                    div {
+                    .player__text {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .player__buttons {
                         display: flex;
                         gap: 5px;
 
@@ -125,6 +180,7 @@
             gap: 10px;
 
             .select {
+                padding: 5px;
                 font-size: 1.3rem;
                 color: whitesmoke;
                 display: flex;
@@ -133,16 +189,47 @@
                 border: 2px solid whitesmoke;
                 width: 400px;
                 border-radius: 10px;
+                background-color: rgba(73, 73, 73, 0.616);
 
                 select {
                     font-size: 1rem;
                     background-color: #2a2f3b;
                     background: #636363;
                     color: whitesmoke;
-                    // border: 2px #2a2f3b solid;
                     border-radius: 10px;
                     padding: 5px;
                     cursor: pointer;
+                }
+            }
+        }
+
+        .generated-teams-wrapper {
+            border: 2px solid whitesmoke;
+            display: flex;
+            color: whitesmoke;
+            font-size: 1rem;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+            background-color: #6363637a;
+            flex-wrap: wrap;
+            border-radius: 10px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            max-height: 100%;
+
+            .team {
+                padding: 5px;
+                border: 2px solid rgba(245, 245, 245, 0.418);
+                width: 150px;
+                border-radius: 10px;
+
+                .player {
+                    padding: 5px;
+                    border-top: 2px solid whitesmoke;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
             }
         }

@@ -3,13 +3,17 @@ import GeneratorComponent from "../../components/main/generator-components/Gener
 import { generatorInitialState } from "../../reducers/generator-reducer/initialState";
 import { generatorReducer } from "../../reducers/generator-reducer/reducer";
 import { generatorActions } from "../../reducers/generator-reducer/actionTypes";
+import { useMainData } from "../../context/MainProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function GeneratorContainer() {
     const [generatorState, dispatch] = useReducer(
         generatorReducer,
         generatorInitialState
     );
-    console.log(generatorState);
+    const navigate = useNavigate();
+    const { functions } = useMainData();
+
     const handleSelectChange = (e, type) => {
         const selectedNumber = parseInt(e.target.value, 10);
         dispatch({
@@ -18,13 +22,13 @@ export default function GeneratorContainer() {
         });
     };
 
-    const handleToggleButton = () => {
-        if (generatorState.teamOptionsIsAccepted) {
+    const handleAcceptAndBackButton = () => {
+        if (generatorState.isTeamOptionsAccepted) {
             dispatch({
                 type: generatorActions.setReset,
             });
         } else {
-            dispatch({ type: generatorActions.setTeamOptionsIsAccepted });
+            dispatch({ type: generatorActions.setIsTeamOptionsAccepted });
         }
     };
 
@@ -34,6 +38,35 @@ export default function GeneratorContainer() {
             payload: e.target.value,
         });
         if (generatorState.popup) closePopup();
+    };
+
+    const generate = () => {
+        if (
+            generatorState.actualListOfPlayers.length <
+            generatorState.numberOfTeams * generatorState.numberOfTeamPlayers
+        ) {
+            return;
+        }
+        const shuffledList = [...generatorState.actualListOfPlayers].sort(
+            () => Math.random() - 0.5
+        );
+        const teams = [];
+        for (let i = 0; i < generatorState.numberOfTeams; i++) {
+            const team = shuffledList.slice(
+                i * generatorState.numberOfTeamPlayers,
+                (i + 1) * generatorState.numberOfTeamPlayers
+            );
+            teams.push(team);
+        }
+
+        setListOfGeneratedTeams(teams);
+        if (generatorState.popup) closePopup();
+        if (generatorState.nameOfEditingPlayer) toggleEditPlayerName();
+    };
+
+    const acceptGeneratedTeams = () => {
+        functions.setAcceptedTeams(generatorState.generatedTeams);
+        navigate("/my-teams");
     };
 
     const editPlayerInList = () => {
@@ -61,7 +94,8 @@ export default function GeneratorContainer() {
     };
 
     const removePlayerFromList = (player) => {
-        if (generatorState.nameOfEditingPlayer === player) undoEditPlayerName();
+        if (generatorState.nameOfEditingPlayer === player)
+            toggleEditPlayerName();
         dispatch({
             type: generatorActions.removePlayerFromList,
             payload: player,
@@ -111,25 +145,14 @@ export default function GeneratorContainer() {
         });
     };
 
-    const editPlayerName = (player) => {
+    const toggleEditPlayerName = (player) => {
         dispatch({
             type: generatorActions.setNameOfEditingPlayer,
-            payload: player,
+            payload: player ? player : "",
         });
         dispatch({
             type: generatorActions.setNameOfPlayer,
-            payload: player,
-        });
-    };
-
-    const undoEditPlayerName = () => {
-        dispatch({
-            type: generatorActions.setNameOfEditingPlayer,
-            payload: "",
-        });
-        dispatch({
-            type: generatorActions.setNameOfPlayer,
-            payload: "",
+            payload: player ? player : "",
         });
     };
 
@@ -140,19 +163,28 @@ export default function GeneratorContainer() {
         if (generatorState.popup) closePopup();
     };
 
+    const setListOfGeneratedTeams = (list) => {
+        dispatch({
+            type: generatorActions.setGeneratedTeams,
+            payload: list,
+        });
+    };
+
     return (
         <GeneratorComponent
             generatorState={generatorState}
             handleSelectChange={handleSelectChange}
-            handleToggleButton={handleToggleButton}
+            handleAcceptAndBackButton={handleAcceptAndBackButton}
             setPlayerName={setPlayerName}
             addPlayerToList={addPlayerToList}
             closePopup={closePopup}
-            editPlayerName={editPlayerName}
-            undoEditPlayerName={undoEditPlayerName}
             editPlayerInList={editPlayerInList}
             removePlayerFromList={removePlayerFromList}
             clearPlayersList={clearPlayersList}
+            toggleEditPlayerName={toggleEditPlayerName}
+            generate={generate}
+            setListOfGeneratedTeams={setListOfGeneratedTeams}
+            acceptGeneratedTeams={acceptGeneratedTeams}
         />
     );
 }

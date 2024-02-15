@@ -1,15 +1,15 @@
 import Footer from "./containers/footer/FooterContainer";
 import Header from "./containers/header/HeaderContainer";
 import Main from "./containers/main/MainContainer";
-import { GeneratorProvider } from "./context/generator/GeneratorProvider";
+import { MainProvider } from "./context/MainProvider";
 
 function App() {
     return (
-        <GeneratorProvider>
+        <MainProvider>
             <Header />
             <Main />
             <Footer />
-        </GeneratorProvider>
+        </MainProvider>
     );
 }
 

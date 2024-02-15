@@ -8,8 +8,8 @@ export default function NavbarComponent() {
             <NavLink style={navLinkStyles} to="/generate-teams">
                 Generate
             </NavLink>
-            <NavLink style={navLinkStyles} to="/history">
-                History
+            <NavLink style={navLinkStyles} to="/my-teams">
+                My Teams
             </NavLink>
             <NavLink style={navLinkStyles} to="/stats">
                 Stats

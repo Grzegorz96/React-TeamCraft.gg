@@ -1,9 +1,10 @@
 export const generatorInitialState = {
     numberOfTeams: 1,
     numberOfTeamPlayers: 1,
-    teamOptionsIsAccepted: false,
+    isTeamOptionsAccepted: false,
     nameOfPlayer: "",
     actualListOfPlayers: [],
     popup: "",
     nameOfEditingPlayer: "",
+    generatedTeams: [],
 };
