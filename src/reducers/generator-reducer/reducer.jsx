@@ -71,7 +71,19 @@ export const generatorReducer = (state, action) => {
                 ...state,
                 generatedTeams: action.payload,
             };
-
+        case "SET_EVENT_NAME":
+            return {
+                ...state,
+                eventName: action.payload,
+            };
+        case "SET_TEAM_NAME":
+            const updatedGeneratedTeams = [...state.generatedTeams];
+            updatedGeneratedTeams[action.payload.teamIndex].teamName =
+                action.payload.teamName;
+            return {
+                ...state,
+                generatedTeams: updatedGeneratedTeams,
+            };
         default:
             return state;
     }

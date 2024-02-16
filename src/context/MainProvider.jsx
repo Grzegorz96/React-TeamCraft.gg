@@ -20,8 +20,11 @@ export const MainProvider = ({ children }) => {
             : (isInitialized.current = true);
     }, [mainState]);
 
-    const setAcceptedTeams = (data) => {
-        dispatch({ type: mainActions.addAcceptedTeams, payload: data });
+    const addAcceptedTeams = (teams, eventName) => {
+        dispatch({
+            type: mainActions.addAcceptedTeams,
+            payload: { teams: teams, eventName: eventName },
+        });
     };
 
     return (
@@ -29,7 +32,7 @@ export const MainProvider = ({ children }) => {
             value={{
                 mainState,
                 functions: {
-                    setAcceptedTeams,
+                    addAcceptedTeams,
                 },
             }}
         >

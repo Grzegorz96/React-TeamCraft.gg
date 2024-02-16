@@ -13,12 +13,26 @@ export default function GeneratorContainer() {
     );
     const navigate = useNavigate();
     const { functions } = useMainData();
-
+    console.log(generatorState);
     const handleSelectChange = (e, type) => {
         const selectedNumber = parseInt(e.target.value, 10);
         dispatch({
             type: type,
             payload: selectedNumber,
+        });
+    };
+
+    const setEventName = (e) => {
+        dispatch({
+            type: generatorActions.setEventName,
+            payload: e.target.value,
+        });
+    };
+
+    const setTeamName = (teamIndex, e) => {
+        dispatch({
+            type: generatorActions.setTeamName,
+            payload: { teamIndex: teamIndex, teamName: e.target.value },
         });
     };
 
@@ -56,7 +70,7 @@ export default function GeneratorContainer() {
                 i * generatorState.numberOfTeamPlayers,
                 (i + 1) * generatorState.numberOfTeamPlayers
             );
-            teams.push(team);
+            teams.push({ players: team, teamName: "" });
         }
 
         setListOfGeneratedTeams(teams);
@@ -65,7 +79,10 @@ export default function GeneratorContainer() {
     };
 
     const acceptGeneratedTeams = () => {
-        functions.setAcceptedTeams(generatorState.generatedTeams);
+        functions.addAcceptedTeams(
+            generatorState.generatedTeams,
+            generatorState.eventName
+        );
         navigate("/my-teams");
     };
 
@@ -185,6 +202,8 @@ export default function GeneratorContainer() {
             generate={generate}
             setListOfGeneratedTeams={setListOfGeneratedTeams}
             acceptGeneratedTeams={acceptGeneratedTeams}
+            setEventName={setEventName}
+            setTeamName={setTeamName}
         />
     );
 }

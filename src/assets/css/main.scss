@@ -49,6 +49,7 @@
             }
             .teams-wrapper {
                 display: flex;
+                justify-content: center;
                 gap: 10px;
 
                 .team-wrapper {
@@ -77,6 +78,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
 
         .buttons-wrapper {
             display: flex;
@@ -122,14 +124,20 @@
                     width: 100%;
                     font-size: 1.3rem;
                     border: none;
-                    background-color: whitesmoke;
+                    background-color: rgba(44, 44, 44, 0.788);
+                    color: whitesmoke;
+                    padding: 5px;
+                    text-align: center;
+                    border: 2px solid whitesmoke;
+                    border-right: none;
                 }
 
                 button {
-                    border: none;
                     font-size: 1.5rem;
                     padding: 5px;
-                    background-color: whitesmoke;
+                    background-color: rgba(44, 44, 44, 0.788);
+                    color: whitesmoke;
+                    border: 2px solid whitesmoke;
                 }
             }
 
@@ -203,6 +211,29 @@
             }
         }
 
+        .team-name-input {
+            font-size: 0.9rem;
+            padding: 3px;
+            width: 100%;
+            color: whitesmoke;
+            &::placeholder {
+                color: whitesmoke;
+            }
+            background-color: rgba(44, 44, 44, 0.63);
+            border: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .event-name-input {
+            color: whitesmoke;
+            background-color: rgba(44, 44, 44, 0.788);
+            border: 2px solid whitesmoke;
+            padding: 5px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
         .generated-teams-wrapper {
             border: 2px solid whitesmoke;
             display: flex;
@@ -233,6 +264,10 @@
                 }
             }
         }
+    }
+
+    button {
+        cursor: pointer;
     }
 
     .icon-style1 {

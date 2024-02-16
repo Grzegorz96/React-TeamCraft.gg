@@ -17,6 +17,8 @@ export default function GeneratorComponent({
     generate,
     setListOfGeneratedTeams,
     acceptGeneratedTeams,
+    setEventName,
+    setTeamName,
 }) {
     return (
         <div className="main__container main__generator">
@@ -27,6 +29,8 @@ export default function GeneratorComponent({
                         generatorState={generatorState}
                         generate={generate}
                         acceptGeneratedTeams={acceptGeneratedTeams}
+                        setEventName={setEventName}
+                        setTeamName={setTeamName}
                     />
                 ) : (
                     <SetPlayersComponent

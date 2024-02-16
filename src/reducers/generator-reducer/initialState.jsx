@@ -7,4 +7,5 @@ export const generatorInitialState = {
     popup: "",
     nameOfEditingPlayer: "",
     generatedTeams: [],
+    eventName: "",
 };

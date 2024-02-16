@@ -59,6 +59,7 @@ export default function SetPlayersComponent({
                 </h2>
                 <div className="input-button">
                     <input
+                        placeholder="Player name"
                         name="player-name-input"
                         type="text"
                         value={generatorState.nameOfPlayer}

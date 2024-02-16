@@ -1,5 +1,4 @@
 import React from "react";
-import { alphabet } from "../../../utils/alphabet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faRotateLeft,
@@ -12,6 +11,8 @@ export default function GeneratedTeamsComponent({
     generatorState,
     generate,
     acceptGeneratedTeams,
+    setEventName,
+    setTeamName,
 }) {
     return (
         <>
@@ -30,17 +31,37 @@ export default function GeneratedTeamsComponent({
                     <FontAwesomeIcon icon={faCheck} /> Accept
                 </button>
             </div>
+            <input
+                placeholder="Create event name"
+                className="event-name-input"
+                type="text"
+                name="event-name"
+                value={generatorState.eventName}
+                onChange={(e) => setEventName(e)}
+            />
+
             <div className="generated-teams-wrapper">
-                {generatorState.generatedTeams.map((listOfPlayers, index) => (
-                    <div className="team" key={index}>
-                        <h3>Team {alphabet[index]}:</h3>
-                        {listOfPlayers.map((player, index) => (
-                            <div className="player" key={player}>
-                                {`${index + 1}: ${player}`}
-                            </div>
-                        ))}
-                    </div>
-                ))}
+                {generatorState.generatedTeams.map(
+                    (teamObject, teamObjectIndex) => (
+                        <div className="team" key={teamObjectIndex}>
+                            <input
+                                name="team-name"
+                                type="text"
+                                className="team-name-input"
+                                placeholder="Create team name"
+                                value={teamObject.teamName}
+                                onChange={(e) =>
+                                    setTeamName(teamObjectIndex, e)
+                                }
+                            />
+                            {teamObject.players.map((player, playerIndex) => (
+                                <div className="player" key={player}>
+                                    {`${playerIndex + 1}: ${player}`}
+                                </div>
+                            ))}
+                        </div>
+                    )
+                )}
             </div>
         </>
     );

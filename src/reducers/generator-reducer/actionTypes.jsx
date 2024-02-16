@@ -11,4 +11,6 @@ export const generatorActions = {
     setNameOfEditingPlayer: "SET_NAME_OF_EDITING_PLAYER",
     editPlayerInList: "EDIT_PLAYER_IN_LIST",
     setGeneratedTeams: "SET_GENERATED_TEAMS",
+    setEventName: "SET_EVENT_NAME",
+    setTeamName: "SET_TEAM_NAME",
 };

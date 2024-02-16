@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { getDataFromLocalStorage } from "../utils/localDataOperations";
+import { getActualDate } from "../utils/getActualDate";
 
 export const MainContext = createContext(null);
 
@@ -15,9 +16,17 @@ export const getInitialMainState = () => {
 export const mainReducer = (state, action) => {
     switch (action.type) {
         case "ADD_ACCEPTED_TEAMS":
+            const creationDate = getActualDate();
             return {
                 ...state,
-                acceptedTeams: [...state.acceptedTeams, action.payload],
+                acceptedTeams: [
+                    ...state.acceptedTeams,
+                    {
+                        creationDate: creationDate,
+                        teams: action.payload.teams,
+                        eventName: action.payload.eventName,
+                    },
+                ],
             };
         default:
             return state;
