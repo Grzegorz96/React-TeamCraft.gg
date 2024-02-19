@@ -22,8 +22,25 @@ export const MainProvider = ({ children }) => {
 
     const addAcceptedTeams = (teams, eventName) => {
         dispatch({
-            type: mainActions.addAcceptedTeams,
+            type: mainActions.addEvent,
             payload: { teams: teams, eventName: eventName },
+        });
+    };
+
+    const removeAcceptedTeams = (eventObject) => {
+        dispatch({
+            type: mainActions.removeEvent,
+            payload: eventObject,
+        });
+    };
+
+    const updateAcceptedTeams = ({ editedEvent, indexOfEditedEvent }) => {
+        dispatch({
+            type: mainActions.updateEvent,
+            payload: {
+                updatedEvent: editedEvent,
+                indexOfUpdatedEvent: indexOfEditedEvent,
+            },
         });
     };
 
@@ -33,6 +50,8 @@ export const MainProvider = ({ children }) => {
                 mainState,
                 functions: {
                     addAcceptedTeams,
+                    removeAcceptedTeams,
+                    updateAcceptedTeams,
                 },
             }}
         >

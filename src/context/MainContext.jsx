@@ -1,11 +1,14 @@
 import { createContext } from "react";
 import { getDataFromLocalStorage } from "../utils/localDataOperations";
 import { getActualDate } from "../utils/getActualDate";
+import { json } from "react-router-dom";
 
 export const MainContext = createContext(null);
 
 export const mainActions = {
-    addAcceptedTeams: "ADD_ACCEPTED_TEAMS",
+    addEvent: "ADD_EVENT",
+    removeEvent: "REMOVE_EVENT",
+    updateEvent: "UPDATE_EVENT",
 };
 
 export const getInitialMainState = () => {
@@ -15,7 +18,7 @@ export const getInitialMainState = () => {
 
 export const mainReducer = (state, action) => {
     switch (action.type) {
-        case "ADD_ACCEPTED_TEAMS":
+        case "ADD_EVENT":
             const creationDate = getActualDate();
             return {
                 ...state,
@@ -27,6 +30,24 @@ export const mainReducer = (state, action) => {
                         eventName: action.payload.eventName,
                     },
                 ],
+            };
+        case "REMOVE_EVENT":
+            const updatedListOfEvents = state.acceptedTeams.filter(
+                (eventObject) =>
+                    JSON.stringify(eventObject) !==
+                    JSON.stringify(action.payload)
+            );
+            return {
+                ...state,
+                acceptedTeams: updatedListOfEvents,
+            };
+        case "UPDATE_EVENT":
+            const updatedAcceptedTeams = [...state.acceptedTeams];
+            updatedAcceptedTeams[action.payload.indexOfUpdatedEvent] =
+                JSON.parse(JSON.stringify(action.payload.updatedEvent));
+            return {
+                ...state,
+                acceptedTeams: updatedAcceptedTeams,
             };
         default:
             return state;
