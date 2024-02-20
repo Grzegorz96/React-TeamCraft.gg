@@ -38,11 +38,18 @@ export default function DisplayEventsComponent({
                                         ? team.teamName
                                         : `Team ${alphabet[teamIndex]}`}
                                 </h4>
-                                {team.players.map((player, playerIndex) => (
-                                    <div className="player" key={player}>
-                                        {`${playerIndex + 1}: ${player}`}
-                                    </div>
-                                ))}
+                                {team.players.map(
+                                    ({ playerName }, playerIndex) => (
+                                        <div
+                                            className="player"
+                                            key={playerName}
+                                        >
+                                            {`${
+                                                playerIndex + 1
+                                            }: ${playerName}`}
+                                        </div>
+                                    )
+                                )}
                             </div>
                         ))}
                     </div>

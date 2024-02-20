@@ -9,6 +9,10 @@ export default function MyTeamsComponent({
     setTeamName,
     setEventName,
     editEvent,
+    backFromEditing,
+    setEditedPlayer,
+    statsInputsHandler,
+    setStats,
 }) {
     return (
         <div className="main__container main__my-teams">
@@ -18,6 +22,10 @@ export default function MyTeamsComponent({
                     setTeamName={setTeamName}
                     setEventName={setEventName}
                     editEvent={editEvent}
+                    backFromEditing={backFromEditing}
+                    setEditedPlayer={setEditedPlayer}
+                    statsInputsHandler={statsInputsHandler}
+                    setStats={setStats}
                 />
             ) : (
                 <DisplayEventsComponent

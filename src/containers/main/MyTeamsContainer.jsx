@@ -6,7 +6,7 @@ import { myTeamsInitialState } from "../../reducers/my-teams-reducer/initialStat
 import { myTeamsReducer } from "../../reducers/my-teams-reducer/reducer";
 
 export default function MyTeamsContainer() {
-    const { mainState, functions } = useMainData();
+    const { functions } = useMainData();
     const [myTeamsState, dispatch] = useReducer(
         myTeamsReducer,
         myTeamsInitialState
@@ -33,6 +33,12 @@ export default function MyTeamsContainer() {
         });
     };
 
+    const backFromEditing = () => {
+        dispatch({
+            type: myTeamsActions.setReset,
+        });
+    };
+
     const setEventName = (e) => {
         dispatch({
             type: myTeamsActions.setEventName,
@@ -47,6 +53,33 @@ export default function MyTeamsContainer() {
         });
     };
 
+    const setEditedPlayer = (playerName) => {
+        dispatch({
+            type: myTeamsActions.setEditedPlayer,
+            payload: playerName,
+        });
+    };
+
+    const statsInputsHandler = (input, e) => {
+        dispatch({
+            type: myTeamsActions.setStatsInput,
+            payload: { input: input, data: e.target.value },
+        });
+    };
+
+    // const setStats = () => {
+    //     if (
+    //         myTeamsState.statsInputs.killsInput &&
+    //         myTeamsState.statsInputs.assistsInput &&
+    //         myTeamsState.statsInputs.deathsInput
+    //     ) {
+    //         dispatch({
+    //             type: myTeamsActions.setPlayerStats,
+    //         });
+    //     }
+    // };
+
+    console.log(myTeamsState);
     return (
         <MyTeamsComponent
             setEditedEvent={setEditedEvent}
@@ -55,6 +88,10 @@ export default function MyTeamsContainer() {
             setTeamName={setTeamName}
             setEventName={setEventName}
             editEvent={editEvent}
+            backFromEditing={backFromEditing}
+            setEditedPlayer={setEditedPlayer}
+            statsInputsHandler={statsInputsHandler}
+            setStats={setStats}
         />
     );
 }

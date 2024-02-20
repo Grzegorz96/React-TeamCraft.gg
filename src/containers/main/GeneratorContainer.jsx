@@ -72,7 +72,18 @@ export default function GeneratorContainer() {
                 i * generatorState.numberOfTeamPlayers,
                 (i + 1) * generatorState.numberOfTeamPlayers
             );
-            teams.push({ players: team, teamName: "" });
+            const players = team.map((player) => {
+                return {
+                    playerName: player,
+                    stats: {
+                        kills: undefined,
+                        assists: undefined,
+                        deaths: undefined,
+                    },
+                    playerRating: undefined,
+                };
+            });
+            teams.push({ players: players, teamName: "" });
         }
 
         setListOfGeneratedTeams(teams);

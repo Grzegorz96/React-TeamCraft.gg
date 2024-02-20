@@ -3,4 +3,7 @@ export const myTeamsActions = {
     setTeamName: "SET_TEAM_NAME",
     setEventName: "SET_EVENT_NAME",
     setReset: "SET_RESET",
+    setEditedPlayer: "SET_EDITED_PLAYER",
+    setStatsInput: "SET_STATS_INPUT",
+    setPlayerStats: "SET_PLAYER_STATS",
 };

@@ -54,11 +54,13 @@ export default function GeneratedTeamsComponent({
                                     setTeamName(teamObjectIndex, e)
                                 }
                             />
-                            {teamObject.players.map((player, playerIndex) => (
-                                <div className="player" key={player}>
-                                    {`${playerIndex + 1}: ${player}`}
-                                </div>
-                            ))}
+                            {teamObject.players.map(
+                                ({ playerName }, playerIndex) => (
+                                    <div className="player" key={playerName}>
+                                        {`${playerIndex + 1}: ${playerName}`}
+                                    </div>
+                                )
+                            )}
                         </div>
                     )
                 )}
