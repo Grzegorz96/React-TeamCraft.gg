@@ -53,10 +53,10 @@ export default function MyTeamsContainer() {
         });
     };
 
-    const setEditedPlayer = (playerName) => {
+    const toggleEditPlayerStats = (playerName) => {
         dispatch({
             type: myTeamsActions.setEditedPlayer,
-            payload: playerName,
+            payload: playerName ? playerName : "",
         });
     };
 
@@ -67,19 +67,18 @@ export default function MyTeamsContainer() {
         });
     };
 
-    // const setStats = () => {
-    //     if (
-    //         myTeamsState.statsInputs.killsInput &&
-    //         myTeamsState.statsInputs.assistsInput &&
-    //         myTeamsState.statsInputs.deathsInput
-    //     ) {
-    //         dispatch({
-    //             type: myTeamsActions.setPlayerStats,
-    //         });
-    //     }
-    // };
+    const setStats = () => {
+        if (
+            myTeamsState.statsInputs.killsInput &&
+            myTeamsState.statsInputs.assistsInput &&
+            myTeamsState.statsInputs.deathsInput
+        ) {
+            dispatch({
+                type: myTeamsActions.setPlayerStats,
+            });
+        }
+    };
 
-    console.log(myTeamsState);
     return (
         <MyTeamsComponent
             setEditedEvent={setEditedEvent}
@@ -89,7 +88,7 @@ export default function MyTeamsContainer() {
             setEventName={setEventName}
             editEvent={editEvent}
             backFromEditing={backFromEditing}
-            setEditedPlayer={setEditedPlayer}
+            toggleEditPlayerStats={toggleEditPlayerStats}
             statsInputsHandler={statsInputsHandler}
             setStats={setStats}
         />

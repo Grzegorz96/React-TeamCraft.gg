@@ -35,6 +35,12 @@
         padding: 10px;
         color: whitesmoke;
 
+        h2 {
+            color: whitesmoke;
+            margin: auto auto;
+            text-align: center;
+        }
+
         .event-wrapper {
             display: flex;
             flex-direction: column;
@@ -147,35 +153,74 @@
                 gap: 10px;
 
                 .team-wrapper {
+                    display: flex;
+                    justify-content: space-between;
                     padding: 5px;
                     border: 2px solid rgba(245, 245, 245, 0.418);
-                    width: 150px;
+                    width: 200px;
                     border-radius: 10px;
 
-                    h4 {
-                        padding: 5px;
-                    }
-
-                    .player {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding: 5px;
-                        border-top: 2px solid whitesmoke;
+                    .players-wrapper {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
+                        width: 100%;
+
+                        h4 {
+                            padding: 5px;
+                        }
+
+                        .player {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 5px 0 5px 5px;
+                            border-top: 2px solid whitesmoke;
+
+                            &__text {
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+
+                    .k-d-a {
+                        border-left: 2px solid rgba(245, 245, 245, 0.418);
+
+                        h4 {
+                            padding: 5px;
+                            text-align: center;
+                        }
+
+                        &--modifier1 {
+                            font-size: 0.9rem;
+                            padding: 3px !important;
+                        }
+
+                        &__stats {
+                            font-size: 0.7rem;
+                            text-align: center;
+                            border-top: 2px solid whitesmoke;
+                            padding: 8px 5px 8px 5px;
+                            width: 63px;
+                            overflow-x: auto;
+                        }
+                    }
+
+                    .stats-buttons {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
 
                         button {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            gap: 2px;
-                            width: 40px;
-                            border-radius: 20px;
+                            background-color: rgb(199, 199, 199, 0.616);
+                            border: 2px solid whitesmoke;
+                            border-bottom: none;
                             padding: 3px;
-                            border: none;
-                            font-size: 0.9rem;
+                            height: 30px;
+                            border-top-right-radius: 50%;
+                            border-bottom-right-radius: 50%;
                         }
                     }
                 }
@@ -375,6 +420,7 @@
         padding: 5px;
         font-size: 1.4rem;
         text-align: center;
+        border-radius: 10px;
     }
 
     button {

@@ -47,9 +47,27 @@ export const myTeamsReducer = (state, action) => {
                     [action.payload.input]: action.payload.data,
                 },
             };
-        // case "SET_PLAYER_STATS":
+        case "SET_PLAYER_STATS":
+            const newTeams = JSON.parse(
+                JSON.stringify(state.editedEvent.teams)
+            );
 
-        //     return {};
+            newTeams.forEach((team) => {
+                team.players.forEach(({ playerName, stats }) => {
+                    if (playerName === state.editedPlayer) {
+                        stats.kills = Number(state.statsInputs.killsInput);
+                        stats.deaths = Number(state.statsInputs.deathsInput);
+                        stats.assists = Number(state.statsInputs.assistsInput);
+                    }
+                });
+            });
+
+            return {
+                ...state,
+                editedEvent: { ...state.editedEvent, teams: newTeams },
+                editedPlayer: "",
+                statsInputs: myTeamsInitialState.statsInputs,
+            };
         default:
             return state;
     }

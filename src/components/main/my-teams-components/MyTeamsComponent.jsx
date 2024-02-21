@@ -10,7 +10,7 @@ export default function MyTeamsComponent({
     setEventName,
     editEvent,
     backFromEditing,
-    setEditedPlayer,
+    toggleEditPlayerStats,
     statsInputsHandler,
     setStats,
 }) {
@@ -23,7 +23,7 @@ export default function MyTeamsComponent({
                     setEventName={setEventName}
                     editEvent={editEvent}
                     backFromEditing={backFromEditing}
-                    setEditedPlayer={setEditedPlayer}
+                    toggleEditPlayerStats={toggleEditPlayerStats}
                     statsInputsHandler={statsInputsHandler}
                     setStats={setStats}
                 />

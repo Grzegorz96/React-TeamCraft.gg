@@ -76,11 +76,11 @@ export default function GeneratorContainer() {
                 return {
                     playerName: player,
                     stats: {
-                        kills: undefined,
-                        assists: undefined,
-                        deaths: undefined,
+                        kills: null,
+                        deaths: null,
+                        assists: null,
                     },
-                    playerRating: undefined,
+                    playerRating: null,
                 };
             });
             teams.push({ players: players, teamName: "" });
