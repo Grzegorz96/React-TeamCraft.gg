@@ -10,7 +10,7 @@ export default function GeneratorComponent({
     setPlayerName,
     addPlayerToList,
     closePopup,
-    editPlayerInList,
+    editPlayerNameInList,
     removePlayerFromList,
     clearPlayersList,
     toggleEditPlayerName,
@@ -19,6 +19,8 @@ export default function GeneratorComponent({
     acceptGeneratedTeams,
     setEventName,
     setTeamName,
+    toogleRating,
+    setRatingForPlayer,
 }) {
     return (
         <div className="main__container main__generator">
@@ -39,11 +41,13 @@ export default function GeneratorComponent({
                         closePopup={closePopup}
                         handleAcceptAndBackButton={handleAcceptAndBackButton}
                         generatorState={generatorState}
-                        editPlayerInList={editPlayerInList}
+                        editPlayerNameInList={editPlayerNameInList}
                         removePlayerFromList={removePlayerFromList}
                         clearPlayersList={clearPlayersList}
                         toggleEditPlayerName={toggleEditPlayerName}
                         generate={generate}
+                        toogleRating={toogleRating}
+                        setRatingForPlayer={setRatingForPlayer}
                     />
                 )
             ) : (

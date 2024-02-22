@@ -250,6 +250,10 @@
             border: none;
             cursor: pointer;
             margin: 5px;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
         }
 
         .set-players-wrapper {
@@ -306,6 +310,7 @@
                 overflow-y: auto;
 
                 .player {
+                    position: relative;
                     padding: 5px;
                     border-radius: 20px;
                     border: 2px solid whitesmoke;
@@ -318,6 +323,27 @@
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                    }
+
+                    .rating-wrapper {
+                        position: absolute;
+                        display: flex;
+                        top: 2px;
+                        right: 110px;
+
+                        button {
+                            color: whitesmoke;
+                            font-size: 0.9rem;
+                            display: flex;
+                            background-color: transparent;
+                            border: none;
+
+                            &:disabled {
+                                cursor: not-allowed;
+                                opacity: 0.4;
+                                color: rgba(199, 199, 199, 0.616);
+                            }
+                        }
                     }
 
                     .player__buttons {
@@ -433,6 +459,7 @@
     }
 
     .popup {
+        z-index: 100;
         max-width: 530px;
         width: 90%;
         text-align: center;

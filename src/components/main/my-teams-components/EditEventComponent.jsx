@@ -18,9 +18,11 @@ export default function EditEventComponent({
     statsInputsHandler,
     setStats,
 }) {
-    console.log(editedEvent.teams[0].players);
     return (
-        <div className="event-wrapper" style={eventWrapperStyles}>
+        <div
+            className="event-wrapper"
+            style={eventWrapperStyles(editedPlayer, editedEvent)}
+        >
             <div className="event-wrapper__buttons-wrapper">
                 <button onClick={editEvent}>
                     <FontAwesomeIcon icon={faCheck} />
@@ -120,14 +122,20 @@ export default function EditEventComponent({
                                 <button
                                     key={playerName}
                                     onClick={() =>
-                                        toggleEditPlayerStats(playerName)
+                                        toggleEditPlayerStats(
+                                            editedPlayer === playerName
+                                                ? undefined
+                                                : playerName
+                                        )
                                     }
                                 >
-                                    {editedPlayer === playerName ? (
-                                        <FontAwesomeIcon icon={faPenToSquare} />
-                                    ) : (
-                                        <FontAwesomeIcon icon={faPen} />
-                                    )}
+                                    <FontAwesomeIcon
+                                        icon={
+                                            editedPlayer === playerName
+                                                ? faPenToSquare
+                                                : faPen
+                                        }
+                                    />
                                 </button>
                             ))}
                         </div>

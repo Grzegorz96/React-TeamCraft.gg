@@ -11,11 +11,9 @@ export default function GeneratorContainer() {
         generatorReducer,
         generatorInitialState
     );
-
     const navigate = useNavigate();
-
     const { functions } = useMainData();
-
+    // console.log(generatorState);
     const handleSelectChange = (e, type) => {
         const selectedNumber = parseInt(e.target.value, 10);
         dispatch({
@@ -74,13 +72,12 @@ export default function GeneratorContainer() {
             );
             const players = team.map((player) => {
                 return {
-                    playerName: player,
+                    ...player,
                     stats: {
                         kills: null,
                         deaths: null,
                         assists: null,
                     },
-                    playerRating: null,
                 };
             });
             teams.push({ players: players, teamName: "" });
@@ -99,7 +96,7 @@ export default function GeneratorContainer() {
         navigate("/my-teams");
     };
 
-    const editPlayerInList = () => {
+    const editPlayerNameInList = () => {
         if (generatorState.nameOfPlayer) {
             if (
                 !generatorState.actualListOfPlayers.includes(
@@ -107,7 +104,7 @@ export default function GeneratorContainer() {
                 )
             ) {
                 dispatch({
-                    type: generatorActions.editPlayerInList,
+                    type: generatorActions.editPlayerNameInList,
                 });
             } else {
                 dispatch({
@@ -129,6 +126,19 @@ export default function GeneratorContainer() {
         dispatch({
             type: generatorActions.removePlayerFromList,
             payload: player,
+        });
+    };
+
+    const toogleRating = () => {
+        dispatch({
+            type: generatorActions.toogleRatingMode,
+        });
+    };
+
+    const setRatingForPlayer = (player, ratingValue) => {
+        dispatch({
+            type: generatorActions.setRating,
+            payload: { playerName: player, playerRating: ratingValue },
         });
     };
 
@@ -208,7 +218,7 @@ export default function GeneratorContainer() {
             setPlayerName={setPlayerName}
             addPlayerToList={addPlayerToList}
             closePopup={closePopup}
-            editPlayerInList={editPlayerInList}
+            editPlayerNameInList={editPlayerNameInList}
             removePlayerFromList={removePlayerFromList}
             clearPlayersList={clearPlayersList}
             toggleEditPlayerName={toggleEditPlayerName}
@@ -217,6 +227,8 @@ export default function GeneratorContainer() {
             acceptGeneratedTeams={acceptGeneratedTeams}
             setEventName={setEventName}
             setTeamName={setTeamName}
+            toogleRating={toogleRating}
+            setRatingForPlayer={setRatingForPlayer}
         />
     );
 }

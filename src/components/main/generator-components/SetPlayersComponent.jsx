@@ -9,7 +9,10 @@ import {
     faDice,
     faPlus,
     faCheck,
+    faRankingStar,
+    faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { generateButtonConditions } from "../../../utils/conditionsForGenerateButton";
 
 export default function SetPlayersComponent({
     setPlayerName,
@@ -17,11 +20,13 @@ export default function SetPlayersComponent({
     closePopup,
     handleAcceptAndBackButton,
     generatorState,
-    editPlayerInList,
+    editPlayerNameInList,
     removePlayerFromList,
     clearPlayersList,
     toggleEditPlayerName,
     generate,
+    toogleRating,
+    setRatingForPlayer,
 }) {
     return (
         <>
@@ -33,12 +38,7 @@ export default function SetPlayersComponent({
                 <button
                     className="button"
                     onClick={generate}
-                    disabled={
-                        generatorState.numberOfTeams *
-                            generatorState.numberOfTeamPlayers -
-                            generatorState.actualListOfPlayers.length !==
-                        0
-                    }
+                    disabled={generateButtonConditions(generatorState)}
                 >
                     <FontAwesomeIcon icon={faDice} /> Generate
                 </button>
@@ -49,13 +49,26 @@ export default function SetPlayersComponent({
                 >
                     <FontAwesomeIcon icon={faUsersSlash} /> Clear
                 </button>
+                <button
+                    style={{
+                        backgroundColor: generatorState.isRatingOn
+                            ? "gold"
+                            : null,
+                    }}
+                    className="button"
+                    onClick={toogleRating}
+                    disabled={!generatorState.actualListOfPlayers.length}
+                >
+                    <FontAwesomeIcon icon={faRankingStar} /> Rating
+                </button>
             </div>
             <div className="set-players-wrapper">
                 <h2>
-                    Players to enter:{" "}
-                    {generatorState.numberOfTeams *
-                        generatorState.numberOfTeamPlayers -
-                        generatorState.actualListOfPlayers.length}
+                    {`Players to enter: ${
+                        generatorState.numberOfTeams *
+                            generatorState.numberOfTeamPlayers -
+                        generatorState.actualListOfPlayers.length
+                    }`}
                 </h2>
                 <div className="input-button">
                     <input
@@ -67,7 +80,7 @@ export default function SetPlayersComponent({
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
                                 if (generatorState.nameOfEditingPlayer) {
-                                    editPlayerInList();
+                                    editPlayerNameInList();
                                 } else {
                                     addPlayerToList();
                                 }
@@ -77,7 +90,7 @@ export default function SetPlayersComponent({
                     <button
                         onClick={
                             generatorState.nameOfEditingPlayer
-                                ? editPlayerInList
+                                ? editPlayerNameInList
                                 : addPlayerToList
                         }
                     >
@@ -103,45 +116,87 @@ export default function SetPlayersComponent({
                 )}
                 {generatorState.actualListOfPlayers.length ? (
                     <div className="players">
-                        {generatorState.actualListOfPlayers.map((player) => (
-                            <div className="player" key={player}>
-                                <div className="player__text">{player}</div>
-                                <div className="player__buttons">
-                                    <button
-                                        className="player__button"
-                                        onClick={() =>
-                                            toggleEditPlayerName(
-                                                generatorState.nameOfEditingPlayer ===
-                                                    player
-                                                    ? undefined
-                                                    : player
+                        {generatorState.actualListOfPlayers.map(
+                            ({ playerName, playerRating }) => (
+                                <div className="player" key={playerName}>
+                                    <div className="player__text">
+                                        {playerName}
+                                    </div>
+                                    <div className="rating-wrapper">
+                                        {Array.from({ length: 5 }).map(
+                                            (_, index) => (
+                                                <button
+                                                    style={{
+                                                        color:
+                                                            parseFloat(
+                                                                (
+                                                                    0.2 *
+                                                                    (index + 1)
+                                                                ).toFixed(1)
+                                                            ) <= playerRating
+                                                                ? "gold"
+                                                                : null,
+                                                    }}
+                                                    disabled={
+                                                        !generatorState.isRatingOn
+                                                    }
+                                                    key={index}
+                                                    onClick={() =>
+                                                        setRatingForPlayer(
+                                                            playerName,
+                                                            parseFloat(
+                                                                (
+                                                                    0.2 *
+                                                                    (index + 1)
+                                                                ).toFixed(1)
+                                                            )
+                                                        )
+                                                    }
+                                                >
+                                                    <FontAwesomeIcon
+                                                        icon={faStar}
+                                                    />
+                                                </button>
                                             )
-                                        }
-                                    >
-                                        <FontAwesomeIcon
-                                            className="icon-style1"
-                                            icon={
-                                                generatorState.nameOfEditingPlayer ===
-                                                player
-                                                    ? faRotateLeft
-                                                    : faPenToSquare
+                                        )}
+                                    </div>
+                                    <div className="player__buttons">
+                                        <button
+                                            className="player__button"
+                                            onClick={() =>
+                                                toggleEditPlayerName(
+                                                    generatorState.nameOfEditingPlayer ===
+                                                        playerName
+                                                        ? undefined
+                                                        : playerName
+                                                )
                                             }
-                                        />
-                                    </button>
-                                    <button
-                                        className="player__button"
-                                        onClick={() =>
-                                            removePlayerFromList(player)
-                                        }
-                                    >
-                                        <FontAwesomeIcon
-                                            className="icon-style1"
-                                            icon={faTrash}
-                                        />
-                                    </button>
+                                        >
+                                            <FontAwesomeIcon
+                                                className="icon-style1"
+                                                icon={
+                                                    generatorState.nameOfEditingPlayer ===
+                                                    playerName
+                                                        ? faRotateLeft
+                                                        : faPenToSquare
+                                                }
+                                            />
+                                        </button>
+                                        <button
+                                            className="player__button"
+                                            onClick={() =>
+                                                removePlayerFromList(playerName)
+                                            }
+                                        >
+                                            <FontAwesomeIcon
+                                                className="icon-style1"
+                                                icon={faTrash}
+                                            />
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            )
+                        )}
                     </div>
                 ) : null}
             </div>

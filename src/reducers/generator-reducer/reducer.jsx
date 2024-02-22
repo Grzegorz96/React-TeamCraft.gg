@@ -15,18 +15,22 @@ export const generatorReducer = (state, action) => {
                 ...state,
                 actualListOfPlayers: [
                     ...state.actualListOfPlayers,
-                    state.nameOfPlayer,
+                    { playerName: state.nameOfPlayer, playerRating: null },
                 ],
                 nameOfPlayer: "",
             };
-        case "EDIT_PLAYER_IN_LIST":
-            const indexOfElement = state.actualListOfPlayers.indexOf(
-                state.nameOfEditingPlayer
+        case "EDIT_PLAYER_NAME_IN_LIST":
+            const indexOfElement = state.actualListOfPlayers.findIndex(
+                ({ playerName }) => playerName === state.nameOfEditingPlayer
             );
 
             if (indexOfElement >= 0) {
-                const editedListOfPlayers = [...state.actualListOfPlayers];
-                editedListOfPlayers[indexOfElement] = state.nameOfPlayer;
+                const editedListOfPlayers = JSON.parse(
+                    JSON.stringify(state.actualListOfPlayers)
+                );
+                editedListOfPlayers[indexOfElement].playerName =
+                    state.nameOfPlayer;
+
                 return {
                     ...state,
                     actualListOfPlayers: editedListOfPlayers,
@@ -41,7 +45,7 @@ export const generatorReducer = (state, action) => {
             }
         case "REMOVE_PLAYER_FROM_LIST":
             const updatedListOfPlayers = state.actualListOfPlayers.filter(
-                (player) => player !== action.payload
+                ({ playerName }) => playerName !== action.payload
             );
             return {
                 ...state,
@@ -53,6 +57,7 @@ export const generatorReducer = (state, action) => {
                 actualListOfPlayers: [],
                 nameOfEditingPlayer: "",
                 nameOfPlayer: "",
+                isRatingOn: false,
             };
         case "SET_POPUP":
             return {
@@ -77,13 +82,43 @@ export const generatorReducer = (state, action) => {
                 eventName: action.payload,
             };
         case "SET_TEAM_NAME":
-            const updatedGeneratedTeams = [...state.generatedTeams];
+            const updatedGeneratedTeams = JSON.parse(
+                JSON.stringify(state.generatedTeams)
+            );
             updatedGeneratedTeams[action.payload.teamIndex].teamName =
                 action.payload.teamName;
             return {
                 ...state,
                 generatedTeams: updatedGeneratedTeams,
             };
+        case "TOOGLE_RATING_MODE":
+            return {
+                ...state,
+                isRatingOn: !state.isRatingOn,
+            };
+        case "SET_RATING":
+            const index = state.actualListOfPlayers.findIndex(
+                ({ playerName }) => playerName === action.payload.playerName
+            );
+
+            if (index >= 0) {
+                const editedListOfPlayers = JSON.parse(
+                    JSON.stringify(state.actualListOfPlayers)
+                );
+                editedListOfPlayers[index].playerRating =
+                    action.payload.playerRating;
+
+                return {
+                    ...state,
+                    actualListOfPlayers: editedListOfPlayers,
+                };
+            } else {
+                return {
+                    ...state,
+                    popup: "Oops! Something went wrong while rating the player.",
+                };
+            }
+
         default:
             return state;
     }

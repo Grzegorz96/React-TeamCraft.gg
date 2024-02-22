@@ -8,4 +8,5 @@ export const generatorInitialState = {
     nameOfEditingPlayer: "",
     generatedTeams: [],
     eventName: "",
+    isRatingOn: false,
 };
