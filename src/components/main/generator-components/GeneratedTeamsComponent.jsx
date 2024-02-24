@@ -4,7 +4,9 @@ import {
     faRotateLeft,
     faDice,
     faCheck,
+    faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { calculateWiningChance } from "../../../utils/calculateWinningChance";
 
 export default function GeneratedTeamsComponent({
     setListOfGeneratedTeams,
@@ -24,7 +26,11 @@ export default function GeneratedTeamsComponent({
                     <FontAwesomeIcon icon={faRotateLeft} />
                     Back
                 </button>
-                <button className="button" onClick={generate}>
+                <button
+                    className="button"
+                    onClick={generate}
+                    disabled={generatorState.isRatingOn}
+                >
                     <FontAwesomeIcon icon={faDice} /> Regenerate
                 </button>
                 <button className="button" onClick={acceptGeneratedTeams}>
@@ -55,11 +61,50 @@ export default function GeneratedTeamsComponent({
                                 }
                             />
                             {teamObject.players.map(
-                                ({ playerName }, playerIndex) => (
+                                ({ playerName, playerRating }, playerIndex) => (
                                     <div className="player" key={playerName}>
-                                        {`${playerIndex + 1}: ${playerName}`}
+                                        <div className="player__text">
+                                            {`${
+                                                playerIndex + 1
+                                            }: ${playerName}`}
+                                        </div>
+                                        {generatorState.isRatingOn ? (
+                                            <div className="rating-wrapper">
+                                                {Array.from({ length: 5 }).map(
+                                                    (_, index) => (
+                                                        <FontAwesomeIcon
+                                                            key={index}
+                                                            icon={faStar}
+                                                            style={{
+                                                                color:
+                                                                    parseFloat(
+                                                                        (
+                                                                            0.2 *
+                                                                            (index +
+                                                                                1)
+                                                                        ).toFixed(
+                                                                            1
+                                                                        )
+                                                                    ) <=
+                                                                    playerRating
+                                                                        ? "gold"
+                                                                        : null,
+                                                            }}
+                                                        />
+                                                    )
+                                                )}
+                                            </div>
+                                        ) : null}
                                     </div>
                                 )
+                            )}
+                            {generatorState.isRatingOn && (
+                                <div className="winning-chance">
+                                    {`Winning chance: ${calculateWiningChance(
+                                        generatorState.generatedTeams,
+                                        teamObject
+                                    )}%`}
+                                </div>
                             )}
                         </div>
                     )

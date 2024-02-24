@@ -5,6 +5,10 @@ import { generatorReducer } from "../../reducers/generator-reducer/reducer";
 import { generatorActions } from "../../reducers/generator-reducer/actionTypes";
 import { useMainData } from "../../context/MainProvider";
 import { useNavigate } from "react-router-dom";
+import {
+    generateWithRatings,
+    generateWithoutRatings,
+} from "../../utils/generatorAlgorithm";
 
 export default function GeneratorContainer() {
     const [generatorState, dispatch] = useReducer(
@@ -13,7 +17,7 @@ export default function GeneratorContainer() {
     );
     const navigate = useNavigate();
     const { functions } = useMainData();
-    // console.log(generatorState);
+    console.log(generatorState);
     const handleSelectChange = (e, type) => {
         const selectedNumber = parseInt(e.target.value, 10);
         dispatch({
@@ -61,26 +65,18 @@ export default function GeneratorContainer() {
         ) {
             return;
         }
-        const shuffledList = [...generatorState.actualListOfPlayers].sort(
-            () => Math.random() - 0.5
-        );
-        const teams = [];
-        for (let i = 0; i < generatorState.numberOfTeams; i++) {
-            const team = shuffledList.slice(
-                i * generatorState.numberOfTeamPlayers,
-                (i + 1) * generatorState.numberOfTeamPlayers
+
+        if (generatorState.isRatingOn) {
+            var teams = generateWithRatings(
+                generatorState.actualListOfPlayers,
+                generatorState.numberOfTeams
             );
-            const players = team.map((player) => {
-                return {
-                    ...player,
-                    stats: {
-                        kills: null,
-                        deaths: null,
-                        assists: null,
-                    },
-                };
-            });
-            teams.push({ players: players, teamName: "" });
+        } else {
+            var teams = generateWithoutRatings(
+                generatorState.actualListOfPlayers,
+                generatorState.numberOfTeams,
+                generatorState.numberOfTeamPlayers
+            );
         }
 
         setListOfGeneratedTeams(teams);
@@ -99,8 +95,9 @@ export default function GeneratorContainer() {
     const editPlayerNameInList = () => {
         if (generatorState.nameOfPlayer) {
             if (
-                !generatorState.actualListOfPlayers.includes(
-                    generatorState.nameOfPlayer
+                !generatorState.actualListOfPlayers.some(
+                    ({ playerName }) =>
+                        playerName === generatorState.nameOfPlayer
                 )
             ) {
                 dispatch({
@@ -150,8 +147,9 @@ export default function GeneratorContainer() {
                     generatorState.numberOfTeamPlayers
             ) {
                 if (
-                    !generatorState.actualListOfPlayers.includes(
-                        generatorState.nameOfPlayer
+                    !generatorState.actualListOfPlayers.some(
+                        ({ playerName }) =>
+                            playerName === generatorState.nameOfPlayer
                     )
                 ) {
                     dispatch({

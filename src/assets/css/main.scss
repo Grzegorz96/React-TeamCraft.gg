@@ -409,15 +409,35 @@
             .team {
                 padding: 5px;
                 border: 2px solid rgba(245, 245, 245, 0.418);
-                width: 150px;
+                width: 200px;
                 border-radius: 10px;
 
+                .winning-chance {
+                    font-size: 0.7rem;
+                    border-top: 2px solid whitesmoke;
+                    padding-top: 2px;
+                }
+
                 .player {
+                    display: flex;
+                    justify-content: space-between;
                     padding: 5px;
                     border-top: 2px solid whitesmoke;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+
+                    &__text {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    .rating-wrapper {
+                        display: flex;
+                        justify-content: center;
+
+                        svg {
+                            font-size: 0.6rem;
+                        }
+                    }
                 }
             }
         }
