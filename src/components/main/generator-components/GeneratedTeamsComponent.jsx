@@ -26,11 +26,7 @@ export default function GeneratedTeamsComponent({
                     <FontAwesomeIcon icon={faRotateLeft} />
                     Back
                 </button>
-                <button
-                    className="button"
-                    onClick={generate}
-                    disabled={generatorState.isRatingOn}
-                >
+                <button className="button" onClick={generate}>
                     <FontAwesomeIcon icon={faDice} /> Regenerate
                 </button>
                 <button className="button" onClick={acceptGeneratedTeams}>

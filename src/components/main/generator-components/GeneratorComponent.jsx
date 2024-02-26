@@ -2,6 +2,7 @@ import React from "react";
 import SetPlayersComponent from "./SetPlayersComponent";
 import SelectOptionsComponent from "./SelectOptionsComponent";
 import GeneratedTeamsComponent from "./GeneratedTeamsComponent";
+import PopupComponent from "../PopupComponent";
 
 export default function GeneratorComponent({
     generatorState,
@@ -24,6 +25,12 @@ export default function GeneratorComponent({
 }) {
     return (
         <div className="main__container main__generator">
+            {generatorState.popup && (
+                <PopupComponent
+                    message={generatorState.popup}
+                    closePopup={closePopup}
+                />
+            )}
             {generatorState.isTeamOptionsAccepted ? (
                 generatorState.generatedTeams.length ? (
                     <GeneratedTeamsComponent

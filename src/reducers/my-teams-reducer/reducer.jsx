@@ -34,10 +34,30 @@ export const myTeamsReducer = (state, action) => {
         case "SET_RESET":
             return myTeamsInitialState;
         case "SET_EDITED_PLAYER":
+            const playerStats = state.editedEvent.teams.reduce(
+                (foundStats, team) => {
+                    const foundPlayer = team.players.find(
+                        ({ playerName }) => playerName === action.payload
+                    );
+
+                    if (foundPlayer) {
+                        foundStats = { ...foundPlayer.stats };
+                    }
+
+                    return foundStats;
+                },
+                null
+            );
+
+            const { kills, deaths, assists } = playerStats || {};
             return {
                 ...state,
                 editedPlayer: action.payload,
-                statsInputs: myTeamsInitialState.statsInputs,
+                statsInputs: {
+                    killsInput: kills || "",
+                    deathsInput: deaths || "",
+                    assistsInput: assists || "",
+                },
             };
         case "SET_STATS_INPUT":
             return {
@@ -55,9 +75,9 @@ export const myTeamsReducer = (state, action) => {
             newTeams.forEach((team) => {
                 team.players.forEach(({ playerName, stats }) => {
                     if (playerName === state.editedPlayer) {
-                        stats.kills = Number(state.statsInputs.killsInput);
-                        stats.deaths = Number(state.statsInputs.deathsInput);
-                        stats.assists = Number(state.statsInputs.assistsInput);
+                        stats.kills = state.statsInputs.killsInput;
+                        stats.deaths = state.statsInputs.deathsInput;
+                        stats.assists = state.statsInputs.assistsInput;
                     }
                 });
             });
@@ -67,6 +87,12 @@ export const myTeamsReducer = (state, action) => {
                 editedEvent: { ...state.editedEvent, teams: newTeams },
                 editedPlayer: "",
                 statsInputs: myTeamsInitialState.statsInputs,
+            };
+
+        case "SET_POPUP":
+            return {
+                ...state,
+                popup: action.payload,
             };
         default:
             return state;

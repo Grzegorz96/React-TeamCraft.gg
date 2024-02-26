@@ -6,4 +6,5 @@ export const myTeamsActions = {
     setEditedPlayer: "SET_EDITED_PLAYER",
     setStatsInput: "SET_STATS_INPUT",
     setPlayerStats: "SET_PLAYER_STATS",
+    setPopup: "SET_POPUP",
 };

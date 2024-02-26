@@ -2,7 +2,11 @@ import React from "react";
 import { alphabet } from "../../../utils/alphabet";
 import { useMainData } from "../../../context/MainProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+    faTrash,
+    faPenToSquare,
+    faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function DisplayEventsComponent({
     setEditedEvent,
@@ -66,21 +70,51 @@ export default function DisplayEventsComponent({
                                                     deaths,
                                                     assists,
                                                 },
+                                                playerRating,
                                             },
                                             statsIndex
                                         ) => (
                                             <div
                                                 key={statsIndex}
-                                                className="k-d-a__stats"
-                                            >{`${
-                                                kills !== null ? kills : "NA"
-                                            }/${
-                                                deaths !== null ? deaths : "NA"
-                                            }/${
-                                                assists !== null
-                                                    ? assists
-                                                    : "NA"
-                                            }`}</div>
+                                                className={
+                                                    playerRating
+                                                        ? "k-d-a__stats--modifier1"
+                                                        : "k-d-a__stats"
+                                                }
+                                            >
+                                                {playerRating ? (
+                                                    <div className="rating-wrapper">
+                                                        {Array.from({
+                                                            length: 5,
+                                                        }).map((_, index) => (
+                                                            <FontAwesomeIcon
+                                                                key={index}
+                                                                icon={faStar}
+                                                                style={{
+                                                                    color:
+                                                                        parseFloat(
+                                                                            (
+                                                                                0.2 *
+                                                                                (index +
+                                                                                    1)
+                                                                            ).toFixed(
+                                                                                1
+                                                                            )
+                                                                        ) <=
+                                                                        playerRating
+                                                                            ? "gold"
+                                                                            : null,
+                                                                }}
+                                                            />
+                                                        ))}
+                                                    </div>
+                                                ) : null}
+                                                <div className="text">
+                                                    {`${kills || "NA"}/${
+                                                        deaths || "NA"
+                                                    }/${assists || "NA"}`}
+                                                </div>
+                                            </div>
                                         )
                                     )}
                                 </div>

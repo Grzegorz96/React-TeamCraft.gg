@@ -17,6 +17,7 @@ export default function EditEventComponent({
     toggleEditPlayerStats,
     statsInputsHandler,
     setStats,
+    closePopup,
 }) {
     return (
         <div
@@ -80,7 +81,7 @@ export default function EditEventComponent({
                             <input
                                 name="team-name"
                                 type="text"
-                                className="team-name-input"
+                                className="team-name-input--modifier1"
                                 placeholder="Create name"
                                 value={teamObject.teamName}
                                 onChange={(e) =>
@@ -110,9 +111,11 @@ export default function EditEventComponent({
                                         key={statsIndex}
                                         className="k-d-a__stats"
                                     >
-                                        {`${kills !== null ? kills : "NA"}/${
-                                            deaths !== null ? deaths : "NA"
-                                        }/${assists !== null ? assists : "NA"}`}
+                                        <div className="text">
+                                            {`${kills || "NA"}/${
+                                                deaths || "NA"
+                                            }/${assists || "NA"}`}
+                                        </div>
                                     </div>
                                 )
                             )}

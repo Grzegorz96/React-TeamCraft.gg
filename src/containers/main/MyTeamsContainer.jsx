@@ -6,11 +6,12 @@ import { myTeamsInitialState } from "../../reducers/my-teams-reducer/initialStat
 import { myTeamsReducer } from "../../reducers/my-teams-reducer/reducer";
 
 export default function MyTeamsContainer() {
-    const { functions } = useMainData();
+    const { mainState, functions } = useMainData();
     const [myTeamsState, dispatch] = useReducer(
         myTeamsReducer,
         myTeamsInitialState
     );
+    console.log(myTeamsState);
 
     const setEditedEvent = (eventObject, eventObjectIndex) => {
         dispatch({
@@ -54,6 +55,7 @@ export default function MyTeamsContainer() {
     };
 
     const toggleEditPlayerStats = (playerName) => {
+        myTeamsState.popup && closePopup();
         dispatch({
             type: myTeamsActions.setEditedPlayer,
             payload: playerName ? playerName : "",
@@ -61,6 +63,7 @@ export default function MyTeamsContainer() {
     };
 
     const statsInputsHandler = (input, e) => {
+        myTeamsState.popup && closePopup();
         dispatch({
             type: myTeamsActions.setStatsInput,
             payload: { input: input, data: e.target.value },
@@ -76,7 +79,19 @@ export default function MyTeamsContainer() {
             dispatch({
                 type: myTeamsActions.setPlayerStats,
             });
+        } else {
+            dispatch({
+                type: myTeamsActions.setPopup,
+                payload: "Oops! 🙊 Complete all fields with statistics.",
+            });
         }
+    };
+
+    const closePopup = () => {
+        dispatch({
+            type: myTeamsActions.setPopup,
+            payload: "",
+        });
     };
 
     return (
@@ -91,6 +106,7 @@ export default function MyTeamsContainer() {
             toggleEditPlayerStats={toggleEditPlayerStats}
             statsInputsHandler={statsInputsHandler}
             setStats={setStats}
+            closePopup={closePopup}
         />
     );
 }

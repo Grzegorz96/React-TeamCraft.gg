@@ -106,13 +106,14 @@ export default function GeneratorContainer() {
             } else {
                 dispatch({
                     type: generatorActions.setPopup,
-                    payload: "Player already on the list, cannot be changed.",
+                    payload:
+                        "Player already on the list, cannot be changed. 🙊",
                 });
             }
         } else {
             dispatch({
                 type: generatorActions.setPopup,
-                payload: "Cannot change name to empty.",
+                payload: " Oops! 🙊 Cannot change name to empty.",
             });
         }
     };
@@ -158,20 +159,20 @@ export default function GeneratorContainer() {
                 } else {
                     dispatch({
                         type: generatorActions.setPopup,
-                        payload: "Player already on the list, cannot be added.",
+                        payload:
+                            "Player already on the list, can't be added. 🙊",
                     });
                 }
             } else {
                 dispatch({
                     type: generatorActions.setPopup,
-                    payload:
-                        "Player limit reached. Unable to add more players.",
+                    payload: "Player limit reached. Can't add more players. 🙊",
                 });
             }
         } else {
             dispatch({
                 type: generatorActions.setPopup,
-                payload: "Player cannot be added without a name.",
+                payload: "Oops! 🙊 Player can't be added without a name.",
             });
         }
     };

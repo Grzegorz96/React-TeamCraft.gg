@@ -3,4 +3,5 @@ export const myTeamsInitialState = {
     indexOfEditedEvent: undefined,
     editedPlayer: "",
     statsInputs: { killsInput: "", deathsInput: "", assistsInput: "" },
+    popup: "",
 };

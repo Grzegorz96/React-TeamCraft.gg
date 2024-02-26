@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faTrash,
     faPenToSquare,
-    faX,
     faRotateLeft,
     faUsersSlash,
     faDice,
@@ -17,7 +16,6 @@ import { generateButtonConditions } from "../../../utils/conditionsForGenerateBu
 export default function SetPlayersComponent({
     setPlayerName,
     addPlayerToList,
-    closePopup,
     handleAcceptAndBackButton,
     generatorState,
     editPlayerNameInList,
@@ -103,17 +101,6 @@ export default function SetPlayersComponent({
                         />
                     </button>
                 </div>
-                {generatorState.popup && (
-                    <div className="popup">
-                        {generatorState.popup}
-                        <button onClick={closePopup}>
-                            <FontAwesomeIcon
-                                className="icon-style1"
-                                icon={faX}
-                            />
-                        </button>
-                    </div>
-                )}
                 {generatorState.actualListOfPlayers.length ? (
                     <div className="players">
                         {generatorState.actualListOfPlayers.map(

@@ -1,6 +1,7 @@
 import React from "react";
 import DisplayEventsComponent from "./DisplayEventsComponent";
 import EditEventComponent from "./EditEventComponent";
+import PopupComponent from "../PopupComponent";
 
 export default function MyTeamsComponent({
     setEditedEvent,
@@ -13,9 +14,16 @@ export default function MyTeamsComponent({
     toggleEditPlayerStats,
     statsInputsHandler,
     setStats,
+    closePopup,
 }) {
     return (
         <div className="main__container main__my-teams">
+            {myTeamsState.popup && (
+                <PopupComponent
+                    message={myTeamsState.popup}
+                    closePopup={closePopup}
+                />
+            )}
             {myTeamsState.editedEvent ? (
                 <EditEventComponent
                     myTeamsState={myTeamsState}
@@ -26,6 +34,7 @@ export default function MyTeamsComponent({
                     toggleEditPlayerStats={toggleEditPlayerStats}
                     statsInputsHandler={statsInputsHandler}
                     setStats={setStats}
+                    closePopup={closePopup}
                 />
             ) : (
                 <DisplayEventsComponent

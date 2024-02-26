@@ -199,12 +199,36 @@
                         }
 
                         &__stats {
-                            font-size: 0.7rem;
-                            text-align: center;
                             border-top: 2px solid whitesmoke;
-                            padding: 8px 5px 8px 5px;
+                            font-size: 0.7rem;
                             width: 63px;
-                            overflow-x: auto;
+                            text-align: center;
+                            padding: 8px 5px 8px 5px;
+
+                            .text {
+                                overflow-x: auto;
+                            }
+                        }
+
+                        &__stats--modifier1 {
+                            @extend .k-d-a__stats;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2px;
+                            padding: 2px 5px 2px 5px;
+
+                            .text {
+                                overflow-x: auto;
+                            }
+
+                            .rating-wrapper {
+                                display: flex;
+                                justify-content: center;
+
+                                svg {
+                                    font-size: 10px;
+                                }
+                            }
                         }
                     }
 
@@ -457,6 +481,11 @@
         border-top-right-radius: 10px;
     }
 
+    .team-name-input--modifier1 {
+        @extend .team-name-input;
+        border-top-right-radius: 0;
+    }
+
     .event-name-input {
         width: 100%;
         max-width: 400px;
@@ -479,6 +508,7 @@
     }
 
     .popup {
+        color: black;
         z-index: 100;
         max-width: 530px;
         width: 90%;

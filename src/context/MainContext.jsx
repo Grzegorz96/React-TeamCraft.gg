@@ -42,7 +42,10 @@ export const mainReducer = (state, action) => {
                 acceptedTeams: updatedListOfEvents,
             };
         case "UPDATE_EVENT":
-            const updatedAcceptedTeams = [...state.acceptedTeams];
+            const updatedAcceptedTeams = JSON.parse(
+                JSON.stringify(state.acceptedTeams)
+            );
+
             updatedAcceptedTeams[action.payload.indexOfUpdatedEvent] =
                 JSON.parse(JSON.stringify(action.payload.updatedEvent));
             return {
