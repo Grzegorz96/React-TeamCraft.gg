@@ -5,6 +5,7 @@ import {
     faRotateLeft,
     faPen,
     faPenToSquare,
+    faCrown,
 } from "@fortawesome/free-solid-svg-icons";
 import { eventWrapperStyles } from "../../../utils/ui-styles/eventWrapperStyles";
 
@@ -17,7 +18,7 @@ export default function EditEventComponent({
     toggleEditPlayerStats,
     statsInputsHandler,
     setStats,
-    closePopup,
+    setWinner,
 }) {
     return (
         <div
@@ -76,7 +77,22 @@ export default function EditEventComponent({
             )}
             <div className="teams-wrapper">
                 {editedEvent.teams.map((teamObject, teamObjectIndex) => (
-                    <div className="team-wrapper" key={teamObjectIndex}>
+                    <div
+                        className="team-wrapper"
+                        key={teamObjectIndex}
+                        style={{
+                            border: teamObject.isWinner
+                                ? "2px solid gold"
+                                : null,
+                        }}
+                    >
+                        <button
+                            className="winner-button"
+                            onClick={() => setWinner(teamObjectIndex)}
+                            disabled={teamObject.isWinner}
+                        >
+                            <FontAwesomeIcon icon={faCrown} />
+                        </button>
                         <div className="players-wrapper">
                             <input
                                 name="team-name"

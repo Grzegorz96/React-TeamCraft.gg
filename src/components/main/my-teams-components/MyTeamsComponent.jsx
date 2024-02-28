@@ -15,9 +15,10 @@ export default function MyTeamsComponent({
     statsInputsHandler,
     setStats,
     closePopup,
+    setWinner,
 }) {
     return (
-        <div className="main__container main__my-teams">
+        <div className="main__my-teams">
             {myTeamsState.popup && (
                 <PopupComponent
                     message={myTeamsState.popup}
@@ -35,6 +36,7 @@ export default function MyTeamsComponent({
                     statsInputsHandler={statsInputsHandler}
                     setStats={setStats}
                     closePopup={closePopup}
+                    setWinner={setWinner}
                 />
             ) : (
                 <DisplayEventsComponent

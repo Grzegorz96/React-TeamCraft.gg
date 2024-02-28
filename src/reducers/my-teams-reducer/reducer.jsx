@@ -94,6 +94,19 @@ export const myTeamsReducer = (state, action) => {
                 ...state,
                 popup: action.payload,
             };
+        case "SET_WINNER":
+            return {
+                ...state,
+                editedEvent: {
+                    ...state.editedEvent,
+                    teams: JSON.parse(
+                        JSON.stringify(state.editedEvent.teams)
+                    ).map((team, index) => ({
+                        ...team,
+                        isWinner: index === action.payload,
+                    })),
+                },
+            };
         default:
             return state;
     }

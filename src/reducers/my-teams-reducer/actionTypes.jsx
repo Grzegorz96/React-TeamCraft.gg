@@ -7,4 +7,5 @@ export const myTeamsActions = {
     setStatsInput: "SET_STATS_INPUT",
     setPlayerStats: "SET_PLAYER_STATS",
     setPopup: "SET_POPUP",
+    setWinner: "SET_WINNER",
 };

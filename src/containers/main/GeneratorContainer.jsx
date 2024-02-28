@@ -17,7 +17,7 @@ export default function GeneratorContainer() {
     );
     const navigate = useNavigate();
     const { functions } = useMainData();
-    console.log(generatorState);
+
     const handleSelectChange = (e, type) => {
         const selectedNumber = parseInt(e.target.value, 10);
         dispatch({

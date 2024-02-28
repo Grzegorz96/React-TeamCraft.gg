@@ -24,7 +24,7 @@ export default function GeneratorComponent({
     setRatingForPlayer,
 }) {
     return (
-        <div className="main__container main__generator">
+        <div className="main__generator">
             {generatorState.popup && (
                 <PopupComponent
                     message={generatorState.popup}

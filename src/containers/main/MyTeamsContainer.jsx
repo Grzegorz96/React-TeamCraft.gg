@@ -6,12 +6,11 @@ import { myTeamsInitialState } from "../../reducers/my-teams-reducer/initialStat
 import { myTeamsReducer } from "../../reducers/my-teams-reducer/reducer";
 
 export default function MyTeamsContainer() {
-    const { mainState, functions } = useMainData();
+    const { functions } = useMainData();
     const [myTeamsState, dispatch] = useReducer(
         myTeamsReducer,
         myTeamsInitialState
     );
-    console.log(myTeamsState);
 
     const setEditedEvent = (eventObject, eventObjectIndex) => {
         dispatch({
@@ -94,6 +93,13 @@ export default function MyTeamsContainer() {
         });
     };
 
+    const setWinner = (teamIndex) => {
+        dispatch({
+            type: myTeamsActions.setWinner,
+            payload: teamIndex,
+        });
+    };
+
     return (
         <MyTeamsComponent
             setEditedEvent={setEditedEvent}
@@ -107,6 +113,7 @@ export default function MyTeamsContainer() {
             statsInputsHandler={statsInputsHandler}
             setStats={setStats}
             closePopup={closePopup}
+            setWinner={setWinner}
         />
     );
 }

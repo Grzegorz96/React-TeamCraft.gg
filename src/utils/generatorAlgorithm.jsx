@@ -3,9 +3,8 @@ export const generateWithoutRatings = (
     teamsNumber,
     playersPerTeam
 ) => {
-    const shuffledList = JSON.parse(JSON.stringify(playerslist)).sort(
-        () => Math.random() - 0.5
-    );
+    const shuffledList = JSON.parse(JSON.stringify(playerslist));
+    shuffleArray(shuffledList);
     const teams = [];
 
     for (let i = 0; i < teamsNumber; i++) {
@@ -24,7 +23,7 @@ export const generateWithoutRatings = (
                 },
             };
         });
-        teams.push({ players: players, teamName: "" });
+        teams.push({ players: players, teamName: "", isWinner: false });
     }
 
     return teams;
@@ -73,6 +72,7 @@ export const generateWithRatings = (playersList, teamsNumber) => {
                     })
                     .sort(() => Math.random() - 0.5),
                 teamName: "",
+                isWinner: false,
             };
         })
         .sort(() => Math.random() - 0.5);
@@ -96,7 +96,7 @@ const shufflePlayersWithSameRating = (sortedPlayers) => {
     // Przetasowanie graczy o tym samym ratingu
     playersMap.forEach((playerList) => {
         if (playerList.length > 1) {
-            playerList.sort(() => Math.random() - 0.5);
+            shuffleArray(playerList);
         }
     });
 
@@ -104,4 +104,12 @@ const shufflePlayersWithSameRating = (sortedPlayers) => {
     const sortedAndShuffledPlayers = Array.from(playersMap.values()).flat();
 
     return sortedAndShuffledPlayers;
+};
+
+// Funkcja do wymieszania tablicy za pomocą algorytmu Fishera-Yatesa
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 };

@@ -6,6 +6,7 @@ import {
     faTrash,
     faPenToSquare,
     faStar,
+    faCrown,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function DisplayEventsComponent({
@@ -38,7 +39,21 @@ export default function DisplayEventsComponent({
                     </h3>
                     <div className="teams-wrapper">
                         {eventObject.teams.map((team, teamIndex) => (
-                            <div className="team-wrapper" key={teamIndex}>
+                            <div
+                                className="team-wrapper"
+                                key={teamIndex}
+                                style={{
+                                    border: team.isWinner
+                                        ? "2px solid gold"
+                                        : null,
+                                }}
+                            >
+                                {team.isWinner && (
+                                    <FontAwesomeIcon
+                                        className="crown"
+                                        icon={faCrown}
+                                    />
+                                )}
                                 <div className="players-wrapper">
                                     <h4>
                                         {team.teamName
