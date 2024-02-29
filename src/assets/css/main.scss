@@ -494,7 +494,6 @@
 
     &__stats {
         @include utils.container(100%, 100%);
-        border: 1px solid red;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -509,21 +508,174 @@
         }
 
         .event-stats-wrapper {
-            width: 600px;
+            // width: 600px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             border: 2px solid whitesmoke;
+            background-color: #6363637a;
+            padding: 10px;
+            border-radius: 10px;
 
             .teams-wrapper {
-                border: 1px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
 
                 .team-wrapper {
-                    border: 1px solid blue;
+                    position: relative;
+                    display: flex;
+                    padding: 5px;
+                    border: 2px solid rgba(245, 245, 245, 0.418);
+                    border-radius: 10px;
+
+                    .crown {
+                        top: -17px;
+                        right: 5px;
+                        color: gold;
+                        position: absolute;
+                    }
 
                     .players-wrapper {
-                        display: flex;
-                        justify-content: space-around;
+                        width: 250px;
+
+                        .team-name-and-sum-stats {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            h4 {
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                padding: 5px;
+                            }
+
+                            .sum-stats {
+                                display: flex;
+                                justify-content: center;
+                                gap: 5px;
+                                padding: 5px;
+                            }
+                        }
+
+                        .player {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 5px 0 5px 5px;
+                            border-top: 2px solid whitesmoke;
+
+                            &__text {
+                                width: 100%;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+
+                    .statistics-chart {
+                        border-left: 2px solid rgba(245, 245, 245, 0.418);
+                        width: 150px;
+
+                        h4 {
+                            text-align: center;
+                            padding: 5px;
+                        }
+
+                        .chart-wrapper {
+                            border-top: 2px solid whitesmoke;
+                            overflow: hidden;
+
+                            &__stat {
+                                font-size: 9px;
+                                height: 8px;
+                                display: flex;
+                                justify-content: space-between;
+                                gap: 3px;
+                                margin: 1px 1px 1px 0;
+                                font-weight: bold;
+
+                                &__kills {
+                                    border-top-right-radius: 50px;
+                                    border-bottom-right-radius: 50px;
+                                    background-color: rgba(0, 136, 23, 0.5);
+                                }
+
+                                &__deaths {
+                                    border-top-right-radius: 50px;
+                                    border-bottom-right-radius: 50px;
+                                    background-color: rgba(175, 0, 0, 0.5);
+                                }
+
+                                &__assists {
+                                    border-top-right-radius: 50px;
+                                    border-bottom-right-radius: 50px;
+                                    background-color: rgba(0, 69, 138, 0.5);
+                                }
+                            }
+                        }
+                    }
+
+                    .overall {
+                        border-left: 2px solid rgba(245, 245, 245, 0.418);
+                        width: 50px;
+
+                        h4 {
+                            padding: 7px 3px 7px 3px;
+                            font-size: 12px;
+                            text-align: center;
+                        }
+
+                        &__rating {
+                            border-top: 2px solid whitesmoke;
+                            display: flex;
+                            justify-content: center;
+                            padding: 5px;
+                        }
+                    }
+
+                    .k-d-a {
+                        border-left: 2px solid rgba(245, 245, 245, 0.418);
+
+                        h4 {
+                            padding: 5px;
+                            text-align: center;
+                        }
+
+                        &__stats {
+                            border-top: 2px solid whitesmoke;
+                            font-size: 0.7rem;
+                            width: 63px;
+                            text-align: center;
+                            padding: 8px 5px 8px 5px;
+
+                            .text {
+                                overflow-x: auto;
+                            }
+                        }
+
+                        &__stats--modifier1 {
+                            @extend .k-d-a__stats;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 2px;
+                            padding: 2px 5px 2px 5px;
+
+                            .text {
+                                overflow-x: auto;
+                            }
+
+                            .rating-wrapper {
+                                display: flex;
+                                justify-content: center;
+
+                                svg {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
                     }
                 }
             }

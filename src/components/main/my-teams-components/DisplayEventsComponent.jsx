@@ -87,10 +87,10 @@ export default function DisplayEventsComponent({
                                                 },
                                                 playerRating,
                                             },
-                                            statsIndex
+                                            playerName
                                         ) => (
                                             <div
-                                                key={statsIndex}
+                                                key={playerName}
                                                 className={
                                                     playerRating
                                                         ? "k-d-a__stats--modifier1"

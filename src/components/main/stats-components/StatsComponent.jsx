@@ -1,10 +1,18 @@
 import React from "react";
 import DisplayEventsStatsComponent from "./DisplayEventsStatsComponent";
 
-export default function StatsComponent() {
+export default function StatsComponent({
+    calculateOverall,
+    calculateTotalStats,
+    allStatsAreValid,
+}) {
     return (
         <div className="main__stats">
-            <DisplayEventsStatsComponent />
+            <DisplayEventsStatsComponent
+                calculateOverall={calculateOverall}
+                calculateTotalStats={calculateTotalStats}
+                allStatsAreValid={allStatsAreValid}
+            />
         </div>
     );
 }
