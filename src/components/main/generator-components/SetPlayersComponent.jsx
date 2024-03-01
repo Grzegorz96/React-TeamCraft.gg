@@ -11,7 +11,9 @@ import {
     faRankingStar,
     faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { generateButtonConditions } from "../../../utils/conditionsForGenerateButton";
+import { generateButtonConditions } from "../../../utils/ui-styles/conditionsForGenerateButton";
+import { BigHead } from "@bigheads/core";
+const MemoizedBigHead = React.memo(BigHead);
 
 export default function SetPlayersComponent({
     setPlayerName,
@@ -106,8 +108,13 @@ export default function SetPlayersComponent({
                         {generatorState.actualListOfPlayers.map(
                             ({ playerName, playerRating }) => (
                                 <div className="player" key={playerName}>
-                                    <div className="player__text">
-                                        {playerName}
+                                    <div className="player__info">
+                                        <div className="avatar--modifier1">
+                                            <MemoizedBigHead />
+                                        </div>
+                                        <div className="player__text">
+                                            {playerName}
+                                        </div>
                                     </div>
                                     <div className="rating-wrapper">
                                         {Array.from({ length: 5 }).map(

@@ -8,6 +8,8 @@ import {
     faStar,
     faCrown,
 } from "@fortawesome/free-solid-svg-icons";
+import { BigHead } from "@bigheads/core";
+const MemoizedBigHead = React.memo(BigHead);
 
 export default function DisplayEventsComponent({
     setEditedEvent,
@@ -60,20 +62,19 @@ export default function DisplayEventsComponent({
                                             ? team.teamName
                                             : `Team ${alphabet[teamIndex]}`}
                                     </h4>
-                                    {team.players.map(
-                                        ({ playerName }, playerIndex) => (
-                                            <div
-                                                className="player"
-                                                key={playerName}
-                                            >
-                                                <div className="player__text">
-                                                    {`${
-                                                        playerIndex + 1
-                                                    }: ${playerName}`}
-                                                </div>
+                                    {team.players.map(({ playerName }) => (
+                                        <div
+                                            className="player"
+                                            key={playerName}
+                                        >
+                                            <div className="avatar">
+                                                <MemoizedBigHead />
                                             </div>
-                                        )
-                                    )}
+                                            <div className="player__text">
+                                                {playerName}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                                 <div className="k-d-a">
                                     <h4>K/D/A</h4>

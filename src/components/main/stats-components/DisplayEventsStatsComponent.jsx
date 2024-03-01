@@ -7,6 +7,7 @@ import {
     faCrown,
     faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
+import { BigHead } from "@bigheads/core";
 
 export default function DisplayEventsStatsComponent({
     calculateOverall,
@@ -28,6 +29,7 @@ export default function DisplayEventsStatsComponent({
                             ? eventObject.eventName
                             : `Event ${eventObjectIndex + 1}`}
                     </h3>
+                    <div className="date">{eventObject.creationDate}</div>
                     <div className="teams-wrapper">
                         {eventObject.teams.map((team, teamIndex) => (
                             <div
@@ -68,6 +70,9 @@ export default function DisplayEventsStatsComponent({
                                             className="player"
                                             key={playerName}
                                         >
+                                            <div className="avatar">
+                                                <BigHead />
+                                            </div>
                                             <div className="player__text">
                                                 {playerName}
                                             </div>
@@ -79,8 +84,12 @@ export default function DisplayEventsStatsComponent({
                                     {team.players.map(
                                         ({
                                             stats: { kills, deaths, assists },
+                                            playerName,
                                         }) => (
-                                            <div className="chart-wrapper">
+                                            <div
+                                                className="chart-wrapper"
+                                                key={playerName}
+                                            >
                                                 <div className="chart-wrapper__stat">
                                                     <div
                                                         className="chart-wrapper__stat__kills"

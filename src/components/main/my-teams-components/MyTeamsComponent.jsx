@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayEventsComponent from "./DisplayEventsComponent";
 import EditEventComponent from "./EditEventComponent";
-import PopupComponent from "../PopupComponent";
+import PopupComponent from "../../shared/PopupComponent";
 
 export default function MyTeamsComponent({
     setEditedEvent,

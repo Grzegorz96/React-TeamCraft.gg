@@ -2,7 +2,7 @@ import React from "react";
 import SetPlayersComponent from "./SetPlayersComponent";
 import SelectOptionsComponent from "./SelectOptionsComponent";
 import GeneratedTeamsComponent from "./GeneratedTeamsComponent";
-import PopupComponent from "../PopupComponent";
+import PopupComponent from "../../shared/PopupComponent";
 
 export default function GeneratorComponent({
     generatorState,
@@ -22,6 +22,7 @@ export default function GeneratorComponent({
     setTeamName,
     toogleRating,
     setRatingForPlayer,
+    calculateWiningChance,
 }) {
     return (
         <div className="main__generator">
@@ -40,6 +41,7 @@ export default function GeneratorComponent({
                         acceptGeneratedTeams={acceptGeneratedTeams}
                         setEventName={setEventName}
                         setTeamName={setTeamName}
+                        calculateWiningChance={calculateWiningChance}
                     />
                 ) : (
                     <SetPlayersComponent

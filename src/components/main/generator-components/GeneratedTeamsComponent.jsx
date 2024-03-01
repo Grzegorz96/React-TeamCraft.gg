@@ -6,7 +6,8 @@ import {
     faCheck,
     faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { calculateWiningChance } from "../../../utils/calculateWinningChance";
+import { BigHead } from "@bigheads/core";
+const MemoizedBigHead = React.memo(BigHead);
 
 export default function GeneratedTeamsComponent({
     setListOfGeneratedTeams,
@@ -15,6 +16,7 @@ export default function GeneratedTeamsComponent({
     acceptGeneratedTeams,
     setEventName,
     setTeamName,
+    calculateWiningChance,
 }) {
     return (
         <>
@@ -57,12 +59,15 @@ export default function GeneratedTeamsComponent({
                                 }
                             />
                             {teamObject.players.map(
-                                ({ playerName, playerRating }, playerIndex) => (
+                                ({ playerName, playerRating }) => (
                                     <div className="player" key={playerName}>
-                                        <div className="player__text">
-                                            {`${
-                                                playerIndex + 1
-                                            }: ${playerName}`}
+                                        <div className="player__info">
+                                            <div className="avatar">
+                                                <MemoizedBigHead />
+                                            </div>
+                                            <div className="player__text">
+                                                {playerName}
+                                            </div>
                                         </div>
                                         {generatorState.isRatingOn ? (
                                             <div className="rating-wrapper">
@@ -97,7 +102,6 @@ export default function GeneratedTeamsComponent({
                             {generatorState.isRatingOn && (
                                 <div className="winning-chance">
                                     {`Winning chance: ${calculateWiningChance(
-                                        generatorState.generatedTeams,
                                         teamObject
                                     )}%`}
                                 </div>
