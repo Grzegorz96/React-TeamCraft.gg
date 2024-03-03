@@ -8,6 +8,7 @@ import {
     faShieldHalved,
 } from "@fortawesome/free-solid-svg-icons";
 import { BigHead } from "@bigheads/core";
+import StarsWrapperComponent from "../../shared/StarsWrapperComponent";
 
 export default function DisplayEventsStatsComponent({
     calculateOverall,
@@ -15,7 +16,6 @@ export default function DisplayEventsStatsComponent({
     allStatsAreValid,
 }) {
     const { mainState } = useMainData();
-    console.log(mainState);
     return mainState.acceptedTeams.length < 1 ? (
         <>
             <h2>No teams have been created.</h2>
@@ -179,31 +179,11 @@ export default function DisplayEventsStatsComponent({
                                                 }
                                             >
                                                 {playerRating ? (
-                                                    <div className="rating-wrapper">
-                                                        {Array.from({
-                                                            length: 5,
-                                                        }).map((_, index) => (
-                                                            <FontAwesomeIcon
-                                                                key={index}
-                                                                icon={faStar}
-                                                                style={{
-                                                                    color:
-                                                                        parseFloat(
-                                                                            (
-                                                                                0.2 *
-                                                                                (index +
-                                                                                    1)
-                                                                            ).toFixed(
-                                                                                1
-                                                                            )
-                                                                        ) <=
-                                                                        playerRating
-                                                                            ? "gold"
-                                                                            : null,
-                                                                }}
-                                                            />
-                                                        ))}
-                                                    </div>
+                                                    <StarsWrapperComponent
+                                                        playerRating={
+                                                            playerRating
+                                                        }
+                                                    />
                                                 ) : null}
                                                 <div className="text">
                                                     {`${kills || "NA"}/${

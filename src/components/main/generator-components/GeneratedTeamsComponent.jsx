@@ -4,9 +4,9 @@ import {
     faRotateLeft,
     faDice,
     faCheck,
-    faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import { BigHead } from "@bigheads/core";
+import StarsWrapperComponent from "../../shared/StarsWrapperComponent";
 const MemoizedBigHead = React.memo(BigHead);
 
 export default function GeneratedTeamsComponent({
@@ -70,31 +70,9 @@ export default function GeneratedTeamsComponent({
                                             </div>
                                         </div>
                                         {generatorState.isRatingOn ? (
-                                            <div className="rating-wrapper">
-                                                {Array.from({ length: 5 }).map(
-                                                    (_, index) => (
-                                                        <FontAwesomeIcon
-                                                            key={index}
-                                                            icon={faStar}
-                                                            style={{
-                                                                color:
-                                                                    parseFloat(
-                                                                        (
-                                                                            0.2 *
-                                                                            (index +
-                                                                                1)
-                                                                        ).toFixed(
-                                                                            1
-                                                                        )
-                                                                    ) <=
-                                                                    playerRating
-                                                                        ? "gold"
-                                                                        : null,
-                                                            }}
-                                                        />
-                                                    )
-                                                )}
-                                            </div>
+                                            <StarsWrapperComponent
+                                                playerRating={playerRating}
+                                            />
                                         ) : null}
                                     </div>
                                 )

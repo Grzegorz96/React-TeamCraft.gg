@@ -109,9 +109,7 @@ export default function SetPlayersComponent({
                             ({ playerName, playerRating }) => (
                                 <div className="player" key={playerName}>
                                     <div className="player__info">
-                                        <div className="avatar--modifier1">
-                                            <MemoizedBigHead />
-                                        </div>
+                                        <MemoizedBigHead className="avatar--modifier1" />
                                         <div className="player__text">
                                             {playerName}
                                         </div>

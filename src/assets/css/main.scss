@@ -478,7 +478,6 @@
                     height: 30px;
                     display: flex;
                     justify-content: space-between;
-                    padding: 5px 0 5px 0;
                     border-top: 2px solid whitesmoke;
 
                     &__info {
@@ -497,6 +496,7 @@
                     }
 
                     .rating-wrapper {
+                        padding-top: 5px;
                         display: flex;
                         justify-content: center;
 
@@ -754,9 +754,12 @@
 
     .avatar {
         width: 30px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
 
         &--modifier1 {
-            width: 45px;
+            width: 50px;
         }
     }
 

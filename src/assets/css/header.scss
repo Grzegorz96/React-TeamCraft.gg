@@ -7,24 +7,33 @@ a {
 .header {
     @include utils.container(100%, 70px);
     background-color: rgba(168, 168, 168, 0.329);
-    padding: 5px 20px;
+    padding: 0 15px;
     display: flex;
+    gap: 15px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     &__icon {
-        height: 100%;
+        max-width: 269px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
-            height: 100%;
+            width: 100%;
         }
     }
 
-    .navbar {
+    &__navbar {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
 
         a {
             text-align: center;
@@ -33,6 +42,62 @@ a {
             border: 2px solid whitesmoke;
             font-size: 1.25rem;
             padding: 5px;
+        }
+    }
+
+    &__hamburger-menu {
+        width: 28px;
+        font-size: 2rem;
+        cursor: pointer;
+        display: none;
+
+        &:hover {
+            color: #2e2e2e;
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    &__dropdown {
+        display: none;
+        z-index: 1000;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        right: 1rem;
+        top: calc(70px + 1rem);
+        height: 0;
+        width: 300px;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &--active {
+            @extend .header__dropdown;
+            height: 151px;
+        }
+
+        a {
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 20px);
+            border-radius: 10px;
+            border: 2px solid whitesmoke;
+            font-size: 1.25rem;
+            padding: 5px;
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        @media (max-width: 576px) {
+            left: 1rem;
+            width: unset;
         }
     }
 }

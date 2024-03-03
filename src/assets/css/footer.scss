@@ -4,6 +4,33 @@
     @include utils.container(100%, 30px);
     background-color: rgba(168, 168, 168, 0.329);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 5px;
+    gap: 15px;
+
+    .img-wrapper {
+        height: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+
+        &__img {
+            height: 100%;
+        }
+    }
+
+    .events-counter {
+        font-size: 0.8rem;
+        text-align: center;
+        color: whitesmoke;
+        font-weight: bold;
+        background-color: rgba(126, 126, 126, 0.527);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 2px 10px;
+        border-radius: 15px;
+        white-space: nowrap;
+    }
 }

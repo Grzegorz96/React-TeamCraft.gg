@@ -1,7 +1,6 @@
 import { createContext } from "react";
 import { getDataFromLocalStorage } from "../utils/localDataOperations";
 import { getActualDate } from "../utils/getActualDate";
-import { json } from "react-router-dom";
 
 export const MainContext = createContext(null);
 
