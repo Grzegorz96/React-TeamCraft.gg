@@ -18,8 +18,7 @@ export default function GeneratorContainer() {
     const navigate = useNavigate();
     const { functions } = useMainData();
 
-    const handleSelectChange = (e, type) => {
-        const selectedNumber = parseInt(e.target.value, 10);
+    const handleSelectChange = (selectedNumber, type) => {
         dispatch({
             type: type,
             payload: selectedNumber,
@@ -46,7 +45,17 @@ export default function GeneratorContainer() {
                 type: generatorActions.setReset,
             });
         } else {
-            dispatch({ type: generatorActions.setIsTeamOptionsAccepted });
+            if (
+                generatorState.numberOfTeams &&
+                generatorState.numberOfTeamPlayers
+            ) {
+                dispatch({ type: generatorActions.setIsTeamOptionsAccepted });
+            } else {
+                dispatch({
+                    type: generatorActions.setPopup,
+                    payload: "Please fill in required fields. 🙊",
+                });
+            }
         }
     };
 

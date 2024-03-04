@@ -1,6 +1,6 @@
 export const generatorInitialState = {
-    numberOfTeams: 1,
-    numberOfTeamPlayers: 1,
+    numberOfTeams: undefined,
+    numberOfTeamPlayers: undefined,
     isTeamOptionsAccepted: false,
     nameOfPlayer: "",
     actualListOfPlayers: [],

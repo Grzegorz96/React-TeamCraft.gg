@@ -63,6 +63,7 @@ export default function GeneratorComponent({
                 <SelectOptionsComponent
                     handleAcceptAndBackButton={handleAcceptAndBackButton}
                     handleSelectChange={handleSelectChange}
+                    generatorState={generatorState}
                 />
             )}
         </div>

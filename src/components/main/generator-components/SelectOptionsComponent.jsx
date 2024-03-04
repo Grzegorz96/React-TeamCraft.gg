@@ -1,7 +1,9 @@
 import React from "react";
 import { generatorActions } from "../../../reducers/generator-reducer/actionTypes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faC, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import Select from "react-select";
+import { singleValueStyle } from "../../../utils/ui-styles/selectSingleValueStyle";
 
 export default function SelectOptionsComponent({
     handleSelectChange,
@@ -14,51 +16,45 @@ export default function SelectOptionsComponent({
                 Accept
             </button>
             <div className="select-options-wrapper">
-                <div className="select">
-                    <label htmlFor="select-team-quantitiy">
-                        Select the number of teams:
-                    </label>
-                    <select
-                        id="select-team-quantitiy"
-                        onChange={(e) =>
+                <div className="select-wrapper">
+                    <h4>Select team count:</h4>
+                    <Select
+                        options={Array.from({ length: 10 }, (_, index) => ({
+                            value: index + 1,
+                            label: `${index + 1} ${index ? "teams" : "team"}`,
+                        }))}
+                        isSearchable={false}
+                        placeholder="Select..."
+                        className="select"
+                        styles={singleValueStyle}
+                        onChange={({ value }) =>
                             handleSelectChange(
-                                e,
+                                value,
                                 generatorActions.setNumberOfTeams
                             )
                         }
-                    >
-                        {Array.from(
-                            { length: 10 },
-                            (_, index) => index + 1
-                        ).map((number) => (
-                            <option key={number} value={number}>
-                                {number}
-                            </option>
-                        ))}
-                    </select>
+                    />
                 </div>
-                <div className="select">
-                    <label htmlFor="select-players-quantitiy">
-                        Select players per team:
-                    </label>
-                    <select
-                        id="select-players-quantitiy"
-                        onChange={(e) =>
+                <div className="select-wrapper">
+                    <h4>Select team size:</h4>
+                    <Select
+                        options={Array.from({ length: 20 }, (_, index) => ({
+                            value: index + 1,
+                            label: `${index + 1} ${
+                                index ? "players" : "player"
+                            }`,
+                        }))}
+                        isSearchable={false}
+                        placeholder="Select..."
+                        className="select"
+                        styles={singleValueStyle}
+                        onChange={({ value }) =>
                             handleSelectChange(
-                                e,
+                                value,
                                 generatorActions.setNumberOfTeamPlayers
                             )
                         }
-                    >
-                        {Array.from(
-                            { length: 20 },
-                            (_, index) => index + 1
-                        ).map((number) => (
-                            <option key={number} value={number}>
-                                {number}
-                            </option>
-                        ))}
-                    </select>
+                    />
                 </div>
             </div>
         </>

@@ -47,6 +47,7 @@ a {
 
     &__hamburger-menu {
         width: 28px;
+        flex-shrink: 0;
         font-size: 2rem;
         cursor: pointer;
         display: none;

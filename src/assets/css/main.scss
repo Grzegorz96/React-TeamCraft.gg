@@ -12,6 +12,7 @@
         align-items: center;
         color: whitesmoke;
         text-align: center;
+        padding: 10px;
 
         h1 {
             font-size: 1.75rem;
@@ -30,7 +31,7 @@
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        padding: 10px;
+        padding: 10px 20px;
         color: whitesmoke;
 
         h2 {
@@ -40,6 +41,8 @@
         }
 
         .event-wrapper {
+            position: relative;
+            left: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,7 +101,7 @@
                 display: flex;
                 flex-direction: column;
                 height: 205px;
-                width: 80px;
+                max-width: 50px;
                 border-top-right-radius: 50%;
                 border-bottom-right-radius: 50%;
                 overflow: hidden;
@@ -145,8 +148,13 @@
                 text-align: center;
             }
 
+            h5 {
+                text-align: center;
+            }
+
             .teams-wrapper {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 gap: 10px;
 
@@ -158,6 +166,14 @@
                     border: 2px solid rgba(245, 245, 245, 0.418);
                     width: 200px;
                     border-radius: 10px;
+
+                    @media (max-width: 320px) {
+                        width: 180px;
+                    }
+
+                    @media (max-width: 300px) {
+                        width: 160px;
+                    }
 
                     .winner-button {
                         font-size: 1.2rem;
@@ -190,6 +206,9 @@
 
                         h4 {
                             padding: 5px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
 
                         .player {
@@ -204,6 +223,14 @@
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
+
+                                @media (max-width: 320px) {
+                                    font-size: 0.9rem;
+                                }
+
+                                @media (max-width: 300px) {
+                                    font-size: 0.7rem;
+                                }
                             }
                         }
                     }
@@ -285,6 +312,8 @@
 
         .buttons-wrapper {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .button {
@@ -306,9 +335,7 @@
         }
 
         .set-players-wrapper {
-            padding: 5px;
             position: relative;
-            border: 1px solid red;
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -422,41 +449,39 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            color: whitesmoke;
+            text-align: center;
 
-            .select {
-                padding: 5px;
-                font-size: 1.3rem;
-                color: whitesmoke;
+            .select-wrapper {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border: 2px solid whitesmoke;
-                width: 400px;
-                border-radius: 10px;
-                background-color: rgba(73, 73, 73, 0.616);
+                flex-direction: column;
+                gap: 5px;
 
-                select {
-                    font-size: 1rem;
-                    background-color: #2a2f3b;
-                    background: #636363;
-                    color: whitesmoke;
+                .select {
+                    border: 2px solid whitesmoke;
                     border-radius: 10px;
-                    padding: 5px;
-                    cursor: pointer;
+                    width: 140px;
+
+                    div {
+                        cursor: pointer;
+                        background-color: rgb(73, 73, 73);
+                        border-radius: 10px;
+                        border: none;
+                    }
                 }
             }
         }
 
         .generated-teams-wrapper {
             border: 2px solid whitesmoke;
-            display: flex;
             color: whitesmoke;
             font-size: 1rem;
             gap: 10px;
+            display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 10px;
             background-color: #6363637a;
-            flex-wrap: wrap;
             border-radius: 10px;
             overflow-x: hidden;
             overflow-y: auto;
