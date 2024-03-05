@@ -38,10 +38,14 @@ a {
         a {
             text-align: center;
             width: 140px;
-            border-radius: 10px;
+            border-radius: 20px;
             border: 2px solid whitesmoke;
             font-size: 1.25rem;
             padding: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
         }
     }
 
@@ -86,10 +90,11 @@ a {
             justify-content: center;
             align-items: center;
             width: calc(100% - 20px);
-            border-radius: 10px;
+            border-radius: 20px;
             border: 2px solid whitesmoke;
             font-size: 1.25rem;
             padding: 5px;
+            gap: 5px;
         }
 
         @media (max-width: 768px) {

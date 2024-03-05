@@ -20,6 +20,16 @@
         &__img {
             height: 100%;
         }
+
+        :first-child {
+            @media (max-width: 320px) {
+                padding: 2px;
+            }
+
+            @media (max-width: 280px) {
+                padding: 4px;
+            }
+        }
     }
 
     .events-counter {
