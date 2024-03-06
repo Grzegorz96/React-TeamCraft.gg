@@ -15,7 +15,7 @@ a {
     position: relative;
 
     &__icon {
-        max-width: 269px;
+        max-width: 245px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,18 +50,22 @@ a {
     }
 
     &__hamburger-menu {
-        width: 28px;
+        width: 34px;
         flex-shrink: 0;
         font-size: 2rem;
-        cursor: pointer;
+        border: none;
         display: none;
+        background-color: transparent;
+        place-items: center;
+        cursor: pointer;
+        border-radius: 5px;
 
         &:hover {
             color: #2e2e2e;
         }
 
         @media (max-width: 768px) {
-            display: block;
+            display: grid;
         }
     }
 
@@ -106,4 +110,14 @@ a {
             width: unset;
         }
     }
+}
+
+a:focus,
+.header__hamburger-menu:focus {
+    outline: 2px solid rgb(0, 0, 0);
+}
+
+a:focus:not(:focus-visible),
+.header__hamburger-menu:focus:not(:focus-visible) {
+    outline: none;
 }

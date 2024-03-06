@@ -56,19 +56,15 @@
             border-top-left-radius: 0;
 
             &__buttons-wrapper {
-                left: 0;
+                left: -2px;
                 top: -2px;
                 transform: translateX(-100%);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 height: 100px;
-                width: 30px;
+                width: 28px;
                 position: absolute;
-                border: 2px solid whitesmoke;
-                border-bottom-left-radius: 50%;
-                border-top-left-radius: 50%;
-                overflow: hidden;
 
                 &::before {
                     content: "";
@@ -83,12 +79,22 @@
                     height: 100%;
                     border: none;
                     background-color: rgb(199, 199, 199, 0.616);
+                    border-left: 2px solid whitesmoke;
 
                     svg {
                         font-size: 1.1rem;
                         color: rgb(73, 73, 73);
-                        margin-left: 3px;
                     }
+                }
+
+                button:first-child {
+                    border-top-left-radius: 50%;
+                    border-top: 2px solid whitesmoke;
+                }
+
+                button:last-child {
+                    border-bottom-left-radius: 50%;
+                    border-bottom: 2px solid whitesmoke;
                 }
             }
 
@@ -336,6 +342,7 @@
         }
 
         .set-players-wrapper {
+            padding: 5px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -358,7 +365,6 @@
                 input {
                     width: 100%;
                     font-size: 1.3rem;
-                    border: none;
                     background-color: rgba(44, 44, 44, 0.788);
                     color: whitesmoke;
                     padding: 5px;
@@ -412,6 +418,7 @@
                     .rating-wrapper {
                         position: absolute;
                         display: flex;
+                        gap: 2px;
                         top: 2px;
                         right: 110px;
 
@@ -457,19 +464,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-
-                .select {
-                    border: 2px solid whitesmoke;
-                    border-radius: 10px;
-                    width: 140px;
-
-                    div {
-                        cursor: pointer;
-                        background-color: rgb(73, 73, 73);
-                        border-radius: 10px;
-                        border: none;
-                    }
-                }
             }
         }
 
@@ -833,4 +827,32 @@
             border: 2px solid black;
         }
     }
+}
+
+.button:focus,
+.input-button input:focus,
+.input-button button:focus,
+.player__button:focus,
+.rating-wrapper button:focus,
+.event-name-input:focus,
+.event-wrapper__buttons-wrapper button:focus,
+.winner-button:focus {
+    outline: 2px solid black;
+}
+
+.popup button:focus,
+.team-name-input:focus {
+    outline: 2px solid whitesmoke;
+}
+
+.button:focus:not(:focus-visible),
+.popup button:focus:not(:focus-visible),
+.input-button input:focus:not(:focus-visible),
+.input-button button:focus:not(:focus-visible),
+.player__button:focus:not(:focus-visible),
+.rating-wrapper button:focus:not(:focus-visible),
+.event-name-input:focus:not(:focus-visible),
+.event-wrapper__buttons-wrapper button:focus:not(:focus-visible),
+.winner-button:focus:not(:focus-visible) {
+    outline: none;
 }

@@ -15,15 +15,26 @@ export default function NavbarComponent({ nameClass, toggleMenu }) {
                 style={navLinkStyles}
                 to="/generate-teams"
                 onClick={toggleMenu}
+                tabIndex={nameClass === "header__dropdown" ? -1 : 0}
             >
                 <FontAwesomeIcon icon={faUsersGear} />
                 Generate
             </NavLink>
-            <NavLink style={navLinkStyles} to="/my-teams" onClick={toggleMenu}>
+            <NavLink
+                style={navLinkStyles}
+                to="/my-teams"
+                onClick={toggleMenu}
+                tabIndex={nameClass === "header__dropdown" ? -1 : 0}
+            >
                 <FontAwesomeIcon icon={faPeopleGroup} />
                 My Teams
             </NavLink>
-            <NavLink style={navLinkStyles} to="/stats" onClick={toggleMenu}>
+            <NavLink
+                style={navLinkStyles}
+                to="/stats"
+                onClick={toggleMenu}
+                tabIndex={nameClass === "header__dropdown" ? -1 : 0}
+            >
                 <FontAwesomeIcon icon={faChartSimple} />
                 Statistics
             </NavLink>

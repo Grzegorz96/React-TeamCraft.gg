@@ -23,6 +23,7 @@ export default function GeneratorContainer() {
             type: type,
             payload: selectedNumber,
         });
+        if (generatorState.popup) closePopup();
     };
 
     const setEventName = (e) => {

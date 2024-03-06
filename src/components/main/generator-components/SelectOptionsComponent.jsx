@@ -3,7 +3,7 @@ import { generatorActions } from "../../../reducers/generator-reducer/actionType
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import Select from "react-select";
-import { singleValueStyle } from "../../../utils/ui-styles/selectSingleValueStyle";
+import { customSelectStyles } from "../../../utils/ui-styles/customSelectStyles";
 
 export default function SelectOptionsComponent({
     handleSelectChange,
@@ -25,8 +25,7 @@ export default function SelectOptionsComponent({
                         }))}
                         isSearchable={false}
                         placeholder="Select..."
-                        className="select"
-                        styles={singleValueStyle}
+                        styles={customSelectStyles}
                         onChange={({ value }) =>
                             handleSelectChange(
                                 value,
@@ -46,8 +45,7 @@ export default function SelectOptionsComponent({
                         }))}
                         isSearchable={false}
                         placeholder="Select..."
-                        className="select"
-                        styles={singleValueStyle}
+                        styles={customSelectStyles}
                         onChange={({ value }) =>
                             handleSelectChange(
                                 value,

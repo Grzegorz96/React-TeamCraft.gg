@@ -6,11 +6,9 @@ import NavbarComponent from "./NavbarComponent";
 export default function DropdownMenuComponent({ toggleMenu, isOpen }) {
     return (
         <>
-            <FontAwesomeIcon
-                className="header__hamburger-menu"
-                icon={isOpen ? faX : faBars}
-                onClick={toggleMenu}
-            />
+            <button className="header__hamburger-menu" onClick={toggleMenu}>
+                <FontAwesomeIcon icon={isOpen ? faX : faBars} />
+            </button>
             <NavbarComponent
                 nameClass={`header__dropdown${isOpen ? "--active" : ""}`}
                 toggleMenu={toggleMenu}
