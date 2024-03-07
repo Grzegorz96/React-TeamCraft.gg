@@ -15,7 +15,7 @@ a {
     position: relative;
 
     &__icon {
-        max-width: 245px;
+        max-width: 240px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -114,7 +114,8 @@ a {
 
 a:focus,
 .header__hamburger-menu:focus {
-    outline: 2px solid rgb(0, 0, 0);
+    outline: 3px solid black;
+    z-index: 50;
 }
 
 a:focus:not(:focus-visible),

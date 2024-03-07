@@ -63,10 +63,19 @@ export default function MyTeamsContainer() {
 
     const statsInputsHandler = (input, e) => {
         myTeamsState.popup && closePopup();
-        dispatch({
-            type: myTeamsActions.setStatsInput,
-            payload: { input: input, data: e.target.value },
-        });
+
+        const data = e.target.value;
+        if ((!isNaN(data) && parseInt(data) >= 0) || data === "") {
+            dispatch({
+                type: myTeamsActions.setStatsInput,
+                payload: { input: input, data: data },
+            });
+        } else {
+            dispatch({
+                type: myTeamsActions.setPopup,
+                payload: "Oops! 🙊 wrong value.",
+            });
+        }
     };
 
     const setStats = () => {
