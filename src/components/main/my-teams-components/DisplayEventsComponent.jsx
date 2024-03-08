@@ -43,7 +43,7 @@ export default function DisplayEventsComponent({
                     <div className="teams-wrapper">
                         {eventObject.teams.map((team, teamIndex) => (
                             <div
-                                className="team-wrapper"
+                                className="teams-wrapper__team-wrapper"
                                 key={teamIndex}
                                 style={{
                                     border: team.isWinner

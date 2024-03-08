@@ -8,3 +8,12 @@
     width: $witdh;
     height: $height;
 }
+
+@mixin stat-style($backgroundColor) {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: $backgroundColor;
+}

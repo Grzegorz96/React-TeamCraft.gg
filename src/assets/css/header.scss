@@ -111,14 +111,3 @@ a {
         }
     }
 }
-
-a:focus,
-.header__hamburger-menu:focus {
-    outline: 3px solid black;
-    z-index: 50;
-}
-
-a:focus:not(:focus-visible),
-.header__hamburger-menu:focus:not(:focus-visible) {
-    outline: none;
-}

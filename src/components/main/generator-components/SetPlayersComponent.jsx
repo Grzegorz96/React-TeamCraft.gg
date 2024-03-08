@@ -70,7 +70,7 @@ export default function SetPlayersComponent({
                         generatorState.actualListOfPlayers.length
                     }`}
                 </h2>
-                <div className="input-button">
+                <div className="set-players-wrapper__input-button">
                     <input
                         placeholder="Player name"
                         name="player-name-input"
@@ -104,7 +104,7 @@ export default function SetPlayersComponent({
                     </button>
                 </div>
                 {generatorState.actualListOfPlayers.length ? (
-                    <div className="players">
+                    <div className="set-players-wrapper__players">
                         {generatorState.actualListOfPlayers.map(
                             ({ playerName, playerRating }) => (
                                 <div className="player" key={playerName}>
@@ -114,7 +114,7 @@ export default function SetPlayersComponent({
                                             {playerName}
                                         </div>
                                     </div>
-                                    <div className="rating-wrapper">
+                                    <div className="player__rating-wrapper">
                                         {Array.from({ length: 5 }).map(
                                             (_, index) => (
                                                 <button
@@ -154,7 +154,6 @@ export default function SetPlayersComponent({
                                     </div>
                                     <div className="player__buttons">
                                         <button
-                                            className="player__button"
                                             onClick={() =>
                                                 toggleEditPlayerName(
                                                     generatorState.nameOfEditingPlayer ===
@@ -175,7 +174,6 @@ export default function SetPlayersComponent({
                                             />
                                         </button>
                                         <button
-                                            className="player__button"
                                             onClick={() =>
                                                 removePlayerFromList(playerName)
                                             }

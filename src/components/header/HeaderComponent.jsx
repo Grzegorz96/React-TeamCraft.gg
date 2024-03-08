@@ -11,7 +11,7 @@ export default function HeaderComponent({ toggleMenu, isOpen }) {
                 to="/"
                 onClick={isOpen ? toggleMenu : null}
             >
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="header-logo" />
             </Link>
             <NavbarComponent nameClass="header__navbar" />
             <DropdownMenuComponent toggleMenu={toggleMenu} isOpen={isOpen} />

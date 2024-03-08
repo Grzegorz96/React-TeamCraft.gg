@@ -2,11 +2,7 @@ import React from "react";
 import { useMainData } from "../../../context/MainProvider";
 import { alphabet } from "../../../utils/alphabet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faStar,
-    faCrown,
-    faShieldHalved,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCrown, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
 import { BigHead } from "@bigheads/core";
 import StarsWrapperComponent from "../../shared/StarsWrapperComponent";
 
@@ -102,10 +98,11 @@ export default function DisplayEventsStatsComponent({
                                                             className="chart-wrapper__stat__kills"
                                                             style={{
                                                                 width: kills
-                                                                    ? `${
+                                                                    ? Math.min(
                                                                           kills *
-                                                                          5
-                                                                      }px`
+                                                                              5,
+                                                                          140
+                                                                      )
                                                                     : null,
                                                             }}
                                                         >
@@ -118,10 +115,11 @@ export default function DisplayEventsStatsComponent({
                                                             className="chart-wrapper__stat__deaths"
                                                             style={{
                                                                 width: deaths
-                                                                    ? `${
+                                                                    ? Math.min(
                                                                           deaths *
-                                                                          5
-                                                                      }px`
+                                                                              5,
+                                                                          140
+                                                                      )
                                                                     : null,
                                                             }}
                                                         >
@@ -134,10 +132,11 @@ export default function DisplayEventsStatsComponent({
                                                             className="chart-wrapper__stat__assists"
                                                             style={{
                                                                 width: assists
-                                                                    ? `${
+                                                                    ? Math.min(
                                                                           assists *
-                                                                          5
-                                                                      }px`
+                                                                              5,
+                                                                          140
+                                                                      )
                                                                     : null,
                                                             }}
                                                         >

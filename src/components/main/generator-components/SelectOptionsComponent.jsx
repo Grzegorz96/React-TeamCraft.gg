@@ -16,7 +16,7 @@ export default function SelectOptionsComponent({
                 Accept
             </button>
             <div className="select-options-wrapper">
-                <div className="select-wrapper">
+                <div className="select-options-wrapper__select-wrapper">
                     <h4>Select team count:</h4>
                     <Select
                         options={Array.from({ length: 10 }, (_, index) => ({
@@ -34,7 +34,7 @@ export default function SelectOptionsComponent({
                         }
                     />
                 </div>
-                <div className="select-wrapper">
+                <div className="select-options-wrapper__select-wrapper">
                     <h4>Select team size:</h4>
                     <Select
                         options={Array.from({ length: 20 }, (_, index) => ({

@@ -13,23 +13,15 @@ export default function FooterComponent() {
 
     return (
         <footer className="footer">
-            <div className="events-counter">
+            <div className="footer__events-counter">
                 {`Active events: ${acceptedTeams.length}`}
             </div>
-            <div className="img-wrapper">
-                <img
-                    src={logo}
-                    alt="teamcraft-logo"
-                    className="img-wrapper__img"
-                />
-                <img src={lol} alt="lol-logo" className="img-wrapper__img" />
-                <img src={tft} alt="tft-logo" className="img-wrapper__img" />
-                <img src={cs2} alt="cs2-logo" className="img-wrapper__img" />
-                <img
-                    src={dota2}
-                    alt="dota2-logo"
-                    className="img-wrapper__img"
-                />
+            <div className="footer__img-wrapper">
+                <img src={logo} alt="teamcraft-logo" />
+                <img src={lol} alt="lol-logo" />
+                <img src={tft} alt="tft-logo" />
+                <img src={cs2} alt="cs2-logo" />
+                <img src={dota2} alt="dota2-logo" />
             </div>
         </footer>
     );

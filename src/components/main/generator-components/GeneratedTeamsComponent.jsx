@@ -78,7 +78,7 @@ export default function GeneratedTeamsComponent({
                                 )
                             )}
                             {generatorState.isRatingOn && (
-                                <div className="winning-chance">
+                                <div className="team__winning-chance">
                                     {`Winning chance: ${calculateWiningChance(
                                         teamObject
                                     )}%`}

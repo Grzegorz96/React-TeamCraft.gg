@@ -78,7 +78,7 @@ export default function EditEventComponent({
             <div className="teams-wrapper">
                 {editedEvent.teams.map((teamObject, teamObjectIndex) => (
                     <div
-                        className="team-wrapper"
+                        className="teams-wrapper__team-wrapper"
                         key={teamObjectIndex}
                         style={{
                             border: teamObject.isWinner
@@ -117,7 +117,7 @@ export default function EditEventComponent({
                             )}
                         </div>
                         <div className="k-d-a">
-                            <h4 className="k-d-a--modifier1">K/D/A</h4>
+                            <h4 className="h4--modifier1">K/D/A</h4>
                             {teamObject.players.map(
                                 (
                                     { stats: { kills, deaths, assists } },
