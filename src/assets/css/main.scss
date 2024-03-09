@@ -141,15 +141,6 @@
                     color: whitesmoke;
                     background-color: rgba(44, 44, 44, 0.788);
                     border: 2px solid whitesmoke;
-
-                    &[type="number"] {
-                        -moz-appearance: textfield;
-                        appearance: textfield;
-
-                        &::-webkit-inner-spin-button {
-                            -webkit-appearance: none;
-                        }
-                    }
                 }
             }
 

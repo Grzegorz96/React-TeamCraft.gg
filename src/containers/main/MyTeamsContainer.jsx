@@ -63,9 +63,10 @@ export default function MyTeamsContainer() {
 
     const statsInputsHandler = (input, e) => {
         myTeamsState.popup && closePopup();
+        let data = e.target.value;
 
-        const data = e.target.value;
-        if ((!isNaN(data) && parseInt(data) >= 0) || data === "") {
+        if (/^\d{0,9}$/.test(data)) {
+            if (data) data = parseInt(data, 10).toString();
             dispatch({
                 type: myTeamsActions.setStatsInput,
                 payload: { input: input, data: data },
@@ -81,8 +82,8 @@ export default function MyTeamsContainer() {
     const setStats = () => {
         if (
             myTeamsState.statsInputs.killsInput &&
-            myTeamsState.statsInputs.assistsInput &&
-            myTeamsState.statsInputs.deathsInput
+            myTeamsState.statsInputs.deathsInput &&
+            myTeamsState.statsInputs.assistsInput
         ) {
             dispatch({
                 type: myTeamsActions.setPlayerStats,

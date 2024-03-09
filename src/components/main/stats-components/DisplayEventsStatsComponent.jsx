@@ -101,7 +101,7 @@ export default function DisplayEventsStatsComponent({
                                                                     ? Math.min(
                                                                           kills *
                                                                               5,
-                                                                          140
+                                                                          138
                                                                       )
                                                                     : null,
                                                             }}
@@ -118,7 +118,7 @@ export default function DisplayEventsStatsComponent({
                                                                     ? Math.min(
                                                                           deaths *
                                                                               5,
-                                                                          140
+                                                                          138
                                                                       )
                                                                     : null,
                                                             }}
@@ -135,7 +135,7 @@ export default function DisplayEventsStatsComponent({
                                                                     ? Math.min(
                                                                           assists *
                                                                               5,
-                                                                          140
+                                                                          138
                                                                       )
                                                                     : null,
                                                             }}

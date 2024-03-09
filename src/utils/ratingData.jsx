@@ -1,3 +1,4 @@
+// Exporting an array of rating data, where each object has a 'rating' and 'points' property.
 export const ratingData = [
     { rating: "D-", points: -35 },
     { rating: "D", points: -30 },

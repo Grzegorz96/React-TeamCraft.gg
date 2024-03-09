@@ -1,3 +1,4 @@
+// Actions object for generatorReducer.
 export const generatorActions = {
     setNumberOfTeams: "SET_NUMBER_OF_TEAMS",
     setNumberOfTeamPlayers: "SET_NUMBER_OF_TEAM_PLAYERS",

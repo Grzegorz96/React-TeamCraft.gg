@@ -1,19 +1,19 @@
+// Mixin for a default container with 100% width, 100% height, and hidden overflow.
 @mixin default-container() {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
+// Mixin for a container with custom width and height.
 @mixin container($witdh, $height) {
     width: $witdh;
     height: $height;
 }
 
+// Mixin for styling a stat element with rounded borders and a specified background color.
 @mixin stat-style($backgroundColor) {
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     background-color: $backgroundColor;
 }

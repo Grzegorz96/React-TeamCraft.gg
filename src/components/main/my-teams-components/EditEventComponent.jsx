@@ -50,7 +50,6 @@ export default function EditEventComponent({
                     <input
                         name="kills-input"
                         className="stats-player-input"
-                        type="number"
                         value={statsInputs.killsInput}
                         onChange={(e) => statsInputsHandler("killsInput", e)}
                     />
@@ -58,7 +57,6 @@ export default function EditEventComponent({
                     <input
                         name="deaths-input"
                         className="stats-player-input"
-                        type="number"
                         value={statsInputs.deathsInput}
                         onChange={(e) => statsInputsHandler("deathsInput", e)}
                     />
@@ -66,7 +64,6 @@ export default function EditEventComponent({
                     <input
                         name="assists-input"
                         className="stats-player-input"
-                        type="number"
                         value={statsInputs.assistsInput}
                         onChange={(e) => statsInputsHandler("assistsInput", e)}
                     />

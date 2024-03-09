@@ -1,5 +1,7 @@
+// Importing the CSS utilities module with an alias 'utils'.
 @use "../../utils/css" as utils;
 
+// Global reset for all elements, setting box-sizing, font-family, and removing margins and paddings.
 * {
     margin: 0;
     padding: 0;
@@ -8,21 +10,25 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+// Applying default container styles to the html, body, and #root elements.
 html,
 body,
 #root {
     @include utils.default-container();
 }
 
+// Setting the background of the body using a dark variable and an image from the specified path.
 body {
     background: utils.$dark url(/src/assets/images/theme.jpg) center/cover
         no-repeat;
 }
 
+// Hiding the scrollbar for WebKit browsers.
 ::-webkit-scrollbar {
     display: none;
 }
 
+// Adding focus styles for buttons, inputs, and links, setting a black outline when focused.
 button:focus,
 input:focus,
 a:focus {
@@ -30,6 +36,7 @@ a:focus {
     z-index: 50;
 }
 
+// Eliminating default focus styles for certain browsers using :focus-visible.
 button:focus:not(:focus-visible),
 input:focus:not(:focus-visible),
 a:focus:not(:focus-visible) {
