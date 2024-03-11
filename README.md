@@ -65,13 +65,13 @@ SelectOptionsComponent.jsx:
 MyTeamsContainer.jsx:
 - The MyTeamsContainer.jsx module plays a key role in the website logic for displaying and editing teams. It has its own local state, which is the basis for carrying out all operations related to modifying teams, players and deleting entire events. It is worth noting that any changes made by the user, such as modifying teams, players or deleting entire events, will be reflected in the global state of the application.
   
-MyTeamsComponent.jsx
+MyTeamsComponent.jsx:
 - The MyTeamsComponent.jsx module is responsible for generating appropriate views for the "My Teams" section depending on the current local state of this section. Its main task is to provide a dynamic user interface that reflects the current state in the "My Teams" section. Thanks to this module, the user can effectively view, edit or delete teams depending on what he wants to do.
 
-EditEventComponent.jsx
+EditEventComponent.jsx:
 - The EditEventComponent.jsx module is responsible for rendering the event edit view in the "My Teams" section, depending on the specific event selected by the user. Thanks to this module, the user can effectively modify information related to the selected event and its users.
 
-DisplayEventsComponent.jsx
+DisplayEventsComponent.jsx:
 - The DisplayEventsComponent.jsx module is responsible for rendering the view with events, which contains information about teams and players, in the "My Teams" section. Its main task is to present an organized list of events with related data about teams and players.
 
 StatsContainer.jsx:
