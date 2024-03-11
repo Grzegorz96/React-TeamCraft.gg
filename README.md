@@ -33,9 +33,18 @@ index.jsx:
 App.jsx: 
 - The App.jsx module, as a central component in TeamCraft, plays a pivotal role in orchestrating key containers and managing the application's layout. This module employs context-based state management, utilizing <MainProvider> to facilitate seamless data flow across components. Renders components in the following order: ```<Header />, <Main />, and <Footer />```.
 
+### Header:
+HeaderContainer.jsx:
+- The HeaderContainer.jsx module plays a key role in the logic related to the dropdown menu and the "hamburger" navigation button. Its task is to manage the logic of these elements and initiate the rendering of the HeaderComponent, which is responsible for the comprehensive rendering of the entire page header. Thanks to this approach, this module focuses on handling user interactions related to menus and organizes the header structure, which contributes to the consistent and effective operation of components in the application header area.
 
+HeaderComponent.jsx:
+- The HeaderComponent.jsx module plays a key role in rendering the entire header, including both NavbarComponent and DropdownMenuComponent. It is worth noting that this module is flexible, allowing dynamic adaptation to changing conditions using properties (props). This allows this module to customize the appearance and functionality of the header depending on dynamic props, making it extremely versatile and ready to handle a variety of use cases.
 
+NavbarComponent.jsx:
+- The NavbarComponent.jsx module is responsible for rendering navigation elements in the application, which are represented as links. The key feature of this module is the ability to customize dynamic classes, functions assigned to buttons, and set tabindex, which contributes to the flexibility and customization of navigation elements. Thanks to these dynamic properties, NavbarComponent.jsx allows you to easily modify the appearance and behavior of the navigation depending on the user's current actions.
 
+DropdownMenu.jsx:
+- The DropdownMenuComponent.jsx module plays a key role in rendering the "hamburger menu" button and drop-down menu element, responsible for handling navigation on smaller screens. This is an important component that allows you to effectively manage access to navigation options on devices with limited screen space.
 
 
 
