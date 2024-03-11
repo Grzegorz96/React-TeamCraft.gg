@@ -1,9 +1,6 @@
 <img src="https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22" alt="logo" width="100%" style="border-radius:50%" />
-<a href="url"><img src="https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22" alt="logo" width="100%" style="border-radius:50%" /></a>
-
 
 # TEAMCRAFT.GG
-
 
 TeamCraft is an application created in React technology, dedicated to enthusiasts of team-based games. With its user-friendly interface and advanced features, TeamCraft allows users to quickly and efficiently create teams without the need to create an account. The application enables the rapid generation of teams based on the list of players entered by the user. TeamCraft gives users the option to choose between random team creation and balanced team building, ensuring both exciting challenges and fair gameplay.
 
@@ -29,3 +26,15 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 - [Screnshoots](#licencja)
 
 ## Description of the modules
+
+index.jsx:
+- The index.jsx module serves as the entry point for the TeamCraft application, initiating the rendering process and setting up essential dependencies. Key functionalities include:
+
+Initialization and Rendering:
+This module uses ReactDOM.createRoot to render the main <App /> component within the HTML element with the id "root." It kickstarts the user interface, making the application visually accessible.
+
+Routing Enablement:
+Utilizing the <BrowserRouter> component from react-router-dom, index.jsx facilitates smooth navigation within the application. This is vital for transitioning between different views, enhancing the overall user experience in TeamCraft.
+
+Styling Application:
+The module imports the index.scss stylesheet to apply styles to the application, ensuring a visually appealing and cohesive design.
