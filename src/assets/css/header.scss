@@ -1,9 +1,12 @@
+// Import utilities from a specified path and alias them as 'utils'.
 @use "../../utils/css" as utils;
 
+// Remove default underline from anchor elements.
 a {
     text-decoration: none;
 }
 
+// Define styles for the header component.
 .header {
     @include utils.container(100%, 70px);
     background-color: rgba(168, 168, 168, 0.329);
@@ -14,27 +17,32 @@ a {
     align-items: center;
     position: relative;
 
+    // Styles for the header icon.
     &__icon {
         max-width: 240px;
         display: flex;
         justify-content: center;
         align-items: center;
 
+        // Styles for images within the header icon.
         img {
             width: 100%;
         }
     }
 
+    // Styles for the navigation bar.
     &__navbar {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
 
+        // Hide the navbar on smaller screens.
         @media (max-width: 768px) {
             display: none;
         }
 
+        // Styles for anchor elements within the navbar.
         a {
             text-align: center;
             width: 140px;
@@ -49,6 +57,7 @@ a {
         }
     }
 
+    // Styles for the hamburger menu button.
     &__hamburger-menu {
         width: 34px;
         flex-shrink: 0;
@@ -60,15 +69,18 @@ a {
         cursor: pointer;
         border-radius: 5px;
 
+        // Change color on hover.
         &:hover {
             color: #2e2e2e;
         }
 
+        // Display the hamburger menu button on smaller screens.
         @media (max-width: 768px) {
             display: grid;
         }
     }
 
+    // Styles for the dropdown menu.
     &__dropdown {
         display: none;
         z-index: 1000;
@@ -83,11 +95,13 @@ a {
         width: 300px;
         transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
+        // Active state for the dropdown.
         &--active {
             @extend .header__dropdown;
             height: 151px;
         }
 
+        // Styles for anchor elements within the dropdown.
         a {
             margin: 10px;
             display: flex;
@@ -101,10 +115,12 @@ a {
             gap: 5px;
         }
 
+        // Display the dropdown on smaller screens.
         @media (max-width: 768px) {
             display: block;
         }
 
+        // Adjustments for even smaller screens.
         @media (max-width: 576px) {
             left: 1rem;
             width: unset;

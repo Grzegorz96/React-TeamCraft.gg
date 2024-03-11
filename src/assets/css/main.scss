@@ -1,9 +1,12 @@
+/* Importing utility functions from the "utils/css" file. */
 @use "../../utils/css" as utils;
 
+/* Styles for the main container. */
 .main {
     @include utils.container(100%, calc(100% - 100px));
     padding: 10px;
 
+    /* Styles for home and not-found sections within the main container. */
     &__home,
     &__not-found {
         @include utils.container(100%, 100%);
@@ -14,6 +17,7 @@
         text-align: center;
         padding: 10px;
 
+        /* Heading styles. */
         h1 {
             text-shadow: 0 0 0.2em whitesmoke;
             font-size: 1.75rem;
@@ -25,6 +29,7 @@
         }
     }
 
+    /* Styles for my-teams section within the main container. */
     &__my-teams {
         @include utils.container(100%, 100%);
         overflow-x: hidden;
@@ -36,6 +41,7 @@
         padding: 10px 20px;
         color: whitesmoke;
 
+        /* Heading styles. */
         h2 {
             text-shadow: 0 0 0.2em whitesmoke;
             color: whitesmoke;
@@ -43,6 +49,7 @@
             text-align: center;
         }
 
+        /* Styles for the event wrapper. */
         .event-wrapper {
             position: relative;
             display: flex;
@@ -56,6 +63,7 @@
             border-top-left-radius: 0;
             margin-left: 28px;
 
+            /* Styles for buttons wrapper within the event wrapper. */
             &__buttons-wrapper {
                 left: -30px;
                 top: -2px;
@@ -66,6 +74,7 @@
                 width: 30px;
                 position: absolute;
 
+                /* Styling the pseudo-element before the buttons. */
                 &::before {
                     content: "";
                     position: absolute;
@@ -73,6 +82,7 @@
                     border-bottom: 2px solid white;
                 }
 
+                /* Button styles within buttons wrapper. */
                 button {
                     display: grid;
                     place-items: center;
@@ -80,6 +90,7 @@
                     background-color: rgb(199, 199, 199, 0.616);
                     border: 2px solid whitesmoke;
 
+                    /* Styling the first and last child buttons. */
                     &:first-child {
                         border-top-left-radius: 50%;
                         border-bottom: none;
@@ -90,6 +101,7 @@
                         border-top: none;
                     }
 
+                    /* SVG icon styles within buttons. */
                     svg {
                         font-size: 1.1rem;
                         color: rgb(73, 73, 73);
@@ -97,6 +109,7 @@
                 }
             }
 
+            /* Styles for inputs wrapper within the event wrapper. */
             &__inputs-wrapper {
                 position: absolute;
                 right: -50px;
@@ -106,11 +119,13 @@
                 height: 208px;
                 width: 50px;
 
+                /* Heading styles within inputs wrapper. */
                 h5 {
                     border-inline: 2px solid whitesmoke;
                     font-size: 0.7rem;
                 }
 
+                /* Button styles within inputs wrapper. */
                 button {
                     display: grid;
                     place-items: center;
@@ -118,6 +133,7 @@
                     border: 2px solid whitesmoke;
                     background-color: rgb(199, 199, 199, 0.616);
 
+                    /* Styling the first and last child buttons. */
                     &:first-child {
                         border-top-right-radius: 50%;
                     }
@@ -127,12 +143,14 @@
                         border-top: none;
                     }
 
+                    /* SVG icon styles within buttons. */
                     svg {
                         font-size: 1.1rem;
                         color: rgb(73, 73, 73);
                     }
                 }
 
+                /* Input styles within inputs wrapper. */
                 input {
                     text-align: center;
                     font-size: 1rem;
@@ -144,6 +162,7 @@
                 }
             }
 
+            /* Heading styles within the event wrapper. */
             h3 {
                 text-align: center;
                 width: 200px;
@@ -151,16 +170,19 @@
                 white-space: nowrap;
             }
 
+            /* Heading styles within the event wrapper. */
             h5 {
                 text-align: center;
             }
 
+            /* Styles for teams wrapper within the event wrapper. */
             .teams-wrapper {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
 
+                /* Styles for team wrapper within teams wrapper. */
                 &__team-wrapper {
                     position: relative;
                     display: flex;
@@ -173,6 +195,7 @@
                     backdrop-filter: blur(1px);
                     -webkit-backdrop-filter: blur(1px);
 
+                    /* Media query for responsive design. */
                     @media (max-width: 335px) {
                         width: 180px;
                     }
@@ -181,6 +204,7 @@
                         width: 160px;
                     }
 
+                    /* Styles for winner button within team wrapper. */
                     .winner-button {
                         font-size: 1.2rem;
                         display: flex;
@@ -193,12 +217,14 @@
                         top: 7px;
                         right: 8px;
 
+                        /* Styles for disabled state of winner button. */
                         &:disabled {
                             cursor: not-allowed;
                             opacity: 0.5;
                         }
                     }
 
+                    /* Styles for crown icon within team wrapper. */
                     .crown {
                         color: gold;
                         position: absolute;
@@ -206,10 +232,12 @@
                         right: 5px;
                     }
 
+                    /* Styles for players wrapper within team wrapper. */
                     .players-wrapper {
                         overflow: hidden;
                         width: 100%;
 
+                        /* Heading styles within the team wrapper. */
                         h4 {
                             padding: 5px;
                             white-space: nowrap;
@@ -217,6 +245,7 @@
                             text-overflow: ellipsis;
                         }
 
+                        /* Styles for player within the players wrapper. */
                         .player {
                             height: 30px;
                             display: flex;
@@ -224,12 +253,14 @@
                             align-items: center;
                             border-top: 2px solid whitesmoke;
 
+                            /* Styles for text within player. */
                             &__text {
                                 width: 90%;
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
 
+                                /* Media queries for responsive design. */
                                 @media (max-width: 335px) {
                                     font-size: 0.9rem;
                                 }
@@ -241,18 +272,22 @@
                         }
                     }
 
+                    /* Styles for KDA section within the team wrapper. */
                     .k-d-a {
                         border-left: 2px solid rgba(245, 245, 245, 0.418);
 
+                        /* Heading styles within the KDA section. */
                         h4 {
                             padding: 5px;
                             text-align: center;
                         }
 
+                        /* Modifier styles for heading in KDA section. */
                         .h4--modifier1 {
                             font-size: 0.8rem;
                         }
 
+                        /* Styles for stats in the KDA section. */
                         &__stats {
                             height: 30px;
                             border-top: 2px solid whitesmoke;
@@ -261,11 +296,13 @@
                             text-align: center;
                             padding: 8px 5px 8px 5px;
 
+                            /* Styles for text in stats. */
                             .text {
                                 overflow-x: auto;
                             }
                         }
 
+                        /* Modifier styles for stats in KDA section. */
                         &__stats--modifier1 {
                             @extend .k-d-a__stats;
                             display: flex;
@@ -273,10 +310,12 @@
                             gap: 2px;
                             padding: 2px 5px 2px 5px;
 
+                            /* Styles for rating wrapper. */
                             .rating-wrapper {
                                 display: flex;
                                 justify-content: center;
 
+                                /* Styles for SVG icon in rating wrapper. */
                                 svg {
                                     font-size: 10px;
                                 }
@@ -284,11 +323,13 @@
                         }
                     }
 
+                    /* Styles for buttons section within the team wrapper. */
                     .stats-buttons {
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-end;
 
+                        /* Styles for button within the stats-buttons section. */
                         button {
                             background-color: rgb(199, 199, 199, 0.616);
                             border: 2px solid whitesmoke;
@@ -304,6 +345,7 @@
         }
     }
 
+    /* Styles for generator section within the main container. */
     &__generator {
         @include utils.container(100%, 100%);
         display: flex;
@@ -311,6 +353,7 @@
         align-items: center;
         gap: 10px;
 
+        /* Buttons wrapper styling. */
         .buttons-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -318,6 +361,7 @@
             gap: 5px;
         }
 
+        /* Common button styling. */
         .button {
             display: flex;
             justify-content: center;
@@ -334,6 +378,7 @@
             }
         }
 
+        /* Set players wrapper styling. */
         .set-players-wrapper {
             padding: 5px;
             display: flex;
@@ -344,15 +389,18 @@
             width: 100%;
             overflow: hidden;
 
+            /* Heading styles. */
             h2 {
                 color: whitesmoke;
                 text-align: center;
             }
 
+            /* Styles for input-button within the set-players-wrapper. */
             &__input-button {
                 display: flex;
                 justify-content: space-between;
 
+                /* Input field styling within input-button wrapper. */
                 input {
                     width: 100%;
                     font-size: 1.3rem;
@@ -364,6 +412,7 @@
                     border-right: none;
                 }
 
+                /* Button styling within input-button wrapper. */
                 button {
                     font-size: 1.5rem;
                     padding: 5px;
@@ -373,6 +422,7 @@
                 }
             }
 
+            /* Players list styling. */
             &__players {
                 display: flex;
                 flex-direction: column;
@@ -382,6 +432,7 @@
                 overflow-x: hidden;
                 overflow-y: auto;
 
+                /* Player item styling. */
                 .player {
                     position: relative;
                     padding: 5px;
@@ -391,6 +442,7 @@
                     display: flex;
                     justify-content: space-between;
 
+                    /* Player info wrapper styling. */
                     &__info {
                         display: flex;
                         align-items: center;
@@ -399,6 +451,7 @@
                         width: 100%;
                     }
 
+                    /* Text within player item styling. */
                     &__text {
                         width: 90%;
                         white-space: nowrap;
@@ -406,6 +459,7 @@
                         text-overflow: ellipsis;
                     }
 
+                    /* Rating wrapper within player item styling. */
                     &__rating-wrapper {
                         position: absolute;
                         display: flex;
@@ -413,6 +467,7 @@
                         top: 2px;
                         right: 110px;
 
+                        /* Button within rating wrapper styling. */
                         button {
                             padding-block: 2px;
                             color: whitesmoke;
@@ -421,6 +476,7 @@
                             background-color: transparent;
                             border: none;
 
+                            /* Styles for disabled state of rating-wrapper button. */
                             &:disabled {
                                 cursor: not-allowed;
                                 opacity: 0.4;
@@ -429,6 +485,7 @@
                         }
                     }
 
+                    /* Buttons within player item styling. */
                     &__buttons {
                         display: flex;
                         gap: 5px;
@@ -445,6 +502,7 @@
             }
         }
 
+        /* Select options wrapper styling. */
         .select-options-wrapper {
             display: flex;
             flex-direction: column;
@@ -452,6 +510,7 @@
             color: whitesmoke;
             text-align: center;
 
+            /* Select wrapper styling within select options wrapper. */
             &__select-wrapper {
                 display: flex;
                 flex-direction: column;
@@ -459,6 +518,7 @@
             }
         }
 
+        /* Generated teams wrapper styling. */
         .generated-teams-wrapper {
             border: 2px solid whitesmoke;
             color: whitesmoke;
@@ -474,6 +534,7 @@
             overflow-y: auto;
             max-height: 100%;
 
+            /* Team item styling. */
             .team {
                 padding: 5px;
                 border: 2px solid rgba(245, 245, 245, 0.418);
@@ -483,18 +544,21 @@
                 backdrop-filter: blur(1px);
                 -webkit-backdrop-filter: blur(1px);
 
+                /* Winning-chance styling within team item. */
                 &__winning-chance {
                     font-size: 0.7rem;
                     border-top: 2px solid whitesmoke;
                     padding-top: 2px;
                 }
 
+                /* Player styling. */
                 .player {
                     height: 30px;
                     display: flex;
                     justify-content: space-between;
                     border-top: 2px solid whitesmoke;
 
+                    /* Player info wrapper within player item. */
                     &__info {
                         display: flex;
                         align-items: center;
@@ -503,6 +567,7 @@
                         width: 100%;
                     }
 
+                    /* Text within player item. */
                     &__text {
                         width: 90%;
                         white-space: nowrap;
@@ -510,12 +575,14 @@
                         text-overflow: ellipsis;
                     }
 
+                    /* Rating wrapper within player item. */
                     .rating-wrapper {
                         padding-top: 5px;
                         padding-right: 1px;
                         display: flex;
                         justify-content: center;
 
+                        /* SVG icon styling within rating wrapper. */
                         svg {
                             font-size: 0.6rem;
                         }
@@ -525,6 +592,7 @@
         }
     }
 
+    /* Styles for stats section within the main container. */
     &__stats {
         @include utils.container(100%, 100%);
         display: flex;
@@ -536,6 +604,7 @@
         overflow-y: auto;
         padding: 10px;
 
+        /* Heading styles. */
         h2 {
             text-shadow: 0 0 0.2em whitesmoke;
             color: whitesmoke;
@@ -543,6 +612,7 @@
             text-align: center;
         }
 
+        /* Event stats wrapper styling. */
         .event-stats-wrapper {
             position: relative;
             border: 2px solid whitesmoke;
@@ -550,10 +620,12 @@
             padding: 10px;
             border-radius: 10px;
 
+            /* Responsive width for smaller screens. */
             @media (max-width: 615px) {
                 width: 100%;
             }
 
+            /* Date styling. */
             .date {
                 padding: 5px;
                 position: absolute;
@@ -562,6 +634,7 @@
                 font-size: 0.7rem;
             }
 
+            /* Heading for event. */
             h3 {
                 margin: 6px 0 0 9px;
                 max-width: 532px;
@@ -570,15 +643,18 @@
                 white-space: nowrap;
             }
 
+            /* Teams wrapper styling. */
             .teams-wrapper {
                 display: flex;
                 flex-direction: column;
 
+                /* Scrollable container for teams. */
                 .team-scroll-container {
                     overflow-x: auto;
                     width: 100%;
                     padding: 15px 9px 9px 9px;
 
+                    /* Individual team wrapper styling. */
                     .team-wrapper {
                         position: relative;
                         backdrop-filter: blur(1px);
@@ -590,6 +666,7 @@
                         border: 2px solid rgba(245, 245, 245, 0.418);
                         border-radius: 10px;
 
+                        /* Crown icon for winning team. */
                         .crown {
                             top: -17px;
                             right: 5px;
@@ -597,14 +674,17 @@
                             position: absolute;
                         }
 
+                        /* Players wrapper within team. */
                         .players-wrapper {
                             width: 250px;
 
+                            /* Team name and sum stats wrapper. */
                             .team-name-and-sum-stats {
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
 
+                                /* Team name styling. */
                                 h4 {
                                     overflow: hidden;
                                     text-overflow: ellipsis;
@@ -613,6 +693,7 @@
                                     max-width: 148px;
                                 }
 
+                                /* Sum stats styling. */
                                 .sum-stats {
                                     display: flex;
                                     gap: 5px;
@@ -622,6 +703,7 @@
                                 }
                             }
 
+                            /* Player item within players-wrapper. */
                             .player {
                                 height: 30px;
                                 display: flex;
@@ -629,6 +711,7 @@
                                 border-top: 2px solid whitesmoke;
                                 gap: 3px;
 
+                                /* Text within player item. */
                                 &__text {
                                     width: 90%;
                                     overflow: hidden;
@@ -638,21 +721,25 @@
                             }
                         }
 
+                        /* Statistics chart container. */
                         .statistics-chart {
                             border-left: 2px solid rgba(245, 245, 245, 0.418);
                             width: 150px;
                             overflow: hidden;
 
+                            /* Heading for the chart. */
                             h4 {
                                 text-align: center;
                                 padding: 5px;
                             }
 
+                            /* Chart wrapper styles. */
                             .chart-wrapper {
                                 height: 30px;
                                 border-top: 2px solid whitesmoke;
                                 overflow: hidden;
 
+                                /* Stat display within chart.*/
                                 &__stat {
                                     font-size: 9px;
                                     height: 8px;
@@ -662,6 +749,7 @@
                                     margin: 1px 1px 1px 0;
                                     font-weight: bold;
 
+                                    /* Stat-specific styling. */
                                     &__kills {
                                         @include utils.stat-style(
                                             rgba(0, 136, 23, 0.5)
@@ -683,6 +771,7 @@
                             }
                         }
 
+                        /* Overall stats container. */
                         .overall {
                             border-left: 2px solid rgba(245, 245, 245, 0.418);
                             width: 50px;
@@ -693,6 +782,7 @@
                                 text-align: center;
                             }
 
+                            /* Rating display within overall. */
                             &__rating {
                                 height: 30px;
                                 border-top: 2px solid whitesmoke;
@@ -702,6 +792,7 @@
                             }
                         }
 
+                        /* KDA stats container. */
                         .k-d-a {
                             border-left: 2px solid rgba(245, 245, 245, 0.418);
                             width: 68px;
@@ -711,6 +802,7 @@
                                 text-align: center;
                             }
 
+                            /* Stats display. */
                             &__stats {
                                 height: 30px;
                                 border-top: 2px solid whitesmoke;
@@ -719,11 +811,13 @@
                                 text-align: center;
                                 padding: 8px 5px 8px 5px;
 
+                                /* Text within stats display. */
                                 .text {
                                     overflow-x: auto;
                                 }
                             }
 
+                            /* Modifier for specific stats display. */
                             &__stats--modifier1 {
                                 @extend .k-d-a__stats;
                                 display: flex;
@@ -731,10 +825,7 @@
                                 gap: 2px;
                                 padding: 2px 5px 2px 5px;
 
-                                .text {
-                                    overflow-x: auto;
-                                }
-
+                                /* Rating wrapper display. */
                                 .rating-wrapper {
                                     display: flex;
                                     justify-content: center;
@@ -751,6 +842,7 @@
         }
     }
 
+    /* Styling for the team name input. */
     .team-name-input {
         font-size: 0.9rem;
         padding: 3px;
@@ -765,12 +857,14 @@
         border-top-right-radius: 10px;
     }
 
+    /* Modifier1 styling for the team name input. */
     .team-name-input--modifier1 {
         @extend .team-name-input;
         border-top-right-radius: 0;
         margin-top: 3px;
     }
 
+    /* Styling for the event name input. */
     .event-name-input {
         width: 100%;
         max-width: 400px;
@@ -783,26 +877,31 @@
         border-radius: 10px;
     }
 
+    /* Generic button styling. */
     button {
         cursor: pointer;
     }
 
+    /* Styling for icon style1. */
     .icon-style1 {
         font-size: 1.7rem;
         color: rgb(73, 73, 73);
     }
 
+    /* Styling for avatar. */
     .avatar {
         width: 30px;
         justify-content: center;
         display: flex;
         align-items: center;
 
+        /* Modifier1 styling for avatar. */
         &--modifier1 {
             width: 50px;
         }
     }
 
+    /* Styling for popup. */
     .popup {
         color: black;
         z-index: 100;
@@ -823,6 +922,7 @@
         border: 2px solid black;
         font-size: 1.3rem;
 
+        /* Styling for popup button. */
         button {
             cursor: pointer;
             border-radius: 15px;

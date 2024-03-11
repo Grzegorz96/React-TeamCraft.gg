@@ -1,5 +1,7 @@
 import React from "react";
+// FontAwesomeIcon for displaying icons.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// FontAwesome icons used in the component.
 import {
     faCheck,
     faRotateLeft,
@@ -7,8 +9,10 @@ import {
     faPenToSquare,
     faCrown,
 } from "@fortawesome/free-solid-svg-icons";
+// Styling utility for event wrapper.
 import { eventWrapperStyles } from "../../../utils/ui-styles/eventWrapperStyles";
 
+// EditEventComponent is a functional component responsible for rendering the form to edit an event, including teams and players.
 export default function EditEventComponent({
     myTeamsState: { editedEvent, editedPlayer, statsInputs },
     setTeamName,
@@ -26,13 +30,16 @@ export default function EditEventComponent({
             style={eventWrapperStyles(editedPlayer, editedEvent)}
         >
             <div className="event-wrapper__buttons-wrapper">
+                {/* Button to save changes. */}
                 <button onClick={editEvent}>
                     <FontAwesomeIcon icon={faCheck} />
                 </button>
+                {/* Button to cancel editing. */}
                 <button onClick={backFromEditing}>
                     <FontAwesomeIcon icon={faRotateLeft} />
                 </button>
             </div>
+            {/* Input for event name. */}
             <input
                 placeholder="Create event name"
                 className="event-name-input"
@@ -41,11 +48,14 @@ export default function EditEventComponent({
                 value={editedEvent.eventName}
                 onChange={(e) => setEventName(e)}
             />
+            {/* Input fields for editing player stats. */}
             {editedPlayer && (
                 <div className="event-wrapper__inputs-wrapper">
+                    {/* Button to toggle back to team view. */}
                     <button onClick={() => toggleEditPlayerStats()}>
                         <FontAwesomeIcon icon={faRotateLeft} />
                     </button>
+                    {/* Input fields for Kills, Deaths, and Assists. */}
                     <h5>Kills:</h5>
                     <input
                         name="kills-input"
@@ -67,11 +77,13 @@ export default function EditEventComponent({
                         value={statsInputs.assistsInput}
                         onChange={(e) => statsInputsHandler("assistsInput", e)}
                     />
+                    {/* Button to save player stats. */}
                     <button onClick={setStats}>
                         <FontAwesomeIcon icon={faCheck} />
                     </button>
                 </div>
             )}
+            {/* Render teams and players for editing. */}
             <div className="teams-wrapper">
                 {editedEvent.teams.map((teamObject, teamObjectIndex) => (
                     <div
@@ -83,6 +95,7 @@ export default function EditEventComponent({
                                 : null,
                         }}
                     >
+                        {/* Button to set team as winner. */}
                         <button
                             className="winner-button"
                             onClick={() => setWinner(teamObjectIndex)}
@@ -91,6 +104,7 @@ export default function EditEventComponent({
                             <FontAwesomeIcon icon={faCrown} />
                         </button>
                         <div className="players-wrapper">
+                            {/* Input for team name. */}
                             <input
                                 name="team-name"
                                 type="text"
@@ -101,6 +115,7 @@ export default function EditEventComponent({
                                     setTeamName(teamObjectIndex, e)
                                 }
                             />
+                            {/* Render players within the team. */}
                             {teamObject.players.map(
                                 ({ playerName }, playerIndex) => (
                                     <div className="player" key={playerName}>
@@ -113,6 +128,7 @@ export default function EditEventComponent({
                                 )
                             )}
                         </div>
+                        {/* Display K/D/A stats for each player in the team. */}
                         <div className="k-d-a">
                             <h4 className="h4--modifier1">K/D/A</h4>
                             {teamObject.players.map(
@@ -133,6 +149,7 @@ export default function EditEventComponent({
                                 )
                             )}
                         </div>
+                        {/* Display buttons for editing player stats. */}
                         <div className="stats-buttons">
                             {teamObject.players.map(({ playerName }) => (
                                 <button

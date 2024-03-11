@@ -1,31 +1,47 @@
 import React from "react";
+// Import useMainData hook for accessing main context.
 import { useMainData } from "../../../context/MainProvider";
+// Import alphabet for team naming.
 import { alphabet } from "../../../utils/alphabet";
+// Import FontAwesomeIcon for using font icons.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// Import font icons.
 import { faCrown, faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+// Import BigHead for displaying avatars.
 import { BigHead } from "@bigheads/core";
+// Import StarsWrapperComponent for displaying star ratings.
 import StarsWrapperComponent from "../../shared/StarsWrapperComponent";
 
+// Functional component for displaying event statistics.
 export default function DisplayEventsStatsComponent({
     calculateOverall,
     calculateTotalStats,
     allStatsAreValid,
 }) {
+    // Accessing main context.
     const { mainState } = useMainData();
+
+    // Check if no teams have been created.
     return mainState.acceptedTeams.length < 1 ? (
         <>
             <h2>No teams have been created.</h2>
         </>
     ) : (
         <>
+            {/* Render event statistics. */}
             {mainState.acceptedTeams.map((eventObject, eventObjectIndex) => (
                 <div className="event-stats-wrapper" key={eventObjectIndex}>
+                    {/* Displaying event name or default name. */}
                     <h3>
                         {eventObject.eventName
                             ? eventObject.eventName
                             : `Event ${eventObjectIndex + 1}`}
                     </h3>
+
+                    {/* Displaying creation date. */}
                     <div className="date">{eventObject.creationDate}</div>
+
+                    {/* Displaying teams. */}
                     <div className="teams-wrapper">
                         {eventObject.teams.map((team, teamIndex) => (
                             <div
@@ -40,19 +56,25 @@ export default function DisplayEventsStatsComponent({
                                             : null,
                                     }}
                                 >
+                                    {/* Displaying crown icon for winner. */}
                                     {team.isWinner && (
                                         <FontAwesomeIcon
                                             className="crown"
                                             icon={faCrown}
                                         />
                                     )}
+
                                     <div className="players-wrapper">
+                                        {/* Displaying team name and sum stats. */}
                                         <div className="team-name-and-sum-stats">
+                                            {/* Displaying team name or default name. */}
                                             <h4>
                                                 {team.teamName
                                                     ? team.teamName
                                                     : `Team ${alphabet[teamIndex]}`}
                                             </h4>
+
+                                            {/* Displaying sum stats. */}
                                             <div className="sum-stats">
                                                 <FontAwesomeIcon
                                                     icon={faShieldHalved}
@@ -64,6 +86,8 @@ export default function DisplayEventsStatsComponent({
                                                     : "NA/NA/NA"}
                                             </div>
                                         </div>
+
+                                        {/* Displaying players in the team. */}
                                         {team.players.map(({ playerName }) => (
                                             <div
                                                 className="player"
@@ -78,6 +102,8 @@ export default function DisplayEventsStatsComponent({
                                             </div>
                                         ))}
                                     </div>
+
+                                    {/* Displaying statistics chart. */}
                                     <div className="statistics-chart">
                                         <h4>Stats</h4>
                                         {team.players.map(
@@ -93,6 +119,7 @@ export default function DisplayEventsStatsComponent({
                                                     className="chart-wrapper"
                                                     key={playerName}
                                                 >
+                                                    {/* Displaying kills chart. */}
                                                     <div className="chart-wrapper__stat">
                                                         <div
                                                             className="chart-wrapper__stat__kills"
@@ -110,6 +137,8 @@ export default function DisplayEventsStatsComponent({
                                                         </div>
                                                         K
                                                     </div>
+
+                                                    {/* Displaying deaths chart. */}
                                                     <div className="chart-wrapper__stat">
                                                         <div
                                                             className="chart-wrapper__stat__deaths"
@@ -127,6 +156,8 @@ export default function DisplayEventsStatsComponent({
                                                         </div>
                                                         D
                                                     </div>
+
+                                                    {/* Displaying assists chart. */}
                                                     <div className="chart-wrapper__stat">
                                                         <div
                                                             className="chart-wrapper__stat__assists"
@@ -148,6 +179,8 @@ export default function DisplayEventsStatsComponent({
                                             )
                                         )}
                                     </div>
+
+                                    {/* Displaying overall ratings. */}
                                     <div className="overall">
                                         <h4>Overall</h4>
                                         {team.players.map(
@@ -183,6 +216,8 @@ export default function DisplayEventsStatsComponent({
                                             )
                                         )}
                                     </div>
+
+                                    {/* Displaying K/D/A stats with star ratings. */}
                                     <div className="k-d-a">
                                         <h4>K/D/A</h4>
                                         {team.players.map(
@@ -203,13 +238,13 @@ export default function DisplayEventsStatsComponent({
                                                             : "k-d-a__stats"
                                                     }
                                                 >
-                                                    {playerRating ? (
+                                                    {playerRating && (
                                                         <StarsWrapperComponent
                                                             playerRating={
                                                                 playerRating
                                                             }
                                                         />
-                                                    ) : null}
+                                                    )}
                                                     <div className="text">
                                                         {`${kills || "NA"}/${
                                                             deaths || "NA"

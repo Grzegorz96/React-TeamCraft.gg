@@ -1,9 +1,11 @@
 import React from "react";
+// Custom components for different sections of the generator.
 import SetPlayersComponent from "./SetPlayersComponent";
 import SelectOptionsComponent from "./SelectOptionsComponent";
 import GeneratedTeamsComponent from "./GeneratedTeamsComponent";
 import PopupComponent from "../../shared/PopupComponent";
 
+// GeneratorComponent is a functional component responsible for rendering different sections of the team generator based on the generator state.
 export default function GeneratorComponent({
     generatorState,
     handleSelectChange,
@@ -26,12 +28,15 @@ export default function GeneratorComponent({
 }) {
     return (
         <div className="main__generator">
+            {/* Render the PopupComponent if there is a popup message. */}
             {generatorState.popup && (
                 <PopupComponent
                     message={generatorState.popup}
                     closePopup={closePopup}
                 />
             )}
+
+            {/* Render the GeneratedTeamsComponent if team options are accepted and there are generated teams. */}
             {generatorState.isTeamOptionsAccepted ? (
                 generatorState.generatedTeams.length ? (
                     <GeneratedTeamsComponent
@@ -44,6 +49,7 @@ export default function GeneratorComponent({
                         calculateWiningChance={calculateWiningChance}
                     />
                 ) : (
+                    /* Render the SetPlayersComponent if team options are accepted but there are no generated teams. */
                     <SetPlayersComponent
                         setPlayerName={setPlayerName}
                         addPlayerToList={addPlayerToList}
@@ -60,6 +66,7 @@ export default function GeneratorComponent({
                     />
                 )
             ) : (
+                /* Render the SelectOptionsComponent if team options are not yet accepted. */
                 <SelectOptionsComponent
                     handleAcceptAndBackButton={handleAcceptAndBackButton}
                     handleSelectChange={handleSelectChange}

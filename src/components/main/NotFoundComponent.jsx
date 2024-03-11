@@ -1,5 +1,6 @@
 import React from "react";
 
+// NotFoundComponent: Renders a message for a not found URL.
 export default function NotFoundComponent() {
     return (
         <div className="main__not-found">

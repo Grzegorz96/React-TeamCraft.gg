@@ -1,5 +1,7 @@
+// Import utility functions from the specified file.
 @use "../../utils/css" as utils;
 
+// Define styles for the footer component.
 .footer {
     @include utils.container(100%, 30px);
     background-color: rgba(168, 168, 168, 0.329);
@@ -9,6 +11,7 @@
     padding: 5px;
     gap: 15px;
 
+    // Styles for the events counter within the footer.
     &__events-counter {
         font-size: 0.8rem;
         text-align: center;
@@ -21,6 +24,7 @@
         white-space: nowrap;
     }
 
+    // Styles for the image wrapper within the footer.
     &__img-wrapper {
         height: 100%;
         display: flex;
@@ -29,10 +33,12 @@
         justify-content: flex-end;
         align-items: center;
 
+        // Styles for images within the image wrapper.
         img {
             height: 100%;
         }
 
+        // Media query styles for the first child of the image wrapper.
         :first-child {
             @media (max-width: 320px) {
                 padding-block: 2px;

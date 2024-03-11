@@ -1,5 +1,7 @@
 import React from "react";
+// FontAwesomeIcon for displaying icons.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// FontAwesome icons used in the component.
 import {
     faTrash,
     faPenToSquare,
@@ -11,10 +13,15 @@ import {
     faRankingStar,
     faStar,
 } from "@fortawesome/free-solid-svg-icons";
+// Conditions for the generate button styling.
 import { generateButtonConditions } from "../../../utils/ui-styles/conditionsForGenerateButton";
+// BigHead is a component for generating customizable avatar images.
 import { BigHead } from "@bigheads/core";
+
+// MemoizedBigHead is a memoized version of the BigHead component.
 const MemoizedBigHead = React.memo(BigHead);
 
+// SetPlayersComponent is a functional component responsible for rendering the player input, player list, and related buttons in the team generator.
 export default function SetPlayersComponent({
     setPlayerName,
     addPlayerToList,
@@ -30,6 +37,7 @@ export default function SetPlayersComponent({
 }) {
     return (
         <>
+            {/* Render the buttons for back, generate, clear, and toggle rating. */}
             <div className="buttons-wrapper">
                 <button className="button" onClick={handleAcceptAndBackButton}>
                     <FontAwesomeIcon icon={faRotateLeft} />
@@ -62,6 +70,8 @@ export default function SetPlayersComponent({
                     <FontAwesomeIcon icon={faRankingStar} /> Rating
                 </button>
             </div>
+
+            {/* Render the input field for player names. */}
             <div className="set-players-wrapper">
                 <h2>
                     {`Players to enter: ${
@@ -103,6 +113,8 @@ export default function SetPlayersComponent({
                         />
                     </button>
                 </div>
+
+                {/* Render the list of players with options for rating, editing, and removing. */}
                 {generatorState.actualListOfPlayers.length ? (
                     <div className="set-players-wrapper__players">
                         {generatorState.actualListOfPlayers.map(

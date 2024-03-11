@@ -1,3 +1,4 @@
+// Import necessary containers and MainProvider.
 import Footer from "./containers/footer/FooterContainer";
 import Header from "./containers/header/HeaderContainer";
 import Main from "./containers/main/MainContainer";

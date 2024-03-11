@@ -1,5 +1,6 @@
 import React from "react";
 
+// HomeComponent: Renders a welcome message with the home page.
 export default function HomeComponent() {
     return (
         <div className="main__home">
