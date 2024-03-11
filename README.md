@@ -40,10 +40,19 @@ Utilizing the <BrowserRouter> component from react-router-dom, index.jsx facilit
 The module imports the index.scss stylesheet to apply styles to the application, ensuring a visually appealing and cohesive design.
 
 #### App.jsx:
-The App.jsx module is a central component in TeamCraft, responsible for assembling key containers and managing the application's layout. Utilizes <MainProvider> for context-based state management, ensuring smooth data flow across components.
-Rendering Structure:
-Renders components in the following order: ``` <Header />, <Main />, and <Footer /> ```.
-Default export, making App the entry point for the TeamCraft application.
+
+The App.jsx module, as a central component in TeamCraft, plays a pivotal role in orchestrating key containers and managing the application's layout. Here's a structured overview:
+
+- Initialization and Rendering:
+This module employs context-based state management, utilizing <MainProvider> to facilitate seamless data flow across components.
+
+- Rendering Structure:
+Renders components in the following order: ```<Header />, <Main />, and <Footer />```.
+
+- Export:
+Default export designates App as the entry point for the TeamCraft application.
+
+
 
 
 
