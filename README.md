@@ -6,3 +6,26 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Nazwa Twojego Projektu
+
+Opis krótki, jasny opis projektu.
+
+## Spis treści
+
+- [Technologie](#technologie)
+- [Instalacja](#instalacja)
+- [Uruchamianie projektu](#uruchamianie-projektu)
+- [Struktura projektu](#struktura-projektu)
+- [Skrypty](#skrypty)
+- [Testowanie](#testowanie)
+- [Pomocne zasoby](#pomocne-zasoby)
+- [Znane problemy](#znane-problemy)
+- [Dopłaty](#dopłaty)
+- [Licencja](#licencja)
+
+## Technologie
+
+- React
+- Vite
+- Inne używane technologie
