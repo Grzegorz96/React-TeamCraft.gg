@@ -1,4 +1,5 @@
-![logo](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/ff3b3c02-e86a-46a6-a7b0-e030d5765697)
+
+![tclogo](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/9fde94f2-2121-49e6-809b-7bfd04b76772)
 
 # TEAMCRAFT.GG
 
