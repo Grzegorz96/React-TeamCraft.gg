@@ -1,7 +1,7 @@
 <img src="https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22" alt="logo" width="100%" />
 <style>
   ul li {
-    color: #6c757d; /* Kolor tekstu w elementach listy */
+   text-decoration: none
   }
 </style>
 # TEAMCRAFT.GG
