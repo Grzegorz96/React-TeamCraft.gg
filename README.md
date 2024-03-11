@@ -1,31 +1,26 @@
-# React + Vite
+# TEAMCRAFT.GG
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TeamCraft is an application created in React technology, dedicated to enthusiasts of team-based games. With its user-friendly interface and advanced features, TeamCraft allows users to quickly and efficiently create teams without the need to create an account. The application enables the rapid generation of teams based on the list of players entered by the user. TeamCraft gives users the option to choose between random team creation and balanced team building, ensuring both exciting challenges and fair gameplay.
 
-Currently, two official plugins are available:
+Utilizing browser cache to store all data, TeamCraft eliminates the need for account creation. Users have access to their created events, teams, statistics, and history anytime, without the necessity of logging in. They can freely add, edit, and manage their teams. TeamCraft allows users to mark team wins, facilitating meticulous tracking of results. With access to the history of created teams and detailed statistics, users can analyze their achievements and those of their friends.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-# Nazwa Twojego Projektu
-
-Opis krótki, jasny opis projektu.
-
-## Spis treści
-
-- [Technologie](#technologie)
-- [Instalacja](#instalacja)
 - [Uruchamianie projektu](#uruchamianie-projektu)
 - [Struktura projektu](#struktura-projektu)
 - [Skrypty](#skrypty)
 - [Testowanie](#testowanie)
-- [Pomocne zasoby](#pomocne-zasoby)
-- [Znane problemy](#znane-problemy)
-- [Dopłaty](#dopłaty)
-- [Licencja](#licencja)
 
-## Technologie
 
-- React
-- Vite
-- Inne używane technologie
+- [Description of the modules](#pomocne-zasoby)
+- [Features](#znane-problemy)
+- [Technology used](#dopłaty)
+- [Installation](#licencja)
+- [Lessons Learned](#pomocne-zasoby)
+- [Features to be implemented](#znane-problemy)
+- [Authors](#dopłaty)
+- [Contact](#licencja)
+- [License](#licencja)
+- [Screnshoots](#licencja)
+
+## Description of the modules
