@@ -27,30 +27,29 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 
 ## Description of the modules
 
-#### index.jsx:
+### index.jsx:
 The index.jsx module serves as the entry point for the TeamCraft application, initiating the rendering process and setting up essential dependencies. Key functionalities include:
 
-- Initialization and Rendering:
-This module uses ReactDOM.createRoot to render the main <App /> component within the HTML element with the id "root." It kickstarts the user interface, making the application visually accessible.
+#### Initialization and Rendering:
+- This module uses ReactDOM.createRoot to render the main <App /> component within the HTML element with the id "root." It kickstarts the user interface, making the application visually accessible.
 
-- Routing Enablement:
-Utilizing the <BrowserRouter> component from react-router-dom, index.jsx facilitates smooth navigation within the application. This is vital for transitioning between different views, enhancing the overall user experience in TeamCraft.
+#### Routing Enablement:
+- Utilizing the <BrowserRouter> component from react-router-dom, index.jsx facilitates smooth navigation within the application. This is vital for transitioning between different views, enhancing the overall user experience in TeamCraft.
 
-- Styling Application:
-The module imports the index.scss stylesheet to apply styles to the application, ensuring a visually appealing and cohesive design.
+#### Styling Application:
+- The module imports the index.scss stylesheet to apply styles to the application, ensuring a visually appealing and cohesive design.
 
-#### App.jsx:
-
+### App.jsx:
 The App.jsx module, as a central component in TeamCraft, plays a pivotal role in orchestrating key containers and managing the application's layout. Here's a structured overview:
 
-- Initialization and Rendering:
-This module employs context-based state management, utilizing <MainProvider> to facilitate seamless data flow across components.
+#### Initialization and Rendering:
+- This module employs context-based state management, utilizing <MainProvider> to facilitate seamless data flow across components.
 
-- Rendering Structure:
-Renders components in the following order: ```<Header />, <Main />, and <Footer />```.
+#### Rendering Structure:
+- Renders components in the following order: ```<Header />, <Main />, and <Footer />```.
 
-- Export:
-Default export designates App as the entry point for the TeamCraft application.
+#### Export:
+- Default export designates App as the entry point for the TeamCraft application.
 
 
 
