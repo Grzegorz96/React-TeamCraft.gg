@@ -7,23 +7,16 @@ TeamCraft is an application created in React technology, dedicated to enthusiast
 Utilizing browser cache to store all data, TeamCraft eliminates the need for account creation. Users have access to their created events, teams, statistics, and history anytime, without the necessity of logging in. They can freely add, edit, and manage their teams. TeamCraft allows users to mark team wins, facilitating meticulous tracking of results. With access to the history of created teams and detailed statistics, users can analyze their achievements and those of their friends.
 
 ## Table of Contents
-
-- [Uruchamianie projektu](#uruchamianie-projektu)
-- [Struktura projektu](#struktura-projektu)
-- [Skrypty](#skrypty)
-- [Testowanie](#testowanie)
-
-
 - [Description of the modules](#Description-of-the-modules)
-- [Features](#znane-problemy)
-- [Technology used](#dopłaty)
-- [Installation](#licencja)
-- [Lessons Learned](#pomocne-zasoby)
-- [Features to be implemented](#znane-problemy)
-- [Authors](#dopłaty)
-- [Contact](#licencja)
-- [License](#licencja)
-- [Screnshoots](#licencja)
+- [Features](#Featured)
+- [Technology used](#Technology-used)
+- [Installation](#Installation)
+- [Lessons learned](#Lessons-learned)
+- [Features to be implemented](#Features-to-be-implemented)
+- [Authors](#Authors)
+- [Contact](#Contact)
+- [License](#License)
+- [Screnshoots](#Screnshoots)
 
 ## Description of the modules
 
@@ -121,5 +114,5 @@ generator-reducer:
 my-teams-reducer:
 - The structure of the my-teams-reducer folder contains files for the initialization state, action types and reducer for the myteams module.
 
-### utils
+### utils:
 - The structure of the utils folder contains the necessary tools for the application's operation, offering, among others, functions for handling dynamic styles, operations on the browser's local memory, generating the current date and algorithms used to generate teams.
