@@ -14,7 +14,7 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 - [Testowanie](#testowanie)
 
 
-- [Description of the modules](#pomocne-zasoby)
+- [Description of the modules](#Description of the modules)
 - [Features](#znane-problemy)
 - [Technology used](#dopłaty)
 - [Installation](#licencja)
