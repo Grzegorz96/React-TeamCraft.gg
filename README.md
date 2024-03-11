@@ -27,7 +27,7 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 
 ## Description of the modules
 
-####index.jsx:
+#### index.jsx:
 The index.jsx module serves as the entry point for the TeamCraft application, initiating the rendering process and setting up essential dependencies. Key functionalities include:
 
 - Initialization and Rendering:
