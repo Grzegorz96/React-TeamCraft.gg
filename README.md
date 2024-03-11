@@ -1,5 +1,6 @@
 
-![x](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/295116cb-e152-4b26-a099-624562c71509)
+![d](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22)
+
 
 
 # TEAMCRAFT.GG
