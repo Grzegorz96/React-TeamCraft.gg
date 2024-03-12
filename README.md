@@ -1,10 +1,10 @@
 <img src="https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/49b775d7-ed61-483d-b1fe-3f35c07c3c22" alt="logo" width="100%" />
-
 # TEAMCRAFT.GG
 
 TeamCraft is an application created in React technology, dedicated to enthusiasts of team-based games. With its user-friendly interface and advanced features, TeamCraft allows users to quickly and efficiently create teams without the need to create an account. The application enables the rapid generation of teams based on the list of players entered by the user. TeamCraft gives users the option to choose between random team creation and balanced team building, ensuring both exciting challenges and fair gameplay.
 
 Utilizing browser cache to store all data, TeamCraft eliminates the need for account creation. Users have access to their created events, teams, statistics, and history anytime, without the necessity of logging in. They can freely add, edit, and manage their teams. TeamCraft allows users to mark team wins, facilitating meticulous tracking of results. With access to the history of created teams and detailed statistics, users can analyze their achievements and those of their friends.
+
 
 ## Table of Contents
 - [Description of the modules](#Description-of-the-modules)
@@ -17,6 +17,7 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 - [Contact](#Contact)
 - [License](#License)
 - [Screnshoots](#Screnshoots)
+
 
 ## Description of the modules
 
@@ -116,3 +117,35 @@ my-teams-reducer:
 
 ### utils:
 - The structure of the utils folder contains the necessary tools for the application's operation, offering, among others, functions for handling dynamic styles, operations on the browser's local memory, generating the current date and algorithms used to generate teams.
+
+
+## Features
+- Saving and reading the main application state from the browser's local memory.
+- Selecting the number of teams and the number of players in the team.
+- Adding, editing or removing a player before generating teams.
+- Function of adding ratings for players.
+- Clearing the list of introduced players.
+- Team generation can be done in two ways: randomly or based on player ratings to ensure balance.
+- Possibility to re-generate teams.
+- Possibility to change the name of teams and the event before accepting the event.
+- Calculating winning chance for specific teams when generating based on ratings.
+- Displaying  created events, ability to delete them.
+- Modifying the event name, team name and player statistics from the my-teams level.
+- Feature of marking the winning team in the event.
+- Validation of all user input.
+- Displaying statistics for events.
+- Calculating the total KDA for a given team with completed statistics.
+- Calculating a post-match rating for a given player with completed statistics.
+- Responsive appearance of the application, it can be used on all devices.
+- Information pop-up system.
+- Dropdown menu.
+- Automatic closing dropdown Menu.
+- Information about active user events in the application footer.
+
+
+## Technology used
+**Client:** 
+- Languages: Python
+- Third Party Libraries: Tkinter, Pygame, requests
+
+
