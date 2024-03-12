@@ -116,8 +116,7 @@ generator-reducer:
 my-teams-reducer:
 - The structure of the my-teams-reducer folder contains files for the initialization state, action types and reducer for the myteams module.
 
-**Client:** 
-### **utils:**
+### utils:
 - The structure of the utils folder contains the necessary tools for the application's operation, offering, among others, functions for handling dynamic styles, operations on the browser's local memory, generating the current date and algorithms used to generate teams.
 
 
@@ -146,8 +145,19 @@ my-teams-reducer:
 
 
 ## Technology used
+
 **Client:** 
-- Languages: Python
-- Third Party Libraries: Tkinter, Pygame, requests
+- Languages: JavaScript, HTML, CSS
+- Frontend Library: React
+- Routing: React Router
+- UI Components: React Select, FontAwesome
+- Styling: SCSS
+- Image Generation: bigheads 
+
+
+## Installation
+
+
+
 
 
