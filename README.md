@@ -152,7 +152,8 @@ my-teams-reducer:
 - Routing: React Router
 - UI Components: React Select, FontAwesome
 - Styling: SCSS
-- Image Generation: bigheads 
+- Image Generation: bigheads
+- Hosting for web application: www.netlify.com
 
 
 ## Installation
