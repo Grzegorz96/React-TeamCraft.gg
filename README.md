@@ -9,7 +9,7 @@ Utilizing browser cache to store all data, TeamCraft eliminates the need for acc
 
 ## Table of Contents
 - [Description of the modules](#Description-of-the-modules)
-- [Features](#Featured)
+- [Features](#Features)
 - [Technology used](#Technology-used)
 - [Installation](#Installation)
 - [Lessons learned](#Lessons-learned)
@@ -116,7 +116,8 @@ generator-reducer:
 my-teams-reducer:
 - The structure of the my-teams-reducer folder contains files for the initialization state, action types and reducer for the myteams module.
 
-### utils:
+**Client:** 
+### **utils:**
 - The structure of the utils folder contains the necessary tools for the application's operation, offering, among others, functions for handling dynamic styles, operations on the browser's local memory, generating the current date and algorithms used to generate teams.
 
 
