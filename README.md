@@ -207,7 +207,7 @@ In summary, working on TeamCraft was not only an opportunity to expand skills re
 
 ## Features to be implemented
 - Implementing a backend along with a database to enable the creation of more advanced features for users.
-- The functionality to create tournaments, where various players can participate, providing users with the option to add their team to the tournament or individually join the competition.
+- The functionality to create tournaments online, where various players can participate, providing users with the option to add their team to the tournament or individually join the competition.
 
 
 ## Authors
