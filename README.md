@@ -243,7 +243,7 @@ E-mail: grzesstrzeszewski@gmail.com
 ![statistics](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/41c4f2cb-160c-46a8-b78c-4294ecbac05d)
 ##### Screenshot of the 404 page
 ![404](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/64448361-b6ec-4b8a-96cd-7d6f14dc5400)
-Screenshot of the popup
+##### Screenshot of the popup
 ![popup](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/b356a97b-d878-485b-bb28-bb33561096a8)
 
 ### View for mobile devices:
@@ -263,7 +263,7 @@ Screenshot of the popup
 ![statistics](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/06afaabc-4a9c-423b-b6b5-e168c9e8d071)
 ##### Screenshot of the 404 page
 ![404](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/7b7057b7-16e9-438a-8223-acfe9310d2b9)
-Screenshot of the popup
+##### Screenshot of the popup
 ![popup](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/0df883a0-f351-434f-99ea-696430f10580)
-Screenshot of the dropdown menu
+##### Screenshot of the dropdown menu
 ![dropdown](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/4b94623f-4f93-4bb7-a386-6e2a21f063dc)
