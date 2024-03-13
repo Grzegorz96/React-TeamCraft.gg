@@ -160,7 +160,7 @@ my-teams-reducer:
 ## Installation
 
 ### To quickly launch the TeamCraft application:
-- Enter the link: https://millionaire-web-app.netlify.app
+- Enter the link: https://teamcraft.netlify.app
 
 ### For manually launching the application on the IDE:
 #### Requirements:
