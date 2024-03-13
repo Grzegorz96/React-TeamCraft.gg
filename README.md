@@ -191,6 +191,7 @@ Now the TeamCraft project should be running on your local server. You can now ed
 
 
 ## Lessons learned
+
 During the process of creating the TeamCraft project, I actively enhanced my skills related to working in the React environment. Opting for hooks such as useReducer and useState, and utilizing the context API for global state management, I chose solutions that were appropriate for the project's scale, avoiding more advanced libraries like Redux.
 
 While working on the application, I gained experience with various React libraries and implemented memoization techniques for components and functions to optimize performance. I also effectively developed my skills in writing stylesheets using SCSS, allowing me to customize the application's appearance and maintain clarity in the CSS code.
@@ -205,6 +206,8 @@ In summary, working on TeamCraft was not only an opportunity to expand skills re
 
 
 ## Features to be implemented
+- Implementing a backend along with a database to enable the creation of more advanced features for users.
+- The functionality to create tournaments, where various players can participate, providing users with the option to add their team to the tournament or individually join the competition.
 
 
 ## Authors
@@ -219,5 +222,8 @@ E-mail: grzesstrzeszewski@gmail.com
 
 ## License
 
-[MIT]()
+[MIT](https://github.com/Grzegorz96/React-TeamCraft.gg/blob/master/LICENSE.md)
+
+
+## Screnshoots
 
