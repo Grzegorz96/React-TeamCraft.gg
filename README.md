@@ -229,58 +229,41 @@ E-mail: grzesstrzeszewski@gmail.com
 ### View for desktop and laptop screens:
 ##### Screenshot of the home page
 ![home](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/eb763189-d874-470c-bf43-220bfabf6330)
-
+##### Screenshot of selecting the number of teams and players on the team generation page
 ![generate-select-options](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/182f83c8-17f9-4085-ba01-f6cc0d80221a)
-
+##### Screenshot of setting players on the team generation page
 ![generate-set-players](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/804e079b-6ac1-4480-be49-b982c7ac658b)
-
+##### Screenshot of generated event on the team generation page
 ![generate-generated-players](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/f2d6180a-7ad3-4497-9201-1d5c9a41410c)
-
+##### Screenshot of the user's created events on the my-teams page
 ![my-teams-display-events](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/2a3a63ec-8b62-4ab2-a260-b21bdc5561c9)
-
+##### Screenshot of the edited event on the my-teams page
 ![my-teams-edit-event](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/74a0c1ff-c745-40e0-b9ca-58afce30760e)
-
+##### Screenshot of the statistics of created user events
 ![statistics](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/41c4f2cb-160c-46a8-b78c-4294ecbac05d)
-
+##### Screenshot of the 404 page
 ![404](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/64448361-b6ec-4b8a-96cd-7d6f14dc5400)
-
+Screenshot of the popup
 ![popup](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/b356a97b-d878-485b-bb28-bb33561096a8)
 
 ### View for mobile devices:
-
+##### Screenshot of the home page
 ![home](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/da345722-3859-4db2-ac1d-9d4bf2d8ca7c)
-
+##### Screenshot of selecting the number of teams and players on the team generation page
 ![generate-select-options](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/1c7c539f-d0dd-48c7-96a9-aa372efe0634)
-
+##### Screenshot of setting players on the team generation page
 ![generate-set-players](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/0b682db5-2a54-4b0f-ae1a-11d9adb19a96)
-
+##### Screenshot of generated event on the team generation page
 ![generate-generated-players](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/16b9c892-c6da-4f00-a9b9-9006d3a79b78)
-
+##### Screenshot of the user's created events on the my-teams page
 ![my-teams-display-events](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/53d51147-30ca-48fd-975d-3d218fc7ef56)
-
+##### Screenshot of the edited event on the my-teams page
 ![my-teams-edit-event](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/ba5e1c58-cb3e-43ae-9171-269b40996c93)
-
+##### Screenshot of the statistics of created user events
 ![statistics](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/06afaabc-4a9c-423b-b6b5-e168c9e8d071)
-
+##### Screenshot of the 404 page
 ![404](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/7b7057b7-16e9-438a-8223-acfe9310d2b9)
-
+Screenshot of the popup
 ![popup](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/0df883a0-f351-434f-99ea-696430f10580)
-
+Screenshot of the dropdown menu
 ![dropdown](https://github.com/Grzegorz96/React-TeamCraft.gg/assets/129303867/4b94623f-4f93-4bb7-a386-6e2a21f063dc)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
