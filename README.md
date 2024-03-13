@@ -122,6 +122,7 @@ my-teams-reducer:
 
 ## Features
 - Saving and reading the main application state from the browser's local memory.
+- Possibility to navigate the application using routes.
 - Selecting the number of teams and the number of players in the team.
 - Adding, editing or removing a player before generating teams.
 - Function of adding ratings for players.
@@ -158,7 +159,65 @@ my-teams-reducer:
 
 ## Installation
 
+### To quickly launch the TeamCraft application:
+- Enter the link: https://millionaire-web-app.netlify.app
+
+### For manually launching the application on the IDE:
+#### Requirements:
+##### Programs:
+- Web browser.
+- IDE, for example Visual Studio Code.
+- Node.js
+
+#### Instruction:
+- Download React-TeamCraft.gg repository:
+```bash
+ git clone https://github.com/Grzegorz96/React-TeamCraft.gg.git
+```
+- Go to the React-TeamCraft.gg directory:
+```bash
+cd React-TeamCraft.gg
+```
+- Open the React-TeamCraft.gg on your IDE.
+- Install dependencies:
+```bash
+npm install
+```
+Run the project:
+```bash
+npm run dev
+```
+Now the TeamCraft project should be running on your local server. You can now edit the code in your development environment.
 
 
+## Lessons learned
+During the process of creating the TeamCraft project, I actively enhanced my skills related to working in the React environment. Opting for hooks such as useReducer and useState, and utilizing the context API for global state management, I chose solutions that were appropriate for the project's scale, avoiding more advanced libraries like Redux.
 
+While working on the application, I gained experience with various React libraries and implemented memoization techniques for components and functions to optimize performance. I also effectively developed my skills in writing stylesheets using SCSS, allowing me to customize the application's appearance and maintain clarity in the CSS code.
+
+The introduction of browser caching was crucial to ensure users could comfortably use the application and have access to previously created events.
+
+Throughout the creation of TeamCraft, a priority was to focus on UI/UX aspects, aiming to create an application that provides enjoyable and intuitive experiences, regardless of the device used.
+
+Developing the algorithm for assigning players to teams posed a significant challenge. The devised algorithm took into account player ratings while preserving an element of randomness to ensure balance between teams.
+
+In summary, working on TeamCraft was not only an opportunity to expand skills related to React and SCSS but also a chance to overcome various challenges, each of which brought new experiences and opportunities for growth.
+
+
+## Features to be implemented
+
+
+## Authors
+
+[@Grzegorz96](https://www.github.com/Grzegorz96)
+
+
+## Contact
+
+E-mail: grzesstrzeszewski@gmail.com
+
+
+## License
+
+[MIT]()
 
