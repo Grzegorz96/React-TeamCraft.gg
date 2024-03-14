@@ -16,4 +16,7 @@
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     background-color: $backgroundColor;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }

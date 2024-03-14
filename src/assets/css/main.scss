@@ -683,6 +683,7 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
+                                height: 28px;
 
                                 /* Team name styling. */
                                 h4 {
@@ -690,7 +691,7 @@
                                     text-overflow: ellipsis;
                                     white-space: nowrap;
                                     padding: 5px;
-                                    max-width: 145px;
+                                    max-width: 143px;
                                 }
 
                                 /* Sum stats styling. */
@@ -700,7 +701,7 @@
                                     margin-right: 5px;
                                     overflow-x: auto;
                                     overflow-y: hidden;
-                                    max-width: 100px;
+                                    max-width: 102px;
                                 }
                             }
 
@@ -732,6 +733,7 @@
                             h4 {
                                 text-align: center;
                                 padding: 5px;
+                                height: 28px;
                             }
 
                             /* Chart wrapper styles. */
@@ -781,6 +783,7 @@
                                 padding: 7px 3px 7px 3px;
                                 font-size: 12px;
                                 text-align: center;
+                                height: 28px;
                             }
 
                             /* Rating display within overall. */
@@ -801,6 +804,7 @@
                             h4 {
                                 padding: 5px;
                                 text-align: center;
+                                height: 28px;
                             }
 
                             /* Stats display. */
