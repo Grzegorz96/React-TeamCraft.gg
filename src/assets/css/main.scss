@@ -863,9 +863,8 @@
     .team-name-input--modifier1 {
         @extend .team-name-input;
         border-top-right-radius: 0;
-        // margin-top: 3px;
-        // border: 2px solid red;
-        height: 25px;
+        margin-top: 3px;
+        height: 22px;
     }
 
     /* Styling for the event name input. */
