@@ -274,6 +274,7 @@
 
                     /* Styles for KDA section within the team wrapper. */
                     .k-d-a {
+                        // width: 68px;
                         border-left: 2px solid rgba(245, 245, 245, 0.418);
 
                         /* Heading styles within the KDA section. */
@@ -292,7 +293,7 @@
                             height: 30px;
                             border-top: 2px solid whitesmoke;
                             font-size: 0.7rem;
-                            width: 63px;
+                            width: 66px;
                             text-align: center;
                             padding: 8px 5px 8px 5px;
 
@@ -690,7 +691,7 @@
                                     text-overflow: ellipsis;
                                     white-space: nowrap;
                                     padding: 5px;
-                                    max-width: 148px;
+                                    max-width: 145px;
                                 }
 
                                 /* Sum stats styling. */
@@ -699,7 +700,8 @@
                                     gap: 5px;
                                     margin-right: 5px;
                                     overflow-x: auto;
-                                    max-width: 97px;
+                                    overflow-y: hidden;
+                                    max-width: 100px;
                                 }
                             }
 
@@ -814,6 +816,7 @@
                                 /* Text within stats display. */
                                 .text {
                                     overflow-x: auto;
+                                    overflow-y: hidden;
                                 }
                             }
 
