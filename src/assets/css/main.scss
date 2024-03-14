@@ -274,7 +274,6 @@
 
                     /* Styles for KDA section within the team wrapper. */
                     .k-d-a {
-                        // width: 68px;
                         border-left: 2px solid rgba(245, 245, 245, 0.418);
 
                         /* Heading styles within the KDA section. */
@@ -864,7 +863,9 @@
     .team-name-input--modifier1 {
         @extend .team-name-input;
         border-top-right-radius: 0;
-        margin-top: 3px;
+        // margin-top: 3px;
+        // border: 2px solid red;
+        height: 25px;
     }
 
     /* Styling for the event name input. */
