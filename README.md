@@ -183,7 +183,7 @@ cd React-TeamCraft.gg
 ```bash
 npm install
 ```
-Run the project:
+- Run the project:
 ```bash
 npm run dev
 ```
