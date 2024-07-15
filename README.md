@@ -230,11 +230,11 @@ E-mail: grzesstrzeszewski@gmail.com
 ##### Screenshot of the home page
 ![home](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/home.png)
 ##### Screenshot of selecting the number of teams and players on the team generation page
-![generate-select-options](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-select-opitons.png)
+![generate-select-options](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-select-options.png)
 ##### Screenshot of setting players on the team generation page
-![generate-set-players](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-set-options.png)
+![generate-set-players](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-set-players.png)
 ##### Screenshot of generated event on the team generation page
-![generate-generated-players](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-generated-events.png)
+![generate-generated-players](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/generate-generated-players.png)
 ##### Screenshot of the user's created events on the my-teams page
 ![my-teams-display-events](https://raw.githubusercontent.com/Grzegorz96/React-TeamCraft.gg/master/docs/readme-images/pc/my-teams-display-events.png)
 ##### Screenshot of the edited event on the my-teams page
