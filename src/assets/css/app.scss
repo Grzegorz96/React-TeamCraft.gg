@@ -8,6 +8,8 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     -webkit-tap-highlight-color: transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 // Applying default container styles to the html, body, and #root elements.
